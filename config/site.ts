@@ -10,7 +10,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "",
+    github: "https://github.com/unishigure/mentor-codex",
     lodestone: "https://jp.finalfantasyxiv.com/lodestone/",
   },
 };
