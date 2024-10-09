@@ -38,10 +38,12 @@ export default function ImportForm() {
       const tales = data.map(
         (tale) =>
           ({
-            ...tale,
             id: uuid(),
-            contentId: ContentList.find((c) => c.name === tale.content)?.id,
             dateTime: tale.dateTime ? new Date(tale.dateTime) : new Date(),
+            contentId: ContentList.find((c) => c.name === tale.content)?.id,
+            job: tale.job,
+            inProgress: tale.inProgress,
+            result: tale.result,
           }) as Tale
       );
       await db.tales.bulkAdd(tales);
