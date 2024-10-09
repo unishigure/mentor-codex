@@ -47,7 +47,12 @@ export default function ProgressCount({ tales }: Readonly<ProgressCountProps>) {
       >
         Road to Astrope: {progressCount} / {MountGoal}
       </Link>
-      <Progress value={progPercent} size="sm" color={color} />
+      <Progress
+        label="Road to Astrope"
+        value={progPercent}
+        size="sm"
+        color={color}
+      />
     </>
   );
 }
