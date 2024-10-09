@@ -22,7 +22,7 @@ export default function ExportButton() {
 
     const date = new Date();
     const pad = (num: number) => num.toString().padStart(2, "0");
-    const dateStr = `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
+    const dateStr = `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}_${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
 
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
