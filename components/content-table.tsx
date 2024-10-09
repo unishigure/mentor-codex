@@ -1,11 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useMemo, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 
-import { Link } from "@nextui-org/link";
-import { Chip } from "@nextui-org/chip";
-import { Tooltip } from "@nextui-org/tooltip";
 import {
   Table,
   TableHeader,
@@ -15,10 +12,14 @@ import {
   TableCell,
 } from "@nextui-org/table";
 import { Pagination } from "@nextui-org/pagination";
+import { Link } from "@nextui-org/link";
+import { Chip } from "@nextui-org/chip";
+import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@nextui-org/button";
 
-import { ContentList, Job, Tale, Expansion, Content } from "@/types";
-import { CheckIcon, EnterIcon, StopIcon } from "./icons";
 import { db } from "@/config/db";
+import { ContentList, Job, Tale, Expansion, Content } from "@/types";
+import { CheckIcon, DeleteIcon, EditIcon, EnterIcon, StopIcon } from "./icons";
 import ProgressCount from "./progress-count";
 
 const columns: {
@@ -56,6 +57,11 @@ const columns: {
   {
     key: "result",
     label: "結果",
+    align: "center",
+  },
+  {
+    key: "actions",
+    label: "操作",
     align: "center",
   },
 ];
@@ -155,14 +161,59 @@ export default function ContentTable() {
   const [page, setPage] = useState(1);
   const rowsPerPage = 10;
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const pages = Math.ceil(tails.length / rowsPerPage);
 
-  const items = React.useMemo(() => {
+  const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
     return tails.slice(start, end);
   }, [page, tails]);
+
+  const renderActions = (tale: Tale) => {
+    return (
+      <div className="relative flex gap-1">
+        <Button
+          id={tale.id}
+          aria-label="edit"
+          isIconOnly
+          color="default"
+          size="sm"
+          variant="faded"
+          onClick={() => {}}
+          isLoading={isProcessing}
+        >
+          <EditIcon size={16} className="pointer-events-none" />
+        </Button>
+        <Button
+          id={tale.id}
+          aria-label="delete"
+          isIconOnly
+          color="danger"
+          size="sm"
+          variant="faded"
+          onClick={(event) => {
+            deleteTale(event);
+          }}
+          isLoading={isProcessing}
+        >
+          <DeleteIcon size={16} className="pointer-events-none" />
+        </Button>
+      </div>
+    );
+  };
+
+  const deleteTale = async (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    setIsProcessing(true);
+    const target = event.target as HTMLButtonElement;
+    db.tales.delete(target.id).finally(() => {
+      setIsProcessing(false);
+    });
+  };
 
   useEffect(() => {
     if (liveTails) {
@@ -170,7 +221,7 @@ export default function ContentTable() {
       liveTails
         .toSorted((a, b) => (a.dateTime > b.dateTime ? 1 : -1))
         .forEach((value, index) => {
-          counted.push({ ...value, id: (index + 1).toString() });
+          counted.push({ ...value, key: index + 1 });
         });
       setTails(counted.toReversed());
     }
@@ -214,13 +265,14 @@ export default function ContentTable() {
             const content = ContentList.find((v) => v.id === item.contentId);
             return (
               <TableRow key={item.id}>
-                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.key}</TableCell>
                 <TableCell>{renderContentName(content)}</TableCell>
                 <TableCell>{content?.category}</TableCell>
                 <TableCell>{renderJob(item)}</TableCell>
                 <TableCell>{item.dateTime.toLocaleString()}</TableCell>
                 <TableCell>{renderInProgress(item)}</TableCell>
                 <TableCell>{renderResult(item)}</TableCell>
+                <TableCell>{renderActions(item)}</TableCell>
               </TableRow>
             );
           }}

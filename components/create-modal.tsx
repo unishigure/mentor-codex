@@ -44,6 +44,7 @@ export default function CreateModal() {
     await db.tales
       .add({
         id: uuid(),
+        key: undefined,
         dateTime,
         contentId: content!.id,
         job,

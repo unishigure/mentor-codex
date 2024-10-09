@@ -145,6 +145,7 @@ export type ContentCategoryType =
  */
 export interface Tale {
   id: string;
+  key: number | undefined;
   dateTime: Date;
   contentId: number;
   job: JobType;

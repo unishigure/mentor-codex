@@ -1,14 +1,17 @@
-import Dexie, { type EntityTable } from "dexie";
+import Dexie, { Table } from "dexie";
 
 import { Tale } from "@/types";
 
-const db = new Dexie("TalesDatabase") as Dexie & {
-  tales: EntityTable<Tale>;
-};
+class TalesDatabase extends Dexie {
+  tales: Table<Tale, string>;
 
-db.version(1).stores({
-  tales: "++id, dateTime, contentId, job, inProgress, result",
-});
+  constructor() {
+    super("TalesDatabase");
+    this.version(1).stores({
+      tales: "++id, dateTime, contentId, job, inProgress, result",
+    });
+    this.tales = this.table("tales");
+  }
+}
 
-export type { Tale };
-export { db };
+export const db = new TalesDatabase();
