@@ -20,6 +20,7 @@ const placeholder = `[
 
 export default function ImportForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isInvalid, setIsInvalid] = useState(false);
 
   const registerJson = async (event: FormEvent) => {
     event.preventDefault();
@@ -43,14 +44,18 @@ export default function ImportForm() {
       await db.tales.bulkAdd(tales);
     } catch (e) {
       console.error(e);
+      setIsInvalid(true);
     }
+
+    const form = document.getElementById("import-form") as HTMLFormElement;
+    form.reset();
 
     setIsLoading(false);
   };
 
   return (
     <div className="mt-6 px-6 py-2">
-      <form onSubmit={registerJson}>
+      <form id="import-form" onSubmit={registerJson}>
         <Textarea
           name="json"
           label="JSON Import"
@@ -58,6 +63,9 @@ export default function ImportForm() {
           size="lg"
           minRows={10}
           placeholder={placeholder}
+          isInvalid={isInvalid}
+          errorMessage="Invalid JSON format"
+          onChange={() => setIsInvalid(false)}
         />
         <div className="flex flex-row gap-2 px-6 py-4 justify-end">
           <Button color="primary" type="submit" isLoading={isLoading}>
