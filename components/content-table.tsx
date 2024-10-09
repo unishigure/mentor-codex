@@ -172,7 +172,7 @@ export default function ContentTable() {
         .forEach((value, index) => {
           counted.push({ ...value, id: (index + 1).toString() });
         });
-      setTails(counted);
+      setTails(counted.toReversed());
     }
   }, [liveTails]);
 
