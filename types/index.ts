@@ -2617,4 +2617,112 @@ export const ContentList: Content[] = [
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/17ba391b62b/",
   },
+  {
+    id: 273,
+    expansion: Expansion.v7.v7_0,
+    level: 91,
+    name: "濁流遡上 イフイカ・トゥム",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/259c37be2ea/",
+  },
+  {
+    id: 274,
+    expansion: Expansion.v7.v7_0,
+    level: 93,
+    name: "山嶺登頂 ウォーコー・ゾーモー",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/3234aee78f4/",
+  },
+  {
+    id: 275,
+    expansion: Expansion.v7.v7_0,
+    level: 95,
+    name: "遺産踏査 天深きセノーテ",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/e96880d0f74/",
+  },
+  {
+    id: 276,
+    expansion: Expansion.v7.v7_0,
+    level: 97,
+    name: "外征前哨 ヴァンガード",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/fde94d8793d/",
+  },
+  {
+    id: 277,
+    expansion: Expansion.v7.v7_0,
+    level: 99,
+    name: "魂魄工廠 オリジェニクス",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/5fed58bd8cb/",
+  },
+  {
+    id: 278,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "記憶幻想 アレクサンドリア",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/1e2a6c0010b/",
+  },
+  {
+    id: 279,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "荒野秘境 サボテンダーバレー",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/915e0e65c0c/",
+  },
+  {
+    id: 280,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "悪夢遊園 ストレイバロー",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/cd523999c2e/",
+  },
+  {
+    id: 281,
+    expansion: Expansion.v7.v7_0,
+    level: 93,
+    name: "ヴァリガルマンダ討滅戦",
+    category: ContentCategory.Trials,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/2fc80be63e2/",
+  },
+  {
+    id: 282,
+    expansion: Expansion.v7.v7_0,
+    level: 99,
+    name: "ゾラージャ討滅戦",
+    category: ContentCategory.Trials,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/72c4bd9bafa/",
+  },
+  {
+    id: 283,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "極ヴァリガルマンダ討滅戦",
+    category: ContentCategory.Extreme,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/ccc7473c187/",
+  },
+  {
+    id: 284,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "極ゾラージャ討滅戦",
+    category: ContentCategory.Extreme,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/515c012009a/",
+  },
 ] as const;
