@@ -74,7 +74,10 @@ export default function ImportForm() {
           errorMessage="Invalid JSON format"
           onChange={() => setIsInvalid(false)}
         />
-        <div className="flex flex-row gap-2 px-6 py-4 justify-end">
+        <div className="flex flex-row gap-2 px-6 py-4 justify-center">
+          <Button color="danger" variant="light" type="reset">
+            クリア
+          </Button>
           <Button color="primary" type="submit" isLoading={isLoading}>
             追加
           </Button>

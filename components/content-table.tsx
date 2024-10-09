@@ -174,33 +174,37 @@ export default function ContentTable() {
 
   const renderActions = (tale: Tale) => {
     return (
-      <div className="relative flex gap-1">
-        <Button
-          id={tale.id}
-          aria-label="edit"
-          isIconOnly
-          color="default"
-          size="sm"
-          variant="faded"
-          onClick={() => {}}
-          isLoading={isProcessing}
-        >
-          <EditIcon size={16} className="pointer-events-none" />
-        </Button>
-        <Button
-          id={tale.id}
-          aria-label="delete"
-          isIconOnly
-          color="danger"
-          size="sm"
-          variant="faded"
-          onClick={(event) => {
-            deleteTale(event);
-          }}
-          isLoading={isProcessing}
-        >
-          <DeleteIcon size={16} className="pointer-events-none" />
-        </Button>
+      <div className="relative flex justify-center gap-1">
+        <Tooltip content="編集">
+          <Button
+            id={tale.id}
+            aria-label="edit"
+            isIconOnly
+            color="default"
+            size="sm"
+            variant="faded"
+            onClick={() => {}}
+            isLoading={isProcessing}
+          >
+            <EditIcon size={16} className="pointer-events-none" />
+          </Button>
+        </Tooltip>
+        <Tooltip content="削除">
+          <Button
+            id={tale.id}
+            aria-label="delete"
+            isIconOnly
+            color="danger"
+            size="sm"
+            variant="faded"
+            onClick={(event) => {
+              deleteTale(event);
+            }}
+            isLoading={isProcessing}
+          >
+            <DeleteIcon size={16} className="pointer-events-none" />
+          </Button>
+        </Tooltip>
       </div>
     );
   };
