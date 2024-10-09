@@ -19,225 +19,7 @@ import { Pagination } from "@nextui-org/pagination";
 import { ContentList, Job, Tale, Expansion, Content } from "@/types";
 import { CheckIcon, EnterIcon, StopIcon } from "./icons";
 import { db } from "@/config/db";
-
-// const tails: Tale[] = [
-//   {
-//     id: "1",
-//     dateTime: new Date("2021/07/01"),
-//     contentId: 110,
-//     job: Job.MagicalRange.RDM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "2",
-//     dateTime: new Date("2021/07/01"),
-//     contentId: 107,
-//     job: Job.MagicalRange.RDM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "3",
-//     dateTime: new Date("2021/07/24"),
-//     contentId: 177,
-//     job: Job.MagicalRange.RDM,
-//     inProgress: true,
-//     result: true,
-//   },
-//   {
-//     id: "4",
-//     dateTime: new Date("2021/07/24"),
-//     contentId: 54,
-//     job: Job.MagicalRange.SMN,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "5",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 143,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "6",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 152,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "7",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 175,
-//     job: Job.Healer.WHM,
-//     inProgress: true,
-//     result: true,
-//   },
-//   {
-//     id: "8",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 2,
-//     job: Job.Healer.WHM,
-//     inProgress: true,
-//     result: true,
-//   },
-//   {
-//     id: "9",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 192,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "10",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 17,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "11",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 143,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "12",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 149,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "13",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 104,
-//     job: Job.Healer.WHM,
-//     inProgress: true,
-//     result: true,
-//   },
-//   {
-//     id: "14",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 55,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "15",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 103,
-//     job: Job.MagicalRange.SMN,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "16",
-//     dateTime: new Date("2021/07/25"),
-//     contentId: 14,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "17",
-//     dateTime: new Date("2021/07/27"),
-//     contentId: 1,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "18",
-//     dateTime: new Date("2021/07/31"),
-//     contentId: 142,
-//     job: Job.MagicalRange.RDM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "19",
-//     dateTime: new Date("2021/09/03"),
-//     contentId: 149,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "20",
-//     dateTime: new Date("2021/09/03"),
-//     contentId: 149,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "21",
-//     dateTime: new Date("2021/09/03"),
-//     contentId: 41,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "22",
-//     dateTime: new Date("2021-09-18"),
-//     contentId: 205,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "23",
-//     dateTime: new Date("2021-09-19"),
-//     contentId: 174,
-//     job: Job.Healer.WHM,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "24",
-//     dateTime: new Date("2021-09-19"),
-//     contentId: 64,
-//     job: Job.Healer.SCH,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "25",
-//     dateTime: new Date("2021-09-24"),
-//     contentId: 135,
-//     job: Job.Healer.WHM,
-//     inProgress: true,
-//     result: true,
-//   },
-//   {
-//     id: "26",
-//     dateTime: new Date("2021-09-24"),
-//     contentId: 65,
-//     job: Job.Healer.SCH,
-//     inProgress: false,
-//     result: true,
-//   },
-//   {
-//     id: "27",
-//     dateTime: new Date("2021-09-24"),
-//     contentId: 36,
-//     job: Job.Healer.SCH,
-//     inProgress: false,
-//     result: true,
-//   },
-// ];
+import ProgressCount from "./progress-count";
 
 const columns: {
   key: string;
@@ -388,61 +170,62 @@ export default function ContentTable() {
       liveTails
         .toSorted((a, b) => (a.dateTime > b.dateTime ? 1 : -1))
         .forEach((value, index) => {
-          value.id = (index + 1).toString();
-          counted.push(value);
+          counted.push({ ...value, id: (index + 1).toString() });
         });
       setTails(counted);
     }
-    console.log("tails", tails);
   }, [liveTails]);
 
   return (
-    <Table
-      aria-label="Mentor roulette records"
-      bottomContent={
-        <div className="flex w-full justify-center">
-          <Pagination
-            isCompact
-            showControls
-            showShadow
-            page={page}
-            total={pages}
-            onChange={(page) => setPage(page)}
-          />
-        </div>
-      }
-      classNames={{
-        wrapper: "min-h-[222px]",
-      }}
-      color="primary"
-      selectionMode="single"
-    >
-      <TableHeader columns={columns}>
-        {(column) => (
-          <TableColumn key={column.key} align={column.align}>
-            {column.label}
-          </TableColumn>
-        )}
-      </TableHeader>
-      <TableBody
-        items={items}
-        emptyContent={"あなただけの記録はここから始まります"}
-      >
-        {(item) => {
-          const content = ContentList.find((v) => v.id === item.contentId);
-          return (
-            <TableRow key={item.id}>
-              <TableCell>{item.id}</TableCell>
-              <TableCell>{renderContentName(content)}</TableCell>
-              <TableCell>{content?.category}</TableCell>
-              <TableCell>{renderJob(item)}</TableCell>
-              <TableCell>{item.dateTime.toLocaleString()}</TableCell>
-              <TableCell>{renderInProgress(item)}</TableCell>
-              <TableCell>{renderResult(item)}</TableCell>
-            </TableRow>
-          );
+    <>
+      <ProgressCount tales={tails} />
+      <Table
+        aria-label="Mentor roulette records"
+        bottomContent={
+          <div className="flex w-full justify-center">
+            <Pagination
+              isCompact
+              showControls
+              showShadow
+              page={page}
+              total={pages}
+              onChange={(page) => setPage(page)}
+            />
+          </div>
+        }
+        classNames={{
+          wrapper: "min-h-[222px]",
         }}
-      </TableBody>
-    </Table>
+        color="primary"
+        selectionMode="single"
+      >
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={column.key} align={column.align}>
+              {column.label}
+            </TableColumn>
+          )}
+        </TableHeader>
+        <TableBody
+          items={items}
+          emptyContent={"あなただけの記録はここから始まります"}
+        >
+          {(item) => {
+            const content = ContentList.find((v) => v.id === item.contentId);
+            return (
+              <TableRow key={item.id}>
+                <TableCell>{item.id}</TableCell>
+                <TableCell>{renderContentName(content)}</TableCell>
+                <TableCell>{content?.category}</TableCell>
+                <TableCell>{renderJob(item)}</TableCell>
+                <TableCell>{item.dateTime.toLocaleString()}</TableCell>
+                <TableCell>{renderInProgress(item)}</TableCell>
+                <TableCell>{renderResult(item)}</TableCell>
+              </TableRow>
+            );
+          }}
+        </TableBody>
+      </Table>
+    </>
   );
 }
