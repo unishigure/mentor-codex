@@ -18,14 +18,14 @@ export default function ClearModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const clearData = async () => {
-    await db.tales.clear();
+    db.delete({ disableAutoOpen: false });
     router.push("/");
   };
 
   return (
     <>
       <Button onClick={onOpen} color="danger" size="sm" variant="flat">
-        CLEAR TALES
+        CLEAR CODEX
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
