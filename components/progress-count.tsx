@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Progress } from "@nextui-org/progress";
-import { Link } from "@nextui-org/link";
 
 import { Tale } from "@/types";
 
@@ -39,20 +38,11 @@ export default function ProgressCount({ tales }: Readonly<ProgressCountProps>) {
   }, [tales]);
 
   return (
-    <>
-      <Link
-        isExternal
-        color="foreground"
-        href="https://jp.finalfantasyxiv.com/lodestone/playguide/db/item/558342fca5b/"
-      >
-        Road to Astrope: {progressCount} / {MountGoal}
-      </Link>
-      <Progress
-        label="Road to Astrope"
-        value={progPercent}
-        size="sm"
-        color={color}
-      />
-    </>
+    <Progress
+      label={`Road to Astrope: ${progressCount} / ${MountGoal}`}
+      value={progPercent}
+      size="sm"
+      color={color}
+    />
   );
 }
