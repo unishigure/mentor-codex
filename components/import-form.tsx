@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { v7 as uuid } from "uuid";
+import { useRouter } from "next/navigation";
 import { Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 
@@ -21,6 +22,8 @@ const placeholder = `[
 export default function ImportForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
+
+  const router = useRouter();
 
   const registerJson = async (event: FormEvent) => {
     event.preventDefault();
@@ -42,6 +45,8 @@ export default function ImportForm() {
           }) as Tale
       );
       await db.tales.bulkAdd(tales);
+
+      router.push("/");
     } catch (e) {
       console.error(e);
       setIsInvalid(true);
