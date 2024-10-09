@@ -34,5 +34,5 @@ export default function ExportButton() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
-  return <Button onClick={exportJson}>Json Export</Button>;
+  return <Button onClick={exportJson}>Export JSON</Button>;
 }

@@ -65,7 +65,7 @@ export default function ImportForm() {
       <form id="import-form" onSubmit={registerJson}>
         <Textarea
           name="json"
-          label="JSON Import"
+          label="Import JSON"
           labelPlacement="outside"
           size="lg"
           minRows={10}
