@@ -1372,7 +1372,8 @@ export const ContentList: Content[] = [
     level: 49,
     name: "リットアティン強襲戦",
     category: ContentCategory.Trials,
-    lodestone: "",
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/b85ab23e734c5f65640c8bea29bc104fa5823a6f/",
   },
   {
     id: 135,
@@ -1389,7 +1390,8 @@ export const ContentList: Content[] = [
     level: 50,
     name: "皇都イシュガルド防衛戦",
     category: ContentCategory.Trials,
-    lodestone: "",
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/c57d70a1428aa5767084c8e2adb8ca73f0d6eba4/",
   },
   {
     id: 137,
