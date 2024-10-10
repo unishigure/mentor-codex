@@ -11,6 +11,11 @@ export default function DocsPage() {
   return (
     <>
       <h1 className={title()}>Usage</h1>
+      <div className="m-8">
+        <p>
+          取扱説明書の製作中...
+        </p>
+      </div>
       <Accordion variant="shadow" className="my-4">
         <AccordionItem key="import/export" title="Data Import / Export">
           <div className="relative flex flex-col gap-2 py-4">
