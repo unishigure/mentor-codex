@@ -61,7 +61,7 @@ export default function ImportForm() {
   };
 
   return (
-    <div className="mt-6 px-6 py-2">
+    <div className="py-2">
       <form id="import-form" onSubmit={registerJson}>
         <Textarea
           name="json"
