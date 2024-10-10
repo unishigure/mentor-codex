@@ -2725,4 +2725,13 @@ export const ContentList: Content[] = [
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/515c012009a/",
   },
+  {
+    id: 285,
+    expansion: Expansion.v6.v6_1,
+    level: 50,
+    name: "アルテマウェポン破壊作戦",
+    category: ContentCategory.Main,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/f369418dbf8/",
+  },
 ] as const;
