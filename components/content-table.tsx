@@ -16,6 +16,7 @@ import { Link } from "@nextui-org/link";
 import { Chip } from "@nextui-org/chip";
 import { Tooltip } from "@nextui-org/tooltip";
 import { Button } from "@nextui-org/button";
+import { Spinner } from "@nextui-org/spinner";
 
 import { db } from "@/config/db";
 import { ContentList, Job, Tale, Expansion, Content } from "@/types";
@@ -156,13 +157,13 @@ const renderResult = (tale: Tale) => {
 
 export default function ContentTable() {
   const [tails, setTails] = useState<Tale[]>([]);
-  const liveTails = useLiveQuery(() => db.tales.toArray());
-
   const [page, setPage] = useState(1);
-  const rowsPerPage = 10;
-
+  const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
+  const liveTails = useLiveQuery(() => db.tales.toArray());
+
+  const rowsPerPage = 10;
   const pages = Math.ceil(tails.length / rowsPerPage);
 
   const items = useMemo(() => {
@@ -171,6 +172,19 @@ export default function ContentTable() {
 
     return tails.slice(start, end);
   }, [page, tails]);
+
+  useEffect(() => {
+    if (liveTails) {
+      setIsLoading(false);
+      const counted: Tale[] = [];
+      liveTails
+        .toSorted((a, b) => (a.dateTime > b.dateTime ? 1 : -1))
+        .forEach((value, index) => {
+          counted.push({ ...value, key: index + 1 });
+        });
+      setTails(counted.toReversed());
+    }
+  }, [liveTails]);
 
   const renderActions = (tale: Tale) => {
     return (
@@ -219,18 +233,6 @@ export default function ContentTable() {
     });
   };
 
-  useEffect(() => {
-    if (liveTails) {
-      const counted: Tale[] = [];
-      liveTails
-        .toSorted((a, b) => (a.dateTime > b.dateTime ? 1 : -1))
-        .forEach((value, index) => {
-          counted.push({ ...value, key: index + 1 });
-        });
-      setTails(counted.toReversed());
-    }
-  }, [liveTails]);
-
   return (
     <>
       <ProgressCount tales={tails} />
@@ -263,6 +265,8 @@ export default function ContentTable() {
         </TableHeader>
         <TableBody
           items={items}
+          isLoading={isLoading}
+          loadingContent={<Spinner />}
           emptyContent={"あなただけの記録はここから始まります"}
         >
           {(item) => {
