@@ -6,7 +6,7 @@ class TalesDatabase extends Dexie {
   tales: Table<Tale, string>;
 
   constructor() {
-    super("TalesDatabase");
+    super("MentorCodex");
     this.version(1).stores({
       tales: "++id, dateTime, contentId, job, inProgress, result",
     });
