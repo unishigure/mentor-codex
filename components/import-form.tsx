@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 
-import { ContentList, Tale } from "@/types";
+import { ContentList, Tale, Job } from "@/types";
 import { db } from "@/config/db";
 
 const placeholder = `[
@@ -22,6 +22,7 @@ const placeholder = `[
 export default function ImportForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const router = useRouter();
 
@@ -35,6 +36,42 @@ export default function ImportForm() {
     try {
       const json = formData.get("json")!.toString();
       const data = JSON.parse(json) as Array<any>;
+
+      // validate content name
+      const isValid = data.every((tale) =>
+        ContentList.some((c) => c.name === tale.content)
+      );
+      if (!isValid) {
+        throw new Error("Invalid content name");
+      }
+
+      // validate job name
+      const isValidJob = data.every(
+        (tale) =>
+          Object.values(Job.Tank).some((j) => j === tale.job) ||
+          Object.values(Job.Healer).some((j) => j === tale.job) ||
+          Object.values(Job.Melee).some((j) => j === tale.job) ||
+          Object.values(Job.PhysicalRange).some((j) => j === tale.job) ||
+          Object.values(Job.MagicalRange).some((j) => j === tale.job)
+      );
+      if (!isValidJob) {
+        throw new Error("Invalid job name");
+      }
+
+      // validate boolean
+      const isValidInProgress = data.every(
+        (tale) => typeof tale.inProgress === "boolean"
+      );
+      const isValidResult = data.every(
+        (tale) => typeof tale.result === "boolean"
+      );
+      if (!isValidInProgress) {
+        throw new Error("Invalid inProgress value");
+      }
+      if (!isValidResult) {
+        throw new Error("Invalid result value");
+      }
+
       const tales = data.map(
         (tale) =>
           ({
@@ -44,7 +81,7 @@ export default function ImportForm() {
             job: tale.job,
             inProgress: tale.inProgress,
             result: tale.result,
-          }) as Tale,
+          }) as Tale
       );
 
       await db.tales.bulkAdd(tales);
@@ -52,11 +89,16 @@ export default function ImportForm() {
       router.push("/");
     } catch (e) {
       setIsInvalid(true);
+
+      if (e instanceof SyntaxError) {
+        setErrorMessage("Invalid JSON format");
+      } else if (e instanceof Error) {
+        setErrorMessage(e.message);
+      } else {
+        console.error(e);
+        setErrorMessage("Unknown error");
+      }
     }
-
-    const form = document.getElementById("import-form") as HTMLFormElement;
-
-    form.reset();
 
     setIsLoading(false);
   };
@@ -65,7 +107,7 @@ export default function ImportForm() {
     <div className="py-2">
       <form id="import-form" onSubmit={registerJson}>
         <Textarea
-          errorMessage="Invalid JSON format"
+          errorMessage={errorMessage}
           isInvalid={isInvalid}
           label="Import JSON"
           labelPlacement="outside"
@@ -73,7 +115,9 @@ export default function ImportForm() {
           name="json"
           placeholder={placeholder}
           size="lg"
-          onChange={() => setIsInvalid(false)}
+          onChange={() => {
+            setIsInvalid(false);
+          }}
         />
         <div className="flex flex-row gap-2 px-6 py-4 justify-center">
           <Button color="danger" type="reset" variant="light">
