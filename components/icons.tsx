@@ -16,10 +16,10 @@ export const Logo: React.FC<IconSvgProps> = ({
     {...props}
   >
     <path
-      fillRule="evenodd"
       clipRule="evenodd"
       d="M21.8382 11.1263L21.609 13.5616C21.2313 17.5742 21.0425 19.5805 19.8599 20.7902C18.6773 22 16.9048 22 13.3599 22H10.6401C7.09517 22 5.32271 22 4.14009 20.7902C2.95748 19.5805 2.76865 17.5742 2.391 13.5616L2.16181 11.1263C1.9818 9.2137 1.8918 8.25739 2.21899 7.86207C2.39598 7.64823 2.63666 7.5172 2.89399 7.4946C3.36968 7.45282 3.96708 8.1329 5.16187 9.49307C5.77977 10.1965 6.08872 10.5482 6.43337 10.6027C6.62434 10.6328 6.81892 10.6018 6.99526 10.5131C7.31351 10.3529 7.5257 9.91812 7.95007 9.04852L10.1869 4.46486C10.9888 2.82162 11.3898 2 12 2C12.6102 2 13.0112 2.82162 13.8131 4.46485L16.0499 9.04851C16.4743 9.91812 16.6865 10.3529 17.0047 10.5131C17.1811 10.6018 17.3757 10.6328 17.5666 10.6027C17.9113 10.5482 18.2202 10.1965 18.8381 9.49307C20.0329 8.1329 20.6303 7.45282 21.106 7.4946C21.3633 7.5172 21.604 7.64823 21.781 7.86207C22.1082 8.25739 22.0182 9.2137 21.8382 11.1263ZM12.9524 12.699L12.8541 12.5227C12.4741 11.841 12.2841 11.5002 12 11.5002C11.7159 11.5002 11.5259 11.841 11.1459 12.5227L11.0476 12.699C10.9397 12.8927 10.8857 12.9896 10.8015 13.0535C10.7173 13.1174 10.6125 13.1411 10.4028 13.1886L10.2119 13.2318C9.47396 13.3987 9.10501 13.4822 9.01723 13.7645C8.92945 14.0468 9.18097 14.3409 9.68403 14.9291L9.81418 15.0813C9.95713 15.2485 10.0286 15.3321 10.0608 15.4355C10.0929 15.5389 10.0821 15.6504 10.0605 15.8734L10.0408 16.0765C9.96476 16.8613 9.92674 17.2538 10.1565 17.4282C10.3864 17.6027 10.7318 17.4436 11.4227 17.1255L11.6014 17.0432C11.7978 16.9528 11.8959 16.9076 12 16.9076C12.1041 16.9076 12.2022 16.9528 12.3986 17.0432L12.5773 17.1255C13.2682 17.4436 13.6136 17.6027 13.8435 17.4282C14.0733 17.2538 14.0352 16.8613 13.9592 16.0765L13.9395 15.8734C13.9179 15.6504 13.9071 15.5389 13.9392 15.4355C13.9714 15.3321 14.0429 15.2485 14.1858 15.0813L14.316 14.9291C14.819 14.3409 15.0706 14.0468 14.9828 13.7645C14.895 13.4822 14.526 13.3987 13.7881 13.2318L13.5972 13.1886C13.3875 13.1411 13.2827 13.1174 13.1985 13.0535C13.1143 12.9896 13.0603 12.8927 12.9524 12.699Z"
       fill="currentColor"
+      fillRule="evenodd"
     />
   </svg>
 );
@@ -194,10 +194,10 @@ export const CheckIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      width={size || width}
+      fill="none"
       height={size || height}
       viewBox="0 0 24 24"
-      fill="none"
+      width={size || width}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -217,10 +217,10 @@ export const StopIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      width={size || width}
+      fill="none"
       height={size || height}
       viewBox="0 0 512 512"
-      fill="none"
+      width={size || width}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -240,10 +240,10 @@ export const EnterIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      width={size || width}
+      fill="none"
       height={size || height}
       viewBox="0 0 21 21"
-      fill="none"
+      width={size || width}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -275,29 +275,29 @@ export const PlusIcon: React.FC<IconSvgProps> = ({
 }) => {
   return (
     <svg
-      width={size || width}
+      fill="none"
       height={size || height}
       viewBox="0 0 32 32"
-      fill="none"
+      width={size || width}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <g
+        fill="none"
+        fillRule="evenodd"
         id="Page-1"
         stroke="none"
         strokeWidth="1"
-        fill="none"
-        fillRule="evenodd"
       >
         <g
+          fill="currentColor"
           id="Icon-Set-Filled"
           transform="translate(-362.000000, -1037.000000)"
-          fill="currentColor"
         >
           <path
             d="M390,1049 L382,1049 L382,1041 C382,1038.79 380.209,1037 378,1037 C375.791,1037 374,1038.79 374,1041 L374,1049 L366,1049 C363.791,1049 362,1050.79 362,1053 C362,1055.21 363.791,1057 366,1057 L374,1057 L374,1065 C374,1067.21 375.791,1069 378,1069 C380.209,1069 382,1067.21 382,1065 L382,1057 L390,1057 C392.209,1057 394,1055.21 394,1053 C394,1050.79 392.209,1049 390,1049"
             id="plus"
-          ></path>
+          />
         </g>
       </g>
     </svg>
@@ -315,10 +315,10 @@ export const EditIcon: React.FC<IconSvgProps> = ({
       aria-hidden="true"
       fill="none"
       focusable="false"
+      height={size || height}
       role="presentation"
       viewBox="0 0 20 20"
       width={size || width}
-      height={size || height}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -361,10 +361,10 @@ export const DeleteIcon: React.FC<IconSvgProps> = ({
       aria-hidden="true"
       fill="none"
       focusable="false"
+      height={size || height}
       role="presentation"
       viewBox="0 0 20 20"
       width={size || width}
-      height={size || height}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

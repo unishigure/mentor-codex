@@ -44,17 +44,18 @@ export default function ImportForm() {
             job: tale.job,
             inProgress: tale.inProgress,
             result: tale.result,
-          }) as Tale
+          }) as Tale,
       );
+
       await db.tales.bulkAdd(tales);
 
       router.push("/");
     } catch (e) {
-      console.error(e);
       setIsInvalid(true);
     }
 
     const form = document.getElementById("import-form") as HTMLFormElement;
+
     form.reset();
 
     setIsLoading(false);
@@ -64,21 +65,21 @@ export default function ImportForm() {
     <div className="py-2">
       <form id="import-form" onSubmit={registerJson}>
         <Textarea
-          name="json"
+          errorMessage="Invalid JSON format"
+          isInvalid={isInvalid}
           label="Import JSON"
           labelPlacement="outside"
-          size="lg"
           minRows={10}
+          name="json"
           placeholder={placeholder}
-          isInvalid={isInvalid}
-          errorMessage="Invalid JSON format"
+          size="lg"
           onChange={() => setIsInvalid(false)}
         />
         <div className="flex flex-row gap-2 px-6 py-4 justify-center">
-          <Button color="danger" variant="light" type="reset">
+          <Button color="danger" type="reset" variant="light">
             クリア
           </Button>
-          <Button color="primary" type="submit" isLoading={isLoading}>
+          <Button color="primary" isLoading={isLoading} type="submit">
             追加
           </Button>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent } from "react";
-
 import {
   Autocomplete,
   AutocompleteItem,
@@ -54,13 +53,6 @@ export default function EditModal({
         inProgress,
         result,
       })
-      .then(() => {
-        return "edited";
-      })
-      .catch((e) => {
-        console.error(e);
-        return null;
-      })
       .finally(() => {
         setIsLoading(false);
         onOpenChange();
@@ -70,11 +62,11 @@ export default function EditModal({
   const jobOptionRender = (selected: string) => {
     return (
       <Autocomplete
-        name="job"
-        label="ジョブ"
         isRequired
-        validationBehavior="native"
         defaultInputValue={selected}
+        label="ジョブ"
+        name="job"
+        validationBehavior="native"
       >
         <AutocompleteSection showDivider title="Tank">
           {Object.values(Job.Tank).map((job) => (
@@ -118,10 +110,10 @@ export default function EditModal({
   const checkboxRender = (inProgress: boolean, result: boolean) => {
     return (
       <div className="flex gap-4 justify-end">
-        <Checkbox name="inProgress" value="true" defaultSelected={inProgress}>
+        <Checkbox defaultSelected={inProgress} name="inProgress" value="true">
           途中参加
         </Checkbox>
-        <Checkbox name="result" value="true" defaultSelected={result}>
+        <Checkbox defaultSelected={result} name="result" value="true">
           コンテンツクリア
         </Checkbox>
       </div>
@@ -135,10 +127,10 @@ export default function EditModal({
           <ModalHeader className="flex flex-col gap-1">記録の編集</ModalHeader>
           <ModalBody>
             <Autocomplete
-              name="content"
-              label="コンテンツ"
               isDisabled
               defaultSelectedKey="content-key"
+              label="コンテンツ"
+              name="content"
             >
               <AutocompleteItem key="content-key" value={contentName}>
                 {contentName}
@@ -148,10 +140,10 @@ export default function EditModal({
             {checkboxRender(tale?.inProgress ?? false, tale?.result ?? false)}
           </ModalBody>
           <ModalFooter>
-            <Button color="danger" variant="light" type="reset">
+            <Button color="danger" type="reset" variant="light">
               クリア
             </Button>
-            <Button color="primary" type="submit" isLoading={isLoading}>
+            <Button color="primary" isLoading={isLoading} type="submit">
               編集
             </Button>
           </ModalFooter>

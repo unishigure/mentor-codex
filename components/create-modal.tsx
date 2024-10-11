@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import { v7 as uuid } from "uuid";
-
 import {
   Autocomplete,
   AutocompleteItem,
@@ -51,13 +50,6 @@ export default function CreateModal() {
         inProgress,
         result,
       })
-      .then(() => {
-        return "created";
-      })
-      .catch((e) => {
-        console.error(e);
-        return null;
-      })
       .finally(() => {
         setIsLoading(false);
         onOpenChange();
@@ -67,13 +59,13 @@ export default function CreateModal() {
   const contentOptionRender = () => {
     return (
       <Autocomplete
-        name="content"
-        label="コンテンツ"
         isRequired
+        label="コンテンツ"
+        name="content"
         validationBehavior="native"
       >
-        {Object.entries(ContentCategory).map(([key, value]) => (
-          <AutocompleteSection showDivider title={value} key={value}>
+        {Object.entries(ContentCategory).map(([_key, value]) => (
+          <AutocompleteSection key={value} showDivider title={value}>
             {ContentList.filter((c) => c.category === value).map((c) => (
               <AutocompleteItem key={c.id} value={c.id}>
                 {c.name}
@@ -88,9 +80,9 @@ export default function CreateModal() {
   const jobOptionRender = () => {
     return (
       <Autocomplete
-        name="job"
-        label="ジョブ"
         isRequired
+        label="ジョブ"
+        name="job"
         validationBehavior="native"
       >
         <AutocompleteSection showDivider title="Tank">
@@ -138,7 +130,7 @@ export default function CreateModal() {
         <Checkbox name="inProgress" value="true">
           途中参加
         </Checkbox>
-        <Checkbox name="result" value="true" defaultSelected>
+        <Checkbox defaultSelected name="result" value="true">
           コンテンツクリア
         </Checkbox>
       </div>
@@ -164,10 +156,10 @@ export default function CreateModal() {
                 {checkboxRender()}
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" type="reset">
+                <Button color="danger" type="reset" variant="light">
                   クリア
                 </Button>
-                <Button color="primary" type="submit" isLoading={isLoading}>
+                <Button color="primary" isLoading={isLoading} type="submit">
                   追加
                 </Button>
               </ModalFooter>

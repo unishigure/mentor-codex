@@ -24,7 +24,7 @@ export default function ClearModal() {
 
   return (
     <>
-      <Button onClick={onOpen} color="danger" size="sm" variant="flat">
+      <Button color="danger" size="sm" variant="flat" onClick={onOpen}>
         CLEAR CODEX
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -35,14 +35,14 @@ export default function ClearModal() {
           </ModalBody>
           <ModalFooter>
             <Button
-              onClick={onOpenChange}
               color="default"
               size="sm"
               variant="flat"
+              onClick={onOpenChange}
             >
               キャンセル
             </Button>
-            <Button onClick={clearData} color="danger" size="sm" variant="flat">
+            <Button color="danger" size="sm" variant="flat" onClick={clearData}>
               削除
             </Button>
           </ModalFooter>

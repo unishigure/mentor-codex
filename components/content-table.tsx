@@ -2,7 +2,6 @@
 
 import { useLiveQuery } from "dexie-react-hooks";
 import { MouseEvent, useEffect, useMemo, useState } from "react";
-
 import { Button } from "@nextui-org/button";
 import { Chip } from "@nextui-org/chip";
 import { Link } from "@nextui-org/link";
@@ -19,12 +18,12 @@ import {
 } from "@nextui-org/table";
 import { Tooltip } from "@nextui-org/tooltip";
 
-import { db } from "@/config/db";
-import { Content, ContentList, Expansion, Job, Tale } from "@/types";
-
 import EditModal from "./edit-modal";
 import { CheckIcon, DeleteIcon, EditIcon, EnterIcon, StopIcon } from "./icons";
 import ProgressCount from "./progress-count";
+
+import { Content, ContentList, Expansion, Job, Tale } from "@/types";
+import { db } from "@/config/db";
 
 const columns: {
   key: string;
@@ -71,7 +70,7 @@ const columns: {
 ];
 
 const renderContentName = (content: Content | undefined) => {
-  const expansion = Object.entries(Expansion).map(([key, value]) => {
+  const expansion = Object.entries(Expansion).map(([_key, value]) => {
     if (Object.values(value).find((v) => v === content?.expansion)) {
       return Object.entries(value).map(([key, value]) => {
         if (value === content?.expansion) {
@@ -81,10 +80,11 @@ const renderContentName = (content: Content | undefined) => {
       });
     }
   });
+
   return (
     <>
       <Tooltip content={content?.expansion}>
-        <Chip className="mr-2" size="sm" radius="sm">
+        <Chip className="mr-2" radius="sm" size="sm">
           {expansion}
         </Chip>
       </Tooltip>
@@ -107,14 +107,16 @@ const renderContentName = (content: Content | undefined) => {
 const renderJob = (tale: Tale) => {
   const jobName = tale.job;
   let color: "danger" | "primary" | "success" = "danger";
+
   if (Object.values(Job.Tank).find((v) => v === jobName)) {
     color = "primary";
   }
   if (Object.values(Job.Healer).find((v) => v === jobName)) {
     color = "success";
   }
+
   return (
-    <Chip color={color} size="sm" radius="sm" variant="flat">
+    <Chip color={color} radius="sm" size="sm" variant="flat">
       {jobName}
     </Chip>
   );
@@ -124,9 +126,9 @@ const renderInProgress = (tale: Tale) => {
   if (tale.inProgress) {
     return (
       <Chip
+        color="primary"
         startContent={<EnterIcon size={18} />}
         variant="faded"
-        color="primary"
       >
         途中参加
       </Chip>
@@ -138,9 +140,9 @@ const renderResult = (tale: Tale) => {
   if (tale.result) {
     return (
       <Chip
+        color="success"
         startContent={<CheckIcon size={18} />}
         variant="faded"
-        color="success"
       >
         成功
       </Chip>
@@ -148,9 +150,9 @@ const renderResult = (tale: Tale) => {
   } else {
     return (
       <Chip
+        color="warning"
         startContent={<StopIcon size={18} />}
         variant="faded"
-        color="warning"
       >
         失敗
       </Chip>
@@ -184,6 +186,7 @@ export default function ContentTable() {
     if (liveTails) {
       setIsLoading(false);
       const counted: Tale[] = [];
+
       liveTails
         .toSorted((a, b) => (a.dateTime > b.dateTime ? 1 : -1))
         .forEach((value, index) => {
@@ -198,34 +201,34 @@ export default function ContentTable() {
       <div className="relative flex justify-center gap-1">
         <Tooltip content="編集">
           <Button
-            id={tale.id}
-            aria-label="edit"
             isIconOnly
+            aria-label="edit"
             color="default"
+            id={tale.id}
+            isLoading={isProcessing}
             size="sm"
             variant="faded"
             onClick={(event) => {
               editTale(event);
             }}
-            isLoading={isProcessing}
           >
-            <EditIcon size={16} className="pointer-events-none" />
+            <EditIcon className="pointer-events-none" size={16} />
           </Button>
         </Tooltip>
         <Tooltip content="削除">
           <Button
-            id={tale.id}
-            aria-label="delete"
             isIconOnly
+            aria-label="delete"
             color="danger"
+            id={tale.id}
+            isLoading={isProcessing}
             size="sm"
             variant="faded"
             onClick={(event) => {
               deleteTale(event);
             }}
-            isLoading={isProcessing}
           >
-            <DeleteIcon size={16} className="pointer-events-none" />
+            <DeleteIcon className="pointer-events-none" size={16} />
           </Button>
         </Tooltip>
       </div>
@@ -233,10 +236,11 @@ export default function ContentTable() {
   };
 
   const editTale = (
-    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
   ) => {
     const target = event.target as HTMLButtonElement;
     const selected = tails.find((tale) => tale.id === target.id);
+
     if (!selected) return;
 
     setSelectedTale(selected);
@@ -244,10 +248,11 @@ export default function ContentTable() {
   };
 
   const deleteTale = async (
-    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
   ) => {
     setIsProcessing(true);
     const target = event.target as HTMLButtonElement;
+
     db.tales.delete(target.id).finally(() => {
       setIsProcessing(false);
     });
@@ -284,13 +289,14 @@ export default function ContentTable() {
           )}
         </TableHeader>
         <TableBody
-          items={items}
-          isLoading={isLoading}
-          loadingContent={<Spinner />}
           emptyContent={"あなただけの記録はここから始まります"}
+          isLoading={isLoading}
+          items={items}
+          loadingContent={<Spinner />}
         >
           {(item) => {
             const content = ContentList.find((v) => v.id === item.contentId);
+
             return (
               <TableRow key={item.id}>
                 <TableCell>{item.key}</TableCell>
@@ -307,12 +313,12 @@ export default function ContentTable() {
         </TableBody>
       </Table>
       <EditModal
-        tale={selectedTale}
         isOpen={isOpen}
-        onOpenChange={onOpenChange}
         isProcessing={isProcessing}
         setIsProcessing={setIsProcessing}
-      ></EditModal>
+        tale={selectedTale}
+        onOpenChange={onOpenChange}
+      />
     </>
   );
 }

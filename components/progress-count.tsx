@@ -21,6 +21,7 @@ export default function ProgressCount({ tales }: Readonly<ProgressCountProps>) {
   useEffect(() => {
     const progressCount = tales.filter((t) => t.result).length;
     const progPercent = (progressCount / MountGoal) * 100;
+
     setProgressCount(progressCount);
     setProgPercent(progPercent);
 
@@ -39,10 +40,10 @@ export default function ProgressCount({ tales }: Readonly<ProgressCountProps>) {
 
   return (
     <Progress
-      label={`Road to Astrope: ${progressCount} / ${MountGoal}`}
-      value={progPercent}
-      size="sm"
       color={color}
+      label={`Road to Astrope: ${progressCount} / ${MountGoal}`}
+      size="sm"
+      value={progPercent}
     />
   );
 }
