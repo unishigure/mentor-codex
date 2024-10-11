@@ -9,3 +9,9 @@
   - [Dexie.js](https://github.com/dexie/Dexie.js)
 - [Google Drive API](https://developers.google.com/drive/api/guides/about-sdk?hl=ja)
   - [Federated Credential Management API](https://developers.google.com/privacy-sandbox/cookies/fedcm?hl=ja)
+
+## thanks
+
+Logo & icons
+
+[SVG Repo - Free SVG Vectors and Icons](https://www.svgrepo.com/)
