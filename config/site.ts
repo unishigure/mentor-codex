@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Mentor Codex",
-  description: "Make beautiful websites regardless of your design experience.",
+  description: "Road to Astrope",
   navItems: [
     {
       label: "Usage",
