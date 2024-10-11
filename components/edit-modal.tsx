@@ -1,7 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { v7 as uuid } from "uuid";
+import { FormEvent } from "react";
 
 import {
   Autocomplete,
@@ -16,43 +15,47 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
-  useDisclosure,
 } from "@nextui-org/modal";
 
-import { PlusIcon } from "@/components/icons";
 import { db } from "@/config/db";
-import { ContentCategory, ContentList, Job, JobType } from "@/types";
+import { ContentList, Job, JobType, Tale } from "@/types";
 
-export default function CreateModal() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [isLoading, setIsLoading] = useState(false);
+interface EditModalProps {
+  tale: Tale | null;
+  isOpen: boolean;
+  onOpenChange: () => void;
+  isProcessing: boolean;
+  setIsProcessing: (isLoading: boolean) => void;
+}
 
-  const submitCreate = async (event: FormEvent) => {
+export default function EditModal({
+  tale,
+  isOpen,
+  onOpenChange,
+  isProcessing: isLoading,
+  setIsProcessing: setIsLoading,
+}: Readonly<EditModalProps>) {
+  const contentName =
+    ContentList.find((c) => c.id === tale?.contentId)?.name ?? "missing";
+
+  const submitEdit = async (event: FormEvent) => {
     event.preventDefault();
     const eventTarget = event.target as HTMLFormElement;
     const formData = new FormData(eventTarget);
 
-    const contentName = formData.get("content");
     const job = formData.get("job")!.toString() as JobType;
-    const dateTime = new Date();
     const inProgress = !!formData.get("inProgress");
     const result = !!formData.get("result");
 
-    const content = ContentList.find((c) => c.name === contentName);
-
     setIsLoading(true);
     await db.tales
-      .add({
-        id: uuid(),
-        key: undefined,
-        dateTime,
-        contentId: content!.id,
+      .update(tale!.id, {
         job,
         inProgress,
         result,
       })
       .then(() => {
-        return "created";
+        return "edited";
       })
       .catch((e) => {
         console.error(e);
@@ -64,34 +67,14 @@ export default function CreateModal() {
       });
   };
 
-  const contentOptionRender = () => {
-    return (
-      <Autocomplete
-        name="content"
-        label="コンテンツ"
-        isRequired
-        validationBehavior="native"
-      >
-        {Object.entries(ContentCategory).map(([key, value]) => (
-          <AutocompleteSection showDivider title={value} key={value}>
-            {ContentList.filter((c) => c.category === value).map((c) => (
-              <AutocompleteItem key={c.id} value={c.id}>
-                {c.name}
-              </AutocompleteItem>
-            ))}
-          </AutocompleteSection>
-        ))}
-      </Autocomplete>
-    );
-  };
-
-  const jobOptionRender = () => {
+  const jobOptionRender = (selected: string) => {
     return (
       <Autocomplete
         name="job"
         label="ジョブ"
         isRequired
         validationBehavior="native"
+        defaultInputValue={selected}
       >
         <AutocompleteSection showDivider title="Tank">
           {Object.values(Job.Tank).map((job) => (
@@ -132,13 +115,13 @@ export default function CreateModal() {
     );
   };
 
-  const checkboxRender = () => {
+  const checkboxRender = (inProgress: boolean, result: boolean) => {
     return (
       <div className="flex gap-4 justify-end">
-        <Checkbox name="inProgress" value="true">
+        <Checkbox name="inProgress" value="true" defaultSelected={inProgress}>
           途中参加
         </Checkbox>
-        <Checkbox name="result" value="true" defaultSelected>
+        <Checkbox name="result" value="true" defaultSelected={result}>
           コンテンツクリア
         </Checkbox>
       </div>
@@ -146,35 +129,34 @@ export default function CreateModal() {
   };
 
   return (
-    <>
-      <Button onPress={onOpen}>
-        <PlusIcon size={18} />
-        記録する
-      </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          {() => (
-            <form onSubmit={submitCreate}>
-              <ModalHeader className="flex flex-col gap-1">
-                記録の追加
-              </ModalHeader>
-              <ModalBody>
-                {contentOptionRender()}
-                {jobOptionRender()}
-                {checkboxRender()}
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" type="reset">
-                  クリア
-                </Button>
-                <Button color="primary" type="submit" isLoading={isLoading}>
-                  追加
-                </Button>
-              </ModalFooter>
-            </form>
-          )}
-        </ModalContent>
-      </Modal>
-    </>
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <ModalContent>
+        <form onSubmit={submitEdit}>
+          <ModalHeader className="flex flex-col gap-1">記録の編集</ModalHeader>
+          <ModalBody>
+            <Autocomplete
+              name="content"
+              label="コンテンツ"
+              isDisabled
+              defaultSelectedKey="content-key"
+            >
+              <AutocompleteItem key="content-key" value={contentName}>
+                {contentName}
+              </AutocompleteItem>
+            </Autocomplete>
+            {jobOptionRender(tale?.job ?? "ナイト")}
+            {checkboxRender(tale?.inProgress ?? false, tale?.result ?? false)}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="danger" variant="light" type="reset">
+              クリア
+            </Button>
+            <Button color="primary" type="submit" isLoading={isLoading}>
+              編集
+            </Button>
+          </ModalFooter>
+        </form>
+      </ModalContent>
+    </Modal>
   );
 }

@@ -1,25 +1,28 @@
 "use client";
 
-import { MouseEvent, useEffect, useMemo, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
+import { MouseEvent, useEffect, useMemo, useState } from "react";
 
+import { Button } from "@nextui-org/button";
+import { Chip } from "@nextui-org/chip";
+import { Link } from "@nextui-org/link";
+import { useDisclosure } from "@nextui-org/modal";
+import { Pagination } from "@nextui-org/pagination";
+import { Spinner } from "@nextui-org/spinner";
 import {
   Table,
-  TableHeader,
   TableBody,
-  TableColumn,
-  TableRow,
   TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
 } from "@nextui-org/table";
-import { Pagination } from "@nextui-org/pagination";
-import { Link } from "@nextui-org/link";
-import { Chip } from "@nextui-org/chip";
 import { Tooltip } from "@nextui-org/tooltip";
-import { Button } from "@nextui-org/button";
-import { Spinner } from "@nextui-org/spinner";
 
 import { db } from "@/config/db";
-import { ContentList, Job, Tale, Expansion, Content } from "@/types";
+import { Content, ContentList, Expansion, Job, Tale } from "@/types";
+
+import EditModal from "./edit-modal";
 import { CheckIcon, DeleteIcon, EditIcon, EnterIcon, StopIcon } from "./icons";
 import ProgressCount from "./progress-count";
 
@@ -158,8 +161,12 @@ const renderResult = (tale: Tale) => {
 export default function ContentTable() {
   const [tails, setTails] = useState<Tale[]>([]);
   const [page, setPage] = useState(1);
+
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [selectedTale, setSelectedTale] = useState<Tale | null>(null);
 
   const liveTails = useLiveQuery(() => db.tales.toArray());
 
@@ -197,7 +204,9 @@ export default function ContentTable() {
             color="default"
             size="sm"
             variant="faded"
-            onClick={() => {}}
+            onClick={(event) => {
+              editTale(event);
+            }}
             isLoading={isProcessing}
           >
             <EditIcon size={16} className="pointer-events-none" />
@@ -221,6 +230,17 @@ export default function ContentTable() {
         </Tooltip>
       </div>
     );
+  };
+
+  const editTale = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    const target = event.target as HTMLButtonElement;
+    const selected = tails.find((tale) => tale.id === target.id);
+    if (!selected) return;
+
+    setSelectedTale(selected);
+    onOpen();
   };
 
   const deleteTale = async (
@@ -286,6 +306,13 @@ export default function ContentTable() {
           }}
         </TableBody>
       </Table>
+      <EditModal
+        tale={selectedTale}
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        isProcessing={isProcessing}
+        setIsProcessing={setIsProcessing}
+      ></EditModal>
     </>
   );
 }
