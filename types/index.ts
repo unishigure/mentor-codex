@@ -2734,4 +2734,24 @@ export const ContentList: Content[] = [
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/f369418dbf8/",
   },
+  {
+    id: 286,
+    expansion: Expansion.v7.v7_1,
+    level: 100,
+    name: "ジュノ：ザ・ファーストウォーク",
+    category: ContentCategory.Alliance,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/57c10dbb08268cf093cd895135d45eba56ddb372",
+  },
+  {
+    id: 287,
+    expansion: Expansion.v7.v7_1,
+    level: 100,
+    name: "廃地討究 ユウェヤーワータ",
+    category: ContentCategory.Dungeons,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/57c10dbb08268cf093cd895135d45eba56ddb372",
+  },
 ] as const;
