@@ -2750,8 +2750,43 @@ export const ContentList: Content[] = [
     level: 100,
     name: "廃地討究 ユウェヤーワータ",
     category: ContentCategory.Dungeons,
-    // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/57c10dbb08268cf093cd895135d45eba56ddb372",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/d6db03218c4/",
+  },
+  {
+    id: 288,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "至天の座アルカディア：ライトヘビー級1",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/cc1de0a3c10/",
+  },
+  {
+    id: 289,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "至天の座アルカディア：ライトヘビー級2",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/6eb0b53fed5/",
+  },
+  {
+    id: 290,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "至天の座アルカディア：ライトヘビー級3",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/107e7c1240f/",
+  },
+  {
+    id: 291,
+    expansion: Expansion.v7.v7_0,
+    level: 100,
+    name: "至天の座アルカディア：ライトヘビー級4",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/d247d8e66b5/",
   },
 ] as const;
