@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/button";
 import { db } from "@/config/db";
 import { ContentList } from "@/types";
 
-export default function ExportButton() {
+export default function ExportJsonButton() {
   const exportJson = async () => {
     const tales = await db.tales.toArray();
     const exportTales = tales.map((tale) => {

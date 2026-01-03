@@ -3,7 +3,8 @@
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 
 import ClearModal from "@/components/clear-modal";
-import ExportButton from "@/components/export-button";
+import ExportJsonButton from "@/components/export-json-button";
+import ExportCsvButton from "@/components/export-csv-button";
 import ImportForm from "@/components/import-form";
 import { title } from "@/components/primitives";
 
@@ -18,7 +19,8 @@ export default function DocsPage() {
         <AccordionItem key="import/export" title="Data Import / Export">
           <div className="relative flex flex-col gap-2 py-4">
             <ImportForm />
-            <ExportButton />
+            <ExportJsonButton />
+            <ExportCsvButton />
           </div>
         </AccordionItem>
         <AccordionItem key="clear" title="Clear data">
