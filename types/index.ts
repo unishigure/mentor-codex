@@ -53,7 +53,7 @@ export const Expansion = {
     v7_1: "未知との邂逅",
     v7_2: "永久の探求者",
     v7_3: "明日への道標",
-    v7_4: "7.4",
+    v7_4: "霧の中の理想郷",
     v7_5: "7.5",
   },
 } as const;
@@ -2886,5 +2886,75 @@ export const ContentList: Content[] = [
     category: ContentCategory.Extreme,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/403fcc21435/",
+  },
+  {
+    id: 303,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "遺忘行路 ミストウェイク",
+    category: ContentCategory.Dungeons,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 304,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "グラシャラボラス討滅戦",
+    category: ContentCategory.Trials,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 305,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "極グラシャラボラス討滅戦",
+    category: ContentCategory.Extreme,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 306,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "至天の座アルカディア：ヘビー級1",
+    category: ContentCategory.Raids,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 307,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "至天の座アルカディア：ヘビー級2",
+    category: ContentCategory.Raids,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 308,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "至天の座アルカディア：ヘビー級3",
+    category: ContentCategory.Raids,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+  },
+  {
+    id: 309,
+    expansion: Expansion.v7.v7_4,
+    level: 100,
+    name: "至天の座アルカディア：ヘビー級4",
+    category: ContentCategory.Raids,
+    // TODO: replace with actual URL
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
   },
 ] as const;
