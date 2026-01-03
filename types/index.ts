@@ -52,7 +52,7 @@ export const Expansion = {
     v7_0: "黄金の遺産",
     v7_1: "未知との邂逅",
     v7_2: "永久の探求者",
-    v7_3: "7.3",
+    v7_3: "明日への道標",
     v7_4: "7.4",
     v7_5: "7.5",
   },
@@ -2850,5 +2850,41 @@ export const ContentList: Content[] = [
     category: ContentCategory.Raids,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/435f30bec71/",
+  },
+  {
+    id: 299,
+    expansion: Expansion.v7.v7_3,
+    level: 100,
+    name: "永久幽界 メインターミナル",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/abbf8a4eef4/",
+  },
+  {
+    id: 300,
+    expansion: Expansion.v7.v7_3,
+    level: 100,
+    name: "サンドリア：ザ・セカンドウォーク",
+    category: ContentCategory.Alliance,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/2659bec79dd/",
+  },
+  {
+    id: 301,
+    expansion: Expansion.v7.v7_3,
+    level: 100,
+    name: "永遠の闇討滅戦",
+    category: ContentCategory.Trials,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/8fc44efcf27/",
+  },
+  {
+    id: 302,
+    expansion: Expansion.v7.v7_3,
+    level: 100,
+    name: "極永遠の闇討滅戦",
+    category: ContentCategory.Extreme,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/403fcc21435/",
   },
 ] as const;
