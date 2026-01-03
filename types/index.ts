@@ -51,7 +51,7 @@ export const Expansion = {
   v7: {
     v7_0: "黄金の遺産",
     v7_1: "未知との邂逅",
-    v7_2: "7.2",
+    v7_2: "永久の探求者",
     v7_3: "7.3",
     v7_4: "7.4",
     v7_5: "7.5",
@@ -2740,9 +2740,8 @@ export const ContentList: Content[] = [
     level: 100,
     name: "ジュノ：ザ・ファーストウォーク",
     category: ContentCategory.Alliance,
-    // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/57c10dbb08268cf093cd895135d45eba56ddb372",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/1318e475557/",
   },
   {
     id: 287,
@@ -2788,5 +2787,68 @@ export const ContentList: Content[] = [
     category: ContentCategory.Dungeons,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/d247d8e66b5/",
+  },
+  {
+    id: 292,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "王城旧跡 アンダーキープ",
+    category: ContentCategory.Dungeons,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/25a4d40f3f1/",
+  },
+  {
+    id: 293,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "ゼレニア討滅戦",
+    category: ContentCategory.Trials,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/7b8ecdbd6af/",
+  },
+  {
+    id: 294,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "極ゼレニア討滅戦",
+    category: ContentCategory.Extreme,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/f68051c8d60/",
+  },
+  {
+    id: 295,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "至天の座アルカディア：クルーザー級1",
+    category: ContentCategory.Raids,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/ab1b1344b17/",
+  },
+  {
+    id: 296,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "至天の座アルカディア：クルーザー級2",
+    category: ContentCategory.Raids,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/708f405c964/",
+  },
+  {
+    id: 297,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "至天の座アルカディア：クルーザー級3",
+    category: ContentCategory.Raids,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/9f10feac1d7/",
+  },
+  {
+    id: 298,
+    expansion: Expansion.v7.v7_2,
+    level: 100,
+    name: "至天の座アルカディア：クルーザー級4",
+    category: ContentCategory.Raids,
+    lodestone:
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/435f30bec71/",
   },
 ] as const;
