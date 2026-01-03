@@ -2913,7 +2913,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Dungeons,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=遺忘行路+ミストウェイク",
   },
   {
     id: 306,
@@ -2923,7 +2923,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Trials,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=グラシャラボラス討滅戦",
   },
   {
     id: 307,
@@ -2933,7 +2933,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Extreme,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=極グラシャラボラス討滅戦",
   },
   {
     id: 308,
@@ -2943,7 +2943,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Raids,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=至天の座アルカディア：ヘビー級1",
   },
   {
     id: 309,
@@ -2953,7 +2953,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Raids,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=至天の座アルカディア：ヘビー級2",
   },
   {
     id: 310,
@@ -2963,7 +2963,7 @@ export const ContentList: Content[] = [
     category: ContentCategory.Raids,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=至天の座アルカディア：ヘビー級3",
   },
   {
     id: 311,
@@ -2973,6 +2973,6 @@ export const ContentList: Content[] = [
     category: ContentCategory.Raids,
     // TODO: replace with actual URL
     lodestone:
-      "https://jp.finalfantasyxiv.com/lodestone/topics/detail/93e0209ee311f3a2ea55d605c2c8b447e9637bad/",
+      "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/?q=至天の座アルカディア：ヘビー級4",
   },
 ] as const;
