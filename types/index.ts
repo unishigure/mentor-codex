@@ -2757,7 +2757,7 @@ export const ContentList: Content[] = [
     expansion: Expansion.v7.v7_0,
     level: 100,
     name: "至天の座アルカディア：ライトヘビー級1",
-    category: ContentCategory.Dungeons,
+    category: ContentCategory.Raids,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/cc1de0a3c10/",
   },
@@ -2766,7 +2766,7 @@ export const ContentList: Content[] = [
     expansion: Expansion.v7.v7_0,
     level: 100,
     name: "至天の座アルカディア：ライトヘビー級2",
-    category: ContentCategory.Dungeons,
+    category: ContentCategory.Raids,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/6eb0b53fed5/",
   },
@@ -2775,7 +2775,7 @@ export const ContentList: Content[] = [
     expansion: Expansion.v7.v7_0,
     level: 100,
     name: "至天の座アルカディア：ライトヘビー級3",
-    category: ContentCategory.Dungeons,
+    category: ContentCategory.Raids,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/107e7c1240f/",
   },
@@ -2784,7 +2784,7 @@ export const ContentList: Content[] = [
     expansion: Expansion.v7.v7_0,
     level: 100,
     name: "至天の座アルカディア：ライトヘビー級4",
-    category: ContentCategory.Dungeons,
+    category: ContentCategory.Raids,
     lodestone:
       "https://jp.finalfantasyxiv.com/lodestone/playguide/db/duty/d247d8e66b5/",
   },
