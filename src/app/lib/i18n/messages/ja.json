@@ -24,9 +24,10 @@
     "job": "参加ジョブ",
     "selectJob": "ジョブを選択",
     "inProgress": "途中参加",
-    "result": "結果",
+    "result": "コンテンツクリア",
     "save": "記録を保存",
-    "saving": "記録を保存中..."
+    "saving": "記録を保存中...",
+    "cancel": "キャンセル"
   },
   "Expansion": {
     "v2": {

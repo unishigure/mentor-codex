@@ -24,9 +24,10 @@
     "job": "Job",
     "selectJob": "Select Job",
     "inProgress": "In Progress",
-    "result": "Result",
+    "result": "Success",
     "save": "Save Record",
-    "saving": "Saving Record..."
+    "saving": "Saving Record...",
+    "cancel": "Cancel"
   },
   "Expansion": {
     "v2": {

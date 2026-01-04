@@ -14,7 +14,9 @@ export default async function HomePage() {
         <SelectLocale />
       </header>
       <TaleList />
-      <WriteTale />
+      <div className="fixed right-4 bottom-4">
+        <WriteTale />
+      </div>
     </main>
   );
 }

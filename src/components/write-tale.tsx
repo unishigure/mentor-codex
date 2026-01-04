@@ -11,15 +11,17 @@ import type { JobCode } from "@/app/lib/job";
 import { SelectContent } from "./select-content";
 import { SelectJob } from "./select-job";
 
-export function WriteTale({ onSaved }: { onSaved?: () => void }) {
+export function WriteTale() {
   const t = useTranslations();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [content, setContent] = useState<ContentCode | "">("");
   const [job, setJob] = useState<JobCode | "">("");
   const [inProgress, setInProgress] = useState(false);
   const [result, setResult] = useState(true);
-  const [isSaving, setIsSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,8 +52,7 @@ export function WriteTale({ onSaved }: { onSaved?: () => void }) {
       setInProgress(false);
       setResult(true);
 
-      // Notify parent component
-      onSaved?.();
+      setIsOpen(false);
     } catch (err) {
       setError(err instanceof Error ? err.message : t("WriteTale.errorSaving"));
       console.error("Error saving tale:", err);
@@ -61,96 +62,134 @@ export function WriteTale({ onSaved }: { onSaved?: () => void }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
-    >
-      <h2 className="font-bold text-gray-900 text-xl dark:text-gray-100">
-        {t("WriteTale.title")}
-      </h2>
-
-      {error && (
-        <div className="rounded bg-red-100 p-3 text-red-700 text-sm dark:bg-red-900 dark:text-red-200">
-          {error}
-        </div>
-      )}
-
-      {/* Content Selection */}
-      <div>
-        <label
-          htmlFor="content"
-          className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
-        >
-          {t("WriteTale.content")}
-        </label>
-        <SelectContent
-          id="content"
-          value={content}
-          onValueChange={(code) => setContent(code as ContentCode)}
-          disabled={isSaving}
-        />
-      </div>
-
-      {/* Job Selection */}
-      <div>
-        <label
-          htmlFor="job"
-          className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
-        >
-          {t("WriteTale.job")}
-        </label>
-        <SelectJob
-          id="job"
-          value={job}
-          onValueChange={(code) => setJob(code as JobCode)}
-          disabled={isSaving}
-        />
-      </div>
-
-      {/* In Progress Checkbox */}
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id="inProgress"
-          checked={inProgress}
-          onChange={(e) => setInProgress(e.target.checked)}
-          disabled={isSaving}
-          className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
-        />
-        <label
-          htmlFor="inProgress"
-          className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
-        >
-          {t("WriteTale.inProgress")}
-        </label>
-      </div>
-
-      {/* Result Checkbox */}
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id="result"
-          checked={result}
-          onChange={(e) => setResult(e.target.checked)}
-          disabled={isSaving}
-          className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
-        />
-        <label
-          htmlFor="result"
-          className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
-        >
-          {t("WriteTale.result")}
-        </label>
-      </div>
-
-      {/* Submit Button */}
+    <>
       <button
-        type="submit"
-        disabled={isSaving || !content || !job}
-        className="w-full rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
+        type="button"
+        onClick={() => setIsOpen(true)}
+        className="rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
-        {isSaving ? t("WriteTale.saving") : t("WriteTale.save")}
+        {t("WriteTale.title")}
       </button>
-    </form>
+
+      {isOpen && (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 cursor-default bg-black/50"
+            onClick={() => setIsOpen(false)}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setIsOpen(false);
+            }}
+          />
+          <dialog
+            open
+            className="fixed top-1/2 left-1/2 z-50 m-0 flex w-[95%] flex-col items-center justify-center rounded-lg border-none p-0 shadow-lg md:w-[50%]"
+            style={{ transform: "translate(-50%, -50%)" }}
+            onCancel={() => setIsOpen(false)}
+          >
+            <div className="w-full rounded-lg bg-white p-6 dark:bg-gray-800">
+              <h2 className="mb-4 font-bold text-gray-900 text-xl dark:text-gray-100">
+                {t("WriteTale.title")}
+              </h2>
+
+              {error && (
+                <div className="mb-4 rounded bg-red-100 p-3 text-red-700 text-sm dark:bg-red-900 dark:text-red-200">
+                  {error}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Content Selection */}
+                <div>
+                  <label
+                    htmlFor="content"
+                    className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
+                  >
+                    {t("WriteTale.content")}
+                  </label>
+                  <SelectContent
+                    id="content"
+                    value={content}
+                    onValueChange={(code) => setContent(code as ContentCode)}
+                    disabled={isSaving}
+                  />
+                </div>
+
+                {/* Job Selection */}
+                <div>
+                  <label
+                    htmlFor="job"
+                    className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
+                  >
+                    {t("WriteTale.job")}
+                  </label>
+                  <SelectJob
+                    id="job"
+                    value={job}
+                    onValueChange={(code) => setJob(code as JobCode)}
+                    disabled={isSaving}
+                  />
+                </div>
+
+                {/* In Progress Checkbox */}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="inProgress"
+                    checked={inProgress}
+                    onChange={(e) => setInProgress(e.target.checked)}
+                    disabled={isSaving}
+                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
+                  />
+                  <label
+                    htmlFor="inProgress"
+                    className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
+                  >
+                    {t("WriteTale.inProgress")}
+                  </label>
+                </div>
+
+                {/* Result Checkbox */}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="result"
+                    checked={result}
+                    onChange={(e) => setResult(e.target.checked)}
+                    disabled={isSaving}
+                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
+                  />
+                  <label
+                    htmlFor="result"
+                    className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
+                  >
+                    {t("WriteTale.result")}
+                  </label>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    type="submit"
+                    disabled={isSaving || !content || !job}
+                    className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
+                  >
+                    {isSaving ? t("WriteTale.saving") : t("WriteTale.save")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    disabled={isSaving}
+                    className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                  >
+                    {t("WriteTale.cancel")}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </dialog>
+        </>
+      )}
+    </>
   );
 }
