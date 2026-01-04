@@ -5,8 +5,12 @@ export default getRequestConfig(async () => {
   const store = await cookies();
   const locale = store.get("locale")?.value ?? "ja";
 
-  return {
-    locale,
-    messages: (await import(`../../../../messages/${locale}.json`)).default,
-  };
+  const jaMessages = (await import("../../../../messages/ja.json")).default;
+  const localeMessages = (await import(`../../../../messages/${locale}.json`))
+    .default;
+
+  // Fall back to Japanese messages for any missing translations
+  const messages = { ...jaMessages, ...localeMessages };
+
+  return { locale, messages };
 });

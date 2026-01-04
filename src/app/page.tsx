@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 
 import { SelectLocale } from "@/components/select-locale";
 
+const latestVersion = "v7.4";
+
 export default async function HomePage() {
   const t = await getTranslations();
 
@@ -16,6 +18,7 @@ export default async function HomePage() {
         <div className="mt-4 flex flex-col items-center gap-4">
           <div>{t("description")}</div>
           <SelectLocale currentLocale={currentLocale} />
+          <div>{latestVersion} {t(`Expansion.${latestVersion}`)}</div>
         </div>
       </div>
     </main>
