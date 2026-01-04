@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
@@ -17,29 +17,33 @@ export function TaleList() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Load all tales on component mount
-  useEffect(() => {
-    const loadTales = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
-        const data = await getAllTales();
-        // Sort by dateTime in descending order (newest first)
-        data.sort(
-          (a, b) =>
-            new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime(),
-        );
-        setTales(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to load tales");
-        console.error("Error loading tales:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadTales();
+  const loadTales = useCallback(async (withLoadingState: boolean) => {
+    try {
+      if (withLoadingState) setIsLoading(true);
+      setError(null);
+      const data = await getAllTales();
+      data.sort(
+        (a, b) =>
+          new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime(),
+      );
+      setTales(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load tales");
+      console.error("Error loading tales:", err);
+    } finally {
+      if (withLoadingState) setIsLoading(false);
+    }
   }, []);
+
+  // Load all tales on component mount
+  useEffect(() => { loadTales(true) }, [loadTales]);
+
+  // Refresh list when a tale is created elsewhere
+  useEffect(() => {
+    const onTaleSaved = () => { void loadTales(false); };
+    window.addEventListener("tale:saved", onTaleSaved);
+    return () => window.removeEventListener("tale:saved", onTaleSaved);
+  }, [loadTales]);
 
   const handleDelete = async (key: number) => {
     if (!confirm(t("TaleList.deleteConfirm"))) return;
