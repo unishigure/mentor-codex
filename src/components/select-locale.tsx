@@ -1,13 +1,14 @@
 "use client";
 
-import { ChevronDownIcon, LanguageIcon } from "@heroicons/react/24/solid";
 import { useTransition } from "react";
+
+import { ChevronDownIcon, LanguageIcon } from "@heroicons/react/24/solid";
 
 import { setLocaleCookie } from "@/actions/locale";
 
 const locales = [
   { code: "ja", name: "日本語" },
-  { code: "en", name: "English" },
+  { code: "na", name: "English (US)" },
 ] as const;
 
 export function SelectLocale({ currentLocale }: { currentLocale: string }) {

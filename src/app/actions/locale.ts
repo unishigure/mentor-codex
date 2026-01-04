@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 
 export async function setLocaleCookie(locale: string) {
-  const validLocales = ["ja", "en"];
+  const validLocales = ["ja", "na"];
   if (!validLocales.includes(locale)) {
     throw new Error("Unsupported locale");
   }
