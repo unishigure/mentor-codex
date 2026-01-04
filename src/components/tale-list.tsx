@@ -62,7 +62,7 @@ export function TaleList() {
   }
 
   return (
-    <div className="w-full">
+    <div className="mx-auto my-4 w-[95%] md:w-3/4">
       {error && (
         <div className="mb-4 rounded bg-red-100 p-4 text-red-700 dark:bg-red-900 dark:text-red-200">
           {error}
@@ -74,7 +74,7 @@ export function TaleList() {
           {t("TaleList.empty")}
         </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto rounded">
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-gray-300 border-b bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
@@ -136,14 +136,16 @@ export function TaleList() {
                     )}
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(tale.key)}
-                      className="inline-flex items-center gap-1 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
-                      title={t("TaleList.delete")}
-                    >
-                      <TrashIcon className="h-4 w-4" />
-                    </button>
+                    <div className="flex items-center justify-center">
+                      <button
+                        type="button"
+                        onClick={() => handleDelete(tale.key)}
+                        className="inline-flex items-center gap-1 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+                        title={t("TaleList.delete")}
+                      >
+                        <TrashIcon className="h-4 w-4" />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
