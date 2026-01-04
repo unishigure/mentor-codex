@@ -90,5 +90,12 @@
       "PCT": "Pictomancer",
       "BLU": "Blue Mage"
     }
+  },
+  "Content": {
+    "Dungeons": {
+      "dungeon_15": { "name": "Sastasha" },
+      "dungeon_16": { "name": "The Tam-Tara Deepcroft" },
+      "dungeon_17": { "name": "Copperbell Mines" }
+    }
   }
 }

@@ -90,5 +90,1783 @@
       "PCT": "ピクトマンサー",
       "BLU": "青魔道士"
     }
+  },
+  "Content": {
+    "Dungeons": {
+      "dungeon_15": {
+        "name": "天然要害 サスタシャ浸食洞",
+        "level": 15,
+        "expansion": "v2.0",
+        "dutyId": "b229b89b3a8"
+      },
+      "dungeon_16": {
+        "name": "地下霊殿 タムタラの墓所",
+        "level": 16,
+        "expansion": "v2.0",
+        "dutyId": "29e71c3b0a0"
+      },
+      "dungeon_17": {
+        "name": "封鎖坑道 カッパーベル銅山",
+        "level": 17,
+        "expansion": "v2.0",
+        "dutyId": "619923ac984"
+      },
+      "dungeon_20": {
+        "name": "魔獣領域 ハラタリ修練所",
+        "level": 20,
+        "expansion": "v2.0",
+        "dutyId": "98319325b98"
+      },
+      "dungeon_24": {
+        "name": "監獄廃墟 トトラクの千獄",
+        "level": 24,
+        "expansion": "v2.0",
+        "dutyId": "cf7612fa294"
+      },
+      "dungeon_28": {
+        "name": "名門屋敷 ハウケタ御用邸",
+        "level": 28,
+        "expansion": "v2.0",
+        "dutyId": "e9740dde26c"
+      },
+      "dungeon_32": {
+        "name": "奪還支援 ブレイフロクスの野営地",
+        "level": 32,
+        "expansion": "v2.0",
+        "dutyId": "e371c7ab919"
+      },
+      "dungeon_35": {
+        "name": "遺跡探索 カルン埋没寺院",
+        "level": 35,
+        "expansion": "v2.0",
+        "dutyId": "b7a48152df9"
+      },
+      "dungeon_38": {
+        "name": "流砂迷宮 カッターズクライ",
+        "level": 38,
+        "expansion": "v2.0",
+        "dutyId": "d601f85dc1e"
+      },
+      "dungeon_41": {
+        "name": "城塞攻略 ストーンヴィジル",
+        "level": 41,
+        "expansion": "v2.0",
+        "dutyId": "b6491e1b508"
+      },
+      "dungeon_44": {
+        "name": "掃討作戦 ゼーメル要塞",
+        "level": 44,
+        "expansion": "v2.0",
+        "dutyId": "4a36cbca533"
+      },
+      "dungeon_47": {
+        "name": "霧中行軍 オーラムヴェイル",
+        "level": 47,
+        "expansion": "v2.0",
+        "dutyId": "f507633618c"
+      },
+      "dungeon_50_2_0_1": {
+        "name": "旅神聖域 ワンダラーパレス",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "3fd66be47b2"
+      },
+      "dungeon_50_2_0_2": {
+        "name": "外郭攻略 カストルム・メリディアヌム",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "59c2b3b84fa"
+      },
+      "dungeon_50_2_0_3": {
+        "name": "最終決戦 魔導城プラエトリウム",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "f6de0165484"
+      },
+      "dungeon_50_2_0_4": {
+        "name": "邪教排撃 古城アムダプール",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "ae8a92122ec"
+      },
+      "dungeon_50_2_1_1": {
+        "name": "怪鳥巨塔 シリウス大灯台",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "a8dd3748467"
+      },
+      "dungeon_50_2_1_2": {
+        "name": "騒乱坑道 カッパーベル銅山 (Hard)",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "a780ca9b970"
+      },
+      "dungeon_50_2_1_3": {
+        "name": "妖異屋敷 ハウケタ御用邸 (Hard)",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "61c74c68e00"
+      },
+      "dungeon_50_2_2_1": {
+        "name": "腐敗遺跡 古アムダプール市街",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "87d3b951d3d"
+      },
+      "dungeon_50_2_2_2": {
+        "name": "剣闘領域 ハラタリ修練所 (Hard)",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "d536b8f0cc8"
+      },
+      "dungeon_50_2_2_3": {
+        "name": "盟友支援 ブレイフロクスの野営地 (Hard)",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "40681f6c94a"
+      },
+      "dungeon_50_2_3_1": {
+        "name": "財宝伝説 ハルブレーカー・アイル",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "18aeffad7c5"
+      },
+      "dungeon_50_2_3_2": {
+        "name": "惨劇霊殿 タムタラの墓所 (Hard)",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "84d01fe5b6c"
+      },
+      "dungeon_50_2_3_3": {
+        "name": "城塞奪回 ストーンヴィジル (Hard)",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "418628edfbf"
+      },
+      "dungeon_50_2_4_1": {
+        "name": "氷結潜窟 スノークローク大氷壁",
+        "level": 50,
+        "expansion": "v2.4",
+        "dutyId": "6f1778eb631"
+      },
+      "dungeon_50_2_4_2": {
+        "name": "逆襲要害 サスタシャ浸食洞 (Hard)",
+        "level": 50,
+        "expansion": "v2.4",
+        "dutyId": "df38ed5c808"
+      },
+      "dungeon_50_2_4_3": {
+        "name": "遺跡救援 カルン埋没寺院 (Hard)",
+        "level": 50,
+        "expansion": "v2.4",
+        "dutyId": "6b35d4a1179"
+      },
+      "dungeon_50_2_5_1": {
+        "name": "幻龍残骸 黙約の塔",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "5e75d2059af"
+      },
+      "dungeon_50_2_5_2": {
+        "name": "武装聖域 ワンダラーパレス (Hard)",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "7c11b0ba080"
+      },
+      "dungeon_50_2_5_3": {
+        "name": "邪念排撃 古城アムダプール (Hard)",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "a4288ecf826"
+      },
+      "dungeon_51": {
+        "name": "廃砦捜索 ダスクヴィジル",
+        "level": 51,
+        "expansion": "v3.0",
+        "dutyId": "df5ab8bfd61"
+      },
+      "dungeon_53": {
+        "name": "霊峰踏破 ソーム・アル",
+        "level": 53,
+        "expansion": "v3.0",
+        "dutyId": "eed0add7a62"
+      },
+      "dungeon_55": {
+        "name": "邪竜血戦 ドラゴンズエアリー",
+        "level": 55,
+        "expansion": "v3.0",
+        "dutyId": "339c4923556"
+      },
+      "dungeon_57": {
+        "name": "強硬突入 イシュガルド教皇庁",
+        "level": 57,
+        "expansion": "v3.0",
+        "dutyId": "a62f7ee3718"
+      },
+      "dungeon_59": {
+        "name": "禁書回収 グブラ幻想図書館",
+        "level": 59,
+        "expansion": "v3.0",
+        "dutyId": "f368b40c648"
+      },
+      "dungeon_60_3_0_1": {
+        "name": "蒼天聖戦 魔科学研究所",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "923e0a1d1d0"
+      },
+      "dungeon_60_3_0_2": {
+        "name": "神域浮島 ネバーリープ",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "618168354ea"
+      },
+      "dungeon_60_3_0_3": {
+        "name": "博物戦艦 フラクタル・コンティニアム",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "c39cf50a6a5"
+      },
+      "dungeon_60_3_1_1": {
+        "name": "草木庭園 聖モシャーヌ植物園",
+        "level": 60,
+        "expansion": "v3.1",
+        "dutyId": "cdad1cb65e8"
+      },
+      "dungeon_60_3_1_2": {
+        "name": "制圧巨塔 シリウス大灯台 (Hard)",
+        "level": 60,
+        "expansion": "v3.1",
+        "dutyId": "cd500c08682"
+      },
+      "dungeon_60_3_2_1": {
+        "name": "星海観測 逆さの塔",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "36e172ff46c"
+      },
+      "dungeon_60_3_2_2": {
+        "name": "神聖遺跡 古アムダプール市街 (Hard)",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "193a96b0fa4"
+      },
+      "dungeon_60_3_3_1": {
+        "name": "天竜宮殿 ソール・カイ",
+        "level": 60,
+        "expansion": "v3.3",
+        "dutyId": "a8c7c5c13bd"
+      },
+      "dungeon_60_3_3_2": {
+        "name": "黒渦伝説 ハルブレーカー・アイル (Hard)",
+        "level": 60,
+        "expansion": "v3.3",
+        "dutyId": "313b1415d0f"
+      },
+      "dungeon_60_3_4_1": {
+        "name": "峻厳渓谷 ゼルファトル",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "1d95a773990"
+      },
+      "dungeon_60_3_4_2": {
+        "name": "稀書回収 グブラ幻想図書館 (Hard)",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "d6e98e35e6f"
+      },
+      "dungeon_60_3_5_1": {
+        "name": "巨大防壁 バエサルの長城",
+        "level": 60,
+        "expansion": "v3.5",
+        "dutyId": "bc72ef27ade"
+      },
+      "dungeon_60_3_5_2": {
+        "name": "霊峰浄化 ソーム・アル (Hard)",
+        "level": 60,
+        "expansion": "v3.5",
+        "dutyId": "9bd9004a140"
+      },
+      "dungeon_61": {
+        "name": "漂流海域 セイレーン海",
+        "level": 61,
+        "expansion": "v4.0",
+        "dutyId": "471227e1ee7"
+      },
+      "dungeon_63": {
+        "name": "海底宮殿 紫水宮",
+        "level": 63,
+        "expansion": "v4.0",
+        "dutyId": "39ba54ada1c"
+      },
+      "dungeon_65": {
+        "name": "伝統試練 バルダム覇道",
+        "level": 65,
+        "expansion": "v4.0",
+        "dutyId": "53d7100d839"
+      },
+      "dungeon_67": {
+        "name": "解放決戦 ドマ城",
+        "level": 67,
+        "expansion": "v4.0",
+        "dutyId": "cd924bd8eac"
+      },
+      "dungeon_69": {
+        "name": "巨砲要塞 カストルム・アバニア",
+        "level": 69,
+        "expansion": "v4.0",
+        "dutyId": "e635797754f"
+      },
+      "dungeon_70_4_0_1": {
+        "name": "紅蓮決戦 アラミゴ",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "c71bb06e67b"
+      },
+      "dungeon_70_4_0_2": {
+        "name": "悪党成敗 クガネ城",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "37d0e83919d"
+      },
+      "dungeon_70_4_0_3": {
+        "name": "壊神修行 星導山寺院",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "23edcb0d626"
+      },
+      "dungeon_70_4_1_1": {
+        "name": "水没遺構 スカラ",
+        "level": 70,
+        "expansion": "v4.1",
+        "dutyId": "47ef709fb04"
+      },
+      "dungeon_70_4_2_1": {
+        "name": "紅玉火山 獄之蓋",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "f9ab5899e9d"
+      },
+      "dungeon_70_4_2_2": {
+        "name": "暴走戦艦 フラクタル・コンティニアム (Hard)",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "b8bea03880d"
+      },
+      "dungeon_70_4_3_1": {
+        "name": "風水霊殿 ガンエン廟",
+        "level": 70,
+        "expansion": "v4.3",
+        "dutyId": "35ed52cf463"
+      },
+      "dungeon_70_4_4_1": {
+        "name": "永久焦土 ザ・バーン",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "c8608c977a6"
+      },
+      "dungeon_70_4_4_2": {
+        "name": "草木汚染 聖モシャーヌ植物園 (Hard)",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "25cf070eeb4"
+      },
+      "dungeon_70_4_5_1": {
+        "name": "境界戦線 ギムリトダーク",
+        "level": 70,
+        "expansion": "v4.5",
+        "dutyId": "33a05f144e4"
+      },
+      "dungeon_71": {
+        "name": "殺戮郷村 ホルミンスター",
+        "level": 71,
+        "expansion": "v5.0",
+        "dutyId": "a6165958a5c"
+      },
+      "dungeon_73": {
+        "name": "水妖幻園 ドォーヌ・メグ",
+        "level": 73,
+        "expansion": "v5.0",
+        "dutyId": "5f9f024b774"
+      },
+      "dungeon_75": {
+        "name": "古跡探索 キタンナ神影洞",
+        "level": 75,
+        "expansion": "v5.0",
+        "dutyId": "3aff2d6760c"
+      },
+      "dungeon_77": {
+        "name": "爽涼離宮 マリカの大井戸",
+        "level": 77,
+        "expansion": "v5.0",
+        "dutyId": "f8fff809d77"
+      },
+      "dungeon_79": {
+        "name": "偽造天界 グルグ火山",
+        "level": 79,
+        "expansion": "v5.0",
+        "dutyId": "72f2e86daba"
+      },
+      "dungeon_80_5_0_1": {
+        "name": "終末幻想 アーモロート",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "c5de427bfef"
+      },
+      "dungeon_80_5_0_2": {
+        "name": "異界遺構 シルクス・ツイニング",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "be6a14f45a6"
+      },
+      "dungeon_80_5_0_3": {
+        "name": "創造機関 アナイダアカデミア",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "d2b053e4e31"
+      },
+      "dungeon_80_5_1": {
+        "name": "魔法宮殿 グラン・コスモス",
+        "level": 80,
+        "expansion": "v5.1",
+        "dutyId": "1f246825352"
+      },
+      "dungeon_80_5_2": {
+        "name": "黒風海底 アニドラス・アナムネーシス",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "969e6501eb7"
+      },
+      "dungeon_80_5_3": {
+        "name": "漆黒決戦 ノルヴラント",
+        "level": 80,
+        "expansion": "v5.3",
+        "dutyId": "44073b7449c"
+      },
+      "dungeon_80_5_4": {
+        "name": "魔術工房 マトーヤのアトリエ",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "5a30eb6b20d"
+      },
+      "dungeon_80_5_5": {
+        "name": "黄金平原 パガルザン",
+        "level": 80,
+        "expansion": "v5.5",
+        "dutyId": "81f08141768"
+      },
+      "dungeon_81": {
+        "name": "異形楼閣 ゾットの塔",
+        "level": 81,
+        "expansion": "v6.0",
+        "dutyId": "9c317b74e3a"
+      },
+      "dungeon_83": {
+        "name": "魔導神門 バブイルの塔",
+        "level": 83,
+        "expansion": "v6.0",
+        "dutyId": "3297718033f"
+      },
+      "dungeon_85": {
+        "name": "終末樹海 ヴァナスパティ",
+        "level": 85,
+        "expansion": "v6.0",
+        "dutyId": "dadcd891cc1"
+      },
+      "dungeon_87": {
+        "name": "創造環境 ヒュペルボレア造物院",
+        "level": 87,
+        "expansion": "v6.0",
+        "dutyId": "8514a64c969"
+      },
+      "dungeon_89": {
+        "name": "星海潜航 アイティオン星晶鏡",
+        "level": 89,
+        "expansion": "v6.0",
+        "dutyId": "fd65b266f55"
+      },
+      "dungeon_90_6_0_1": {
+        "name": "最終幻想 レムナント",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "ba59c193b71"
+      },
+      "dungeon_90_6_0_2": {
+        "name": "楽園都市 スマイルトン",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "175e6a7245d"
+      },
+      "dungeon_90_6_0_3": {
+        "name": "電脳夢想 スティグマ・フォー",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "25f8ec27427"
+      },
+      "dungeon_90_6_1": {
+        "name": "近東秘宝 アルザダール海底遺跡群",
+        "level": 90,
+        "expansion": "v6.1",
+        "dutyId": "d56ff366a07"
+      },
+      "dungeon_90_6_2": {
+        "name": "異界孤城 トロイアコート",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "d75f0e7733b"
+      },
+      "dungeon_90_6_3": {
+        "name": "雪山冥洞 ラピス・マナリス",
+        "level": 90,
+        "expansion": "v6.3",
+        "dutyId": "ce91893321f"
+      },
+      "dungeon_90_6_4": {
+        "name": "星霊間欠 ハーム島",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "ee802d0c0ef"
+      },
+      "dungeon_90_6_5": {
+        "name": "深淵潜行 月の地下渓谷",
+        "level": 90,
+        "expansion": "v6.5",
+        "dutyId": "f3d52caf5b5"
+      },
+      "dungeon_91": {
+        "name": "濁流遡上 イフイカ・トゥム",
+        "level": 91,
+        "expansion": "v7.0",
+        "dutyId": "259c37be2ea"
+      },
+      "dungeon_93": {
+        "name": "山嶺登頂 ウォーコー・ゾーモー",
+        "level": 93,
+        "expansion": "v7.0",
+        "dutyId": "3234aee78f4"
+      },
+      "dungeon_95": {
+        "name": "遺産踏査 天深きセノーテ",
+        "level": 95,
+        "expansion": "v7.0",
+        "dutyId": "e96880d0f74"
+      },
+      "dungeon_97": {
+        "name": "外征前哨 ヴァンガード",
+        "level": 97,
+        "expansion": "v7.0",
+        "dutyId": "fde94d8793d"
+      },
+      "dungeon_99": {
+        "name": "魂魄工廠 オリジェニクス",
+        "level": 99,
+        "expansion": "v7.0",
+        "dutyId": "5fed58bd8cb"
+      },
+      "dungeon_100_7_0_1": {
+        "name": "記憶幻想 アレクサンドリア",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "1e2a6c0010b"
+      },
+      "dungeon_100_7_0_2": {
+        "name": "荒野秘境 サボテンダーバレー",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "915e0e65c0c"
+      },
+      "dungeon_100_7_0_3": {
+        "name": "悪夢遊園 ストレイバロー",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "cd523999c2e"
+      },
+      "dungeon_100_7_1": {
+        "name": "廃地討究 ユウェヤーワータ",
+        "level": 100,
+        "expansion": "v7.1",
+        "dutyId": "d6db03218c4"
+      },
+      "dungeon_100_7_2": {
+        "name": "王城旧跡 アンダーキープ",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "25a4d40f3f1"
+      },
+      "dungeon_100_7_3": {
+        "name": "永久幽界 メインターミナル",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "abbf8a4eef4"
+      },
+      "dungeon_100_7_4": {
+        "name": "遺忘行路 ミストウェイク",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      }
+    },
+    "Guildhests": {
+      "guildhest_1": {
+        "name": "集団戦訓練をくぐり抜けろ！",
+        "level": 10,
+        "expansion": "v2.0",
+        "dutyId": "870b0ba875b"
+      },
+      "guildhest_2": {
+        "name": "彷徨う死霊を討て！",
+        "level": 10,
+        "expansion": "v2.0",
+        "dutyId": "45ceed354ba"
+      },
+      "guildhest_3": {
+        "name": "全関門を突破し、最深部の敵を討て！",
+        "level": 15,
+        "expansion": "v2.0",
+        "dutyId": "62b08358b7f"
+      },
+      "guildhest_4": {
+        "name": "ギルガメを捕獲せよ！",
+        "level": 15,
+        "expansion": "v2.0",
+        "dutyId": "c50aa0b76f2"
+      },
+      "guildhest_5": {
+        "name": "有毒妖花を駆除せよ！",
+        "level": 20,
+        "expansion": "v2.0",
+        "dutyId": "843f9dde819"
+      },
+      "guildhest_6": {
+        "name": "無法者「似我蜂団」を撃滅せよ！",
+        "level": 20,
+        "expansion": "v2.0",
+        "dutyId": "d5aad9309de"
+      },
+      "guildhest_7": {
+        "name": "夢幻のブラキシオを討て！",
+        "level": 25,
+        "expansion": "v2.0",
+        "dutyId": "a26d5953167"
+      },
+      "guildhest_8": {
+        "name": "爆弾魔ゴブリン軍団を撃滅せよ！",
+        "level": 25,
+        "expansion": "v2.0",
+        "dutyId": "17ae2cd194e"
+      },
+      "guildhest_9": {
+        "name": "汚染源モルボルを討て！",
+        "level": 30,
+        "expansion": "v2.0",
+        "dutyId": "8aba424456e"
+      },
+      "guildhest_10": {
+        "name": "坑道に現れた妖異ブソを討て！",
+        "level": 30,
+        "expansion": "v2.0",
+        "dutyId": "c488afabbbf"
+      },
+      "guildhest_11": {
+        "name": "無敵の眷属を従えし、大型妖異を討て！",
+        "level": 35,
+        "expansion": "v2.0",
+        "dutyId": "80a48425be4"
+      },
+      "guildhest_12": {
+        "name": "ボムを率いる「ボムクイーン」を討て！",
+        "level": 35,
+        "expansion": "v2.0",
+        "dutyId": "943de2c3264"
+      },
+      "guildhest_13": {
+        "name": "不気味な陣形を組む妖異をせん滅せよ！",
+        "level": 40,
+        "expansion": "v2.0",
+        "dutyId": "cfb548fa0c9"
+      },
+      "guildhest_14": {
+        "name": "三つ巴の巨人族を制し、遺物を守れ！",
+        "level": 40,
+        "expansion": "v2.0",
+        "dutyId": "7a556805107"
+      }
+    },
+    "Trials": {
+      "trial_ifrit": {
+        "name": "イフリート討伐戦",
+        "level": 20,
+        "expansion": "v2.0",
+        "dutyId": "c3e6020e9e6"
+      },
+      "trial_titan": {
+        "name": "タイタン討伐戦",
+        "level": 34,
+        "expansion": "v2.0",
+        "dutyId": "859d01176cd"
+      },
+      "trial_garuda": {
+        "name": "ガルーダ討伐戦",
+        "level": 44,
+        "expansion": "v2.0",
+        "dutyId": "9c8db3d95b6"
+      },
+      "trial_49": {
+        "name": "リットアティン強襲戦",
+        "level": 49,
+        "expansion": "v2.0",
+        "dutyId": "b85ab23e734"
+      },
+      "trial_main_quest": {
+        "name": "アルテマウェポン破壊作戦",
+        "level": 50,
+        "expansion": "v6.1",
+        "dutyId": "f369418dbf8"
+      },
+      "trial_main_story_1": {
+        "name": "皇都イシュガルド防衛戦",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "c57d70a1428"
+      },
+      "trial_main_story_2": {
+        "name": "アシエン・ナプリアレス討伐戦",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "2fac3746c16"
+      },
+      "trial_relic_1": {
+        "name": "ドルムキマイラ討伐戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "decf353d4e7"
+      },
+      "trial_relic_2": {
+        "name": "ハイドラ討伐戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "c87fbc421a0"
+      },
+      "trial_gilgamesh": {
+        "name": "ギルガメッシュ討伐戦",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "c370021f429"
+      },
+      "trial_ifrit_hard": {
+        "name": "真イフリート討滅戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "2640986aff3"
+      },
+      "trial_garuda_hard": {
+        "name": "真ガルーダ討滅戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "b74b4328a17"
+      },
+      "trial_titan_hard": {
+        "name": "真タイタン討滅戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "349d6ca4465"
+      },
+      "trial_mog_hard": {
+        "name": "善王モグル・モグXII世討滅戦",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "6a88aecaec1"
+      },
+      "trial_leviathan_hard": {
+        "name": "真リヴァイアサン討滅戦",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "a9147177b7a"
+      },
+      "trial_ramuh_hard": {
+        "name": "真ラムウ討滅戦",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "520ffafb60d"
+      },
+      "trial_shiva_hard": {
+        "name": "真シヴァ討滅戦",
+        "level": 50,
+        "expansion": "v2.4",
+        "dutyId": "c38bedcfa46"
+      },
+      "trial_2_4": {
+        "name": "アマジナ杯闘技会決勝戦",
+        "level": 50,
+        "expansion": "v2.4",
+        "dutyId": "a74020d08e8"
+      },
+      "trial_gilgamesh_hard": {
+        "name": "真ギルガメッシュ討滅戦",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "cb876745bce"
+      },
+      "trial_odin_hard": {
+        "name": "闘神オーディン討滅戦",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "21d8c5bd54b"
+      },
+      "trial_ravana_hard": {
+        "name": "真ラーヴァナ討滅戦",
+        "level": 53,
+        "expansion": "v3.0",
+        "dutyId": "f55bdb9e34e"
+      },
+      "trial_bismarck_hard": {
+        "name": "真ビスマルク討滅戦",
+        "level": 57,
+        "expansion": "v3.0",
+        "dutyId": "26fe48f4631"
+      },
+      "trial_knights": {
+        "name": "ナイツ・オブ・ラウンド討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "12c172943bc"
+      },
+      "trial_sophia": {
+        "name": "女神ソフィア討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "83e0064270d"
+      },
+      "trial_zurvan": {
+        "name": "鬼神ズルワーン討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "8ff3c52798c"
+      },
+      "trial_sephirot": {
+        "name": "魔神セフィロト討滅戦",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "08c9d224d28"
+      },
+      "trial_nidhogg": {
+        "name": "ニーズヘッグ征竜戦",
+        "level": 60,
+        "expansion": "v3.3",
+        "dutyId": "2caf2e26f12"
+      },
+      "trial_susano": {
+        "name": "スサノオ討滅戦",
+        "level": 63,
+        "expansion": "v4.0",
+        "dutyId": "5806cb2d995"
+      },
+      "trial_lakshmi": {
+        "name": "ラクシュミ討滅戦",
+        "level": 67,
+        "expansion": "v4.0",
+        "dutyId": "7992a4eab66"
+      },
+      "trial_shinryu": {
+        "name": "神龍討滅戦",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "13be0500007"
+      },
+      "trial_yojimbo_hard": {
+        "name": "真ヨウジンボウ討滅戦",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "bad56c435a5"
+      },
+      "trial_rathalos": {
+        "name": "リオレウス狩猟戦",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "a8b065d443b"
+      },
+      "trial_byakko": {
+        "name": "白虎征魂戦",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "f1fc9fb6093"
+      },
+      "trial_tsukuyomi": {
+        "name": "ツクヨミ討滅戦",
+        "level": 70,
+        "expansion": "v4.3",
+        "dutyId": "10fe97ad942"
+      },
+      "trial_suzaku": {
+        "name": "朱雀征魂戦",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "ea0f6440546"
+      },
+      "trial_seiryu": {
+        "name": "青龍征魂戦",
+        "level": 70,
+        "expansion": "v4.5",
+        "dutyId": "c19b83441e4"
+      },
+      "trial_titania": {
+        "name": "ティターニア討滅戦",
+        "level": 73,
+        "expansion": "v5.0",
+        "dutyId": "dbf2007968d"
+      },
+      "trial_innocence": {
+        "name": "イノセンス討滅戦",
+        "level": 79,
+        "expansion": "v5.0",
+        "dutyId": "0b1d4434e26"
+      },
+      "trial_hades": {
+        "name": "ハーデス討滅戦",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "6b31d339381"
+      },
+      "trial_ruby": {
+        "name": "ルビーウェポン破壊作戦",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "793ed012f43"
+      },
+      "trial_wol": {
+        "name": "ウォーリア・オブ・ライト討滅戦",
+        "level": 80,
+        "expansion": "v5.3",
+        "dutyId": "16b75e706b3"
+      },
+      "trial_emerald": {
+        "name": "エメラルドウェポン破壊作戦",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "cd08ecb15cc"
+      },
+      "trial_diamond": {
+        "name": "ダイヤウェポン捕獲作戦",
+        "level": 80,
+        "expansion": "v5.5",
+        "dutyId": "138006e2d76"
+      },
+      "trial_zodiark": {
+        "name": "ゾディアーク討滅戦",
+        "level": 83,
+        "expansion": "v6.0",
+        "dutyId": "6eed2137942"
+      },
+      "trial_hydaelyn": {
+        "name": "ハイデリン討滅戦",
+        "level": 89,
+        "expansion": "v6.0",
+        "dutyId": "044b34a37ca"
+      },
+      "trial_meteion": {
+        "name": "終焉の戦い",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "7b4070f67f6"
+      },
+      "trial_6_2": {
+        "name": "バルバリシア討滅戦",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "7db24777c99"
+      },
+      "trial_6_3": {
+        "name": "ルビカンテ討滅戦",
+        "level": 90,
+        "expansion": "v6.3",
+        "dutyId": "524d9878b6b"
+      },
+      "trial_6_4": {
+        "name": "ゴルベーザ討滅戦",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "f1f90009296"
+      },
+      "trial_6_5": {
+        "name": "ゼロムス討滅戦",
+        "level": 90,
+        "expansion": "v6.5",
+        "dutyId": "dd8721dfa4b"
+      },
+      "trial_asura": {
+        "name": "アスラ討滅戦",
+        "level": 90,
+        "expansion": "v6.5",
+        "dutyId": "17ba391b62b"
+      },
+      "trial_93": {
+        "name": "ヴァリガルマンダ討滅戦",
+        "level": 93,
+        "expansion": "v7.0",
+        "dutyId": "2fc80be63e2"
+      },
+      "trial_99": {
+        "name": "ゾラージャ討滅戦",
+        "level": 99,
+        "expansion": "v7.0",
+        "dutyId": "72c4bd9bafa"
+      },
+      "trial_7_2": {
+        "name": "ゼレニア討滅戦",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "7b8ecdbd6af"
+      },
+      "trial_7_3": {
+        "name": "永遠の闇討滅戦",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "8fc44efcf27"
+      },
+      "trial_arkveld": {
+        "name": "護竜アルシュベルド狩猟戦",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "5c0593fafa3"
+      },
+      "trial_7_4": {
+        "name": "グラシャラボラス討滅戦",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      }
+    },
+    "Extremes": {
+      "extreme_altema": {
+        "name": "究極幻想 アルテマウェポン破壊作戦",
+        "level": 50,
+        "expansion": "v2.0",
+        "dutyId": "0de44d2eccf"
+      },
+      "extreme_garuda": {
+        "name": "極ガルーダ討滅戦",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "7c17ae70cc6"
+      },
+      "extreme_titan": {
+        "name": "極タイタン討滅戦",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "589c727302e"
+      },
+      "extreme_ifrit": {
+        "name": "極イフリート討滅戦",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "6af1a94ccca"
+      },
+      "extreme_mog": {
+        "name": "極王モグル・モグXII世討滅戦",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "b7c47c44490"
+      },
+      "extreme_leviathan": {
+        "name": "極リヴァイアサン討滅戦",
+        "level": 50,
+        "expansion": "v2.2",
+        "dutyId": "0850a8627aa"
+      },
+      "extreme_ramuh": {
+        "name": "極ラムウ討滅戦",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "4d8cae741db"
+      },
+      "extreme_shiva": {
+        "name": "極シヴァ討滅戦",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "5f786d57228"
+      },
+      "extreme_bismarck": {
+        "name": "極ビスマルク討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "e9bb63551a4"
+      },
+      "extreme_ravana": {
+        "name": "極ラーヴァナ討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "83f028575c8"
+      },
+      "extreme_sophia": {
+        "name": "極女神ソフィア討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "212ceb19a34"
+      },
+      "extreme_zulwahn": {
+        "name": "極鬼神ズルワーン討滅戦",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "26a86785be9"
+      },
+      "extreme_knights": {
+        "name": "蒼天幻想 ナイツ・オブ・ラウンド討滅戦",
+        "level": 60,
+        "expansion": "v3.1",
+        "dutyId": "a8a4860068c"
+      },
+      "extreme_sephirot": {
+        "name": "極魔神セフィロト討滅戦",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "e05c982993d"
+      },
+      "extreme_nidhogg": {
+        "name": "極ニーズヘッグ征竜戦",
+        "level": 60,
+        "expansion": "v3.3",
+        "dutyId": "0e880006330"
+      },
+      "extreme_susano": {
+        "name": "極スサノオ討滅戦",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "b28f61e6212"
+      },
+      "extreme_lakshmi": {
+        "name": "極ラクシュミ討滅戦",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "7de6a27d145"
+      },
+      "extreme_shinryu": {
+        "name": "極神龍討滅戦",
+        "level": 70,
+        "expansion": "v4.1",
+        "dutyId": "8c829b8dd8c"
+      },
+      "extreme_byakko": {
+        "name": "極白虎征魂戦",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "44fc4abc0eb"
+      },
+      "extreme_tsukuyomi": {
+        "name": "極ツクヨミ討滅戦",
+        "level": 70,
+        "expansion": "v4.3",
+        "dutyId": "0919d2674e0"
+      },
+      "extreme_rathalos": {
+        "name": "極リオレウス狩猟戦",
+        "level": 70,
+        "expansion": "v4.3",
+        "dutyId": "52328939737"
+      },
+      "extreme_suzaku": {
+        "name": "極朱雀征魂戦",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "628e9a05d34"
+      },
+      "extreme_seiryu": {
+        "name": "極青龍征魂戦",
+        "level": 70,
+        "expansion": "v4.5",
+        "dutyId": "c79d50c803d"
+      },
+      "extreme_titania": {
+        "name": "極ティターニア討滅戦",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "bad53f19540"
+      },
+      "extreme_innocence": {
+        "name": "極イノセンス討滅戦",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "55504d0495f"
+      },
+      "extreme_varis": {
+        "name": "極シタデル・ボズヤ追憶戦",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "841d3f69efd"
+      },
+      "extreme_hades": {
+        "name": "極ハーデス討滅戦",
+        "level": 80,
+        "expansion": "v5.1",
+        "dutyId": "b2e08d16bce"
+      },
+      "extreme_ruby": {
+        "name": "極ルビーウェポン破壊作戦",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "b388be5eb05"
+      },
+      "extreme_wol": {
+        "name": "極ウォーリア・オブ・ライト討滅戦",
+        "level": 80,
+        "expansion": "v5.3",
+        "dutyId": "1543e03ff37"
+      },
+      "extreme_emerald": {
+        "name": "極エメラルドウェポン破壊作戦",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "16e9780d10e"
+      },
+      "extreme_diamond": {
+        "name": "極ダイヤウェポン捕獲作戦",
+        "level": 80,
+        "expansion": "v5.5",
+        "dutyId": "c4a2acf0912"
+      },
+      "extreme_zodiark": {
+        "name": "極ゾディアーク討滅戦",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "f40a8f14d6d"
+      },
+      "extreme_hydaelyn": {
+        "name": "極ハイデリン討滅戦",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "0dbba05fd0f"
+      },
+      "extreme_meteion": {
+        "name": "終極の戦い",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "0c90d0fd67b"
+      },
+      "extreme_6_2": {
+        "name": "極バルバリシア討滅戦",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "7aa78623503"
+      },
+      "extreme_6_3": {
+        "name": "極ルビカンテ討滅戦",
+        "level": 90,
+        "expansion": "v6.3",
+        "dutyId": "0eb5dd38d5a"
+      },
+      "extreme_6_4": {
+        "name": "極ゴルベーザ討滅戦",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "ea1daa24090"
+      },
+      "extreme_6_5": {
+        "name": "極ゼロムス討滅戦",
+        "level": 90,
+        "expansion": "v6.5",
+        "dutyId": "04dba833267"
+      },
+      "extreme_7_0_1": {
+        "name": "極ヴァリガルマンダ討滅戦",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "ccc7473c187"
+      },
+      "extreme_7_0_2": {
+        "name": "極ゾラージャ討滅戦",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "515c012009a"
+      },
+      "extreme_7_2": {
+        "name": "極ゼレニア討滅戦",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "f68051c8d60"
+      },
+      "extreme_7_3": {
+        "name": "極永遠の闇討滅戦",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "403fcc21435"
+      },
+      "extreme_arkveld": {
+        "name": "極護竜アルシュベルド狩猟戦",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "6a12ba25136"
+      },
+      "extreme_7_4": {
+        "name": "極グラシャラボラス討滅戦",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      }
+    },
+    "Raids": {
+      "raid_3_0_1": {
+        "name": "機工城アレキサンダー：起動編1",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "5877d34ab3d"
+      },
+      "raid_3_0_2": {
+        "name": "機工城アレキサンダー：起動編2",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "157799be6d1"
+      },
+      "raid_3_0_3": {
+        "name": "機工城アレキサンダー：起動編3",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "16d0ba16753"
+      },
+      "raid_3_0_4": {
+        "name": "機工城アレキサンダー：起動編4",
+        "level": 60,
+        "expansion": "v3.0",
+        "dutyId": "0e9dbcd3e88"
+      },
+      "raid_3_2_1": {
+        "name": "機工城アレキサンダー：律動編1",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "39c6854e6a8"
+      },
+      "raid_3_2_2": {
+        "name": "機工城アレキサンダー：律動編2",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "1a42720a2b8"
+      },
+      "raid_3_2_3": {
+        "name": "機工城アレキサンダー：律動編3",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "b919a88ec20"
+      },
+      "raid_3_2_4": {
+        "name": "機工城アレキサンダー：律動編4",
+        "level": 60,
+        "expansion": "v3.2",
+        "dutyId": "d3146ecb9f8"
+      },
+      "raid_3_4_1": {
+        "name": "機工城アレキサンダー：天動編1",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "91e7c2d4647"
+      },
+      "raid_3_4_2": {
+        "name": "機工城アレキサンダー：天動編2",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "54cc9b3db16"
+      },
+      "raid_3_4_3": {
+        "name": "機工城アレキサンダー：天動編3",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "3c58fc35be5"
+      },
+      "raid_3_4_4": {
+        "name": "機工城アレキサンダー：天動編4",
+        "level": 60,
+        "expansion": "v3.4",
+        "dutyId": "5516e8fd14f"
+      },
+      "raid_4_0_1": {
+        "name": "次元の狭間オメガ：デルタ編1",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "8e7cf4fcca2"
+      },
+      "raid_4_0_2": {
+        "name": "次元の狭間オメガ：デルタ編2",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "9322cea310c"
+      },
+      "raid_4_0_3": {
+        "name": "次元の狭間オメガ：デルタ編3",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "1d0f4877cf2"
+      },
+      "raid_4_0_4": {
+        "name": "次元の狭間オメガ：デルタ編4",
+        "level": 70,
+        "expansion": "v4.0",
+        "dutyId": "76f228004f2"
+      },
+      "raid_4_2_1": {
+        "name": "次元の狭間オメガ：シグマ編1",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "98bb0f8e2f5"
+      },
+      "raid_4_2_2": {
+        "name": "次元の狭間オメガ：シグマ編2",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "e89c7361d67"
+      },
+      "raid_4_2_3": {
+        "name": "次元の狭間オメガ：シグマ編3",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "dd9b573806a"
+      },
+      "raid_4_2_4": {
+        "name": "次元の狭間オメガ：シグマ編4",
+        "level": 70,
+        "expansion": "v4.2",
+        "dutyId": "f6bdf734a4a"
+      },
+      "raid_4_4_1": {
+        "name": "次元の狭間オメガ：アルファ編1",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "4cdb4098c20"
+      },
+      "raid_4_4_2": {
+        "name": "次元の狭間オメガ：アルファ編2",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "43a122b16c2"
+      },
+      "raid_4_4_3": {
+        "name": "次元の狭間オメガ：アルファ編3",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "0b697689a12"
+      },
+      "raid_4_4_4": {
+        "name": "次元の狭間オメガ：アルファ編4",
+        "level": 70,
+        "expansion": "v4.4",
+        "dutyId": "6164ec419fe"
+      },
+      "raid_5_0_1": {
+        "name": "希望の園エデン：覚醒編1",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "a3549ccbd94"
+      },
+      "raid_5_0_2": {
+        "name": "希望の園エデン：覚醒編2",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "f82bc5d8d71"
+      },
+      "raid_5_0_3": {
+        "name": "希望の園エデン：覚醒編3",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "4618e49f844"
+      },
+      "raid_5_0_4": {
+        "name": "希望の園エデン：覚醒編4",
+        "level": 80,
+        "expansion": "v5.0",
+        "dutyId": "b2a4cb98763"
+      },
+      "raid_5_2_1": {
+        "name": "希望の園エデン：共鳴編1",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "d743dcfe06a"
+      },
+      "raid_5_2_2": {
+        "name": "希望の園エデン：共鳴編2",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "cdc9ff33eff"
+      },
+      "raid_5_2_3": {
+        "name": "希望の園エデン：共鳴編3",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "96ff35ae58b"
+      },
+      "raid_5_2_4": {
+        "name": "希望の園エデン：共鳴編4",
+        "level": 80,
+        "expansion": "v5.2",
+        "dutyId": "2024c23c039"
+      },
+      "raid_5_4_1": {
+        "name": "希望の園エデン：再生編1",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "83f9103a01c"
+      },
+      "raid_5_4_2": {
+        "name": "希望の園エデン：再生編2",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "aafa2130da3"
+      },
+      "raid_5_4_3": {
+        "name": "希望の園エデン：再生編3",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "ada07e3d029"
+      },
+      "raid_5_4_4": {
+        "name": "希望の園エデン：再生編4",
+        "level": 80,
+        "expansion": "v5.4",
+        "dutyId": "d53631d5202"
+      },
+      "raid_6_0_1": {
+        "name": "万魔殿パンデモニウム：辺獄編1",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "87c1d270e4a"
+      },
+      "raid_6_0_2": {
+        "name": "万魔殿パンデモニウム：辺獄編2",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "53197e092c0"
+      },
+      "raid_6_0_3": {
+        "name": "万魔殿パンデモニウム：辺獄編3",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "489f861eb7b"
+      },
+      "raid_6_0_4": {
+        "name": "万魔殿パンデモニウム：辺獄編4",
+        "level": 90,
+        "expansion": "v6.0",
+        "dutyId": "8766feb6d35"
+      },
+      "raid_6_2_1": {
+        "name": "万魔殿パンデモニウム：煉獄編1",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "d214bf6237c"
+      },
+      "raid_6_2_2": {
+        "name": "万魔殿パンデモニウム：煉獄編2",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "96af4bd34f2"
+      },
+      "raid_6_2_3": {
+        "name": "万魔殿パンデモニウム：煉獄編3",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "0929b0c05bc"
+      },
+      "raid_6_2_4": {
+        "name": "万魔殿パンデモニウム：煉獄編4",
+        "level": 90,
+        "expansion": "v6.2",
+        "dutyId": "4d2ad8ae660"
+      },
+      "raid_6_4_1": {
+        "name": "万魔殿パンデモニウム：天獄編1",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "27ea99ce75a"
+      },
+      "raid_6_4_2": {
+        "name": "万魔殿パンデモニウム：天獄編2",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "335e519ce87"
+      },
+      "raid_6_4_3": {
+        "name": "万魔殿パンデモニウム：天獄編3",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "e142dd574bd"
+      },
+      "raid_6_4_4": {
+        "name": "万魔殿パンデモニウム：天獄編4",
+        "level": 90,
+        "expansion": "v6.4",
+        "dutyId": "33b1d5ca8c6"
+      },
+      "raid_7_0_1": {
+        "name": "至天の座アルカディア：ライトヘビー級1",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "cc1de0a3c10"
+      },
+      "raid_7_0_2": {
+        "name": "至天の座アルカディア：ライトヘビー級2",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "6eb0b53fed5"
+      },
+      "raid_7_0_3": {
+        "name": "至天の座アルカディア：ライトヘビー級3",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "107e7c1240f"
+      },
+      "raid_7_0_4": {
+        "name": "至天の座アルカディア：ライトヘビー級4",
+        "level": 100,
+        "expansion": "v7.0",
+        "dutyId": "d247d8e66b5"
+      },
+      "raid_7_2_1": {
+        "name": "至天の座アルカディア：クルーザー級1",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "ab1b1344b17"
+      },
+      "raid_7_2_2": {
+        "name": "至天の座アルカディア：クルーザー級2",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "708f405c964"
+      },
+      "raid_7_2_3": {
+        "name": "至天の座アルカディア：クルーザー級3",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "9f10feac1d7"
+      },
+      "raid_7_2_4": {
+        "name": "至天の座アルカディア：クルーザー級4",
+        "level": 100,
+        "expansion": "v7.2",
+        "dutyId": "435f30bec71"
+      },
+      "raid_7_4_1": {
+        "name": "至天の座アルカディア：ヘビー級1",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      },
+      "raid_7_4_2": {
+        "name": "至天の座アルカディア：ヘビー級2",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      },
+      "raid_7_4_3": {
+        "name": "至天の座アルカディア：ヘビー級3",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      },
+      "raid_7_4_4": {
+        "name": "至天の座アルカディア：ヘビー級4",
+        "level": 100,
+        "expansion": "v7.4",
+        "dutyId": "none"
+      }
+    },
+    "AllianceRaids": {
+      "alliance_2_1": {
+        "name": "クリスタルタワー：古代の民の迷宮",
+        "level": 50,
+        "expansion": "v2.1",
+        "dutyId": "d9f4e986d0e"
+      },
+      "alliance_2_3": {
+        "name": "クリスタルタワー：シルクスの塔",
+        "level": 50,
+        "expansion": "v2.3",
+        "dutyId": "47eb1d018b6"
+      },
+      "alliance_2_5": {
+        "name": "クリスタルタワー：闇の世界",
+        "level": 50,
+        "expansion": "v2.5",
+        "dutyId": "7f0a3551ab6"
+      },
+      "alliance_3_1": {
+        "name": "魔航船ヴォイドアーク",
+        "level": 60,
+        "expansion": "v3.1",
+        "dutyId": "07fc9cb5bc8"
+      },
+      "alliance_3_3": {
+        "name": "禁忌都市マハ",
+        "level": 60,
+        "expansion": "v3.3",
+        "dutyId": "b0a1515fd3d"
+      },
+      "alliance_3_5": {
+        "name": "影の国ダン・スカー",
+        "level": 60,
+        "expansion": "v3.5",
+        "dutyId": "35a8825ed8e"
+      },
+      "alliance_4_1": {
+        "name": "失われた都 ラバナスタ",
+        "level": 70,
+        "expansion": "v4.1",
+        "dutyId": "56209386296"
+      },
+      "alliance_4_3": {
+        "name": "封じられた聖塔 リドルアナ",
+        "level": 70,
+        "expansion": "v4.3",
+        "dutyId": "390fb10fd68"
+      },
+      "alliance_4_5": {
+        "name": "楽欲の僧院 オーボンヌ",
+        "level": 70,
+        "expansion": "v4.5",
+        "dutyId": "95dbcc947db"
+      },
+      "alliance_5_1": {
+        "name": "複製サレタ工場廃墟",
+        "level": 80,
+        "expansion": "v5.1",
+        "dutyId": "ed86e5291b2"
+      },
+      "alliance_5_3": {
+        "name": "人形タチノ軍事基地",
+        "level": 80,
+        "expansion": "v5.3",
+        "dutyId": "889b8d8cfa4"
+      },
+      "alliance_5_5": {
+        "name": "希望ノ砲台：「塔」",
+        "level": 80,
+        "expansion": "v5.5",
+        "dutyId": "f1a29897772"
+      },
+      "alliance_6_1": {
+        "name": "輝ける神域 アグライア",
+        "level": 90,
+        "expansion": "v6.1",
+        "dutyId": "ced36158c27"
+      },
+      "alliance_6_3": {
+        "name": "喜びの神域 エウプロシュネ",
+        "level": 90,
+        "expansion": "v6.3",
+        "dutyId": "990f420dd6e"
+      },
+      "alliance_6_5": {
+        "name": "華めく神域 タレイア",
+        "level": 90,
+        "expansion": "v6.5",
+        "dutyId": "d4b9d40f28b"
+      },
+      "alliance_7_1": {
+        "name": "ジュノ：ザ・ファーストウォーク",
+        "level": 100,
+        "expansion": "v7.1",
+        "dutyId": "1318e475557"
+      },
+      "alliance_7_3": {
+        "name": "サンドリア：ザ・セカンドウォーク",
+        "level": 100,
+        "expansion": "v7.3",
+        "dutyId": "2659bec79dd"
+      }
+    }
   }
 }
