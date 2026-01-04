@@ -2,6 +2,12 @@
 
 import { cookies } from "next/headers";
 
+export async function getLocaleCookie(): Promise<string | null> {
+  const store = await cookies();
+  const locale = store.get("locale")?.value ?? null;
+  return locale;
+}
+
 export async function setLocaleCookie(locale: string) {
   const validLocales = ["ja", "na"];
   if (!validLocales.includes(locale)) {

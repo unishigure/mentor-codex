@@ -2,18 +2,22 @@
 
 import { useEffect, useState, useTransition } from "react";
 
-import { setJobCookie } from "@/app/actions/job";
+import { getJobCookie, setJobCookie } from "@/app/actions/job";
 import { SelectJob } from "./select-job";
 
-export function SelectJobCookie({
-  initialJob = "PLD",
-}: {
-  initialJob?: string;
-}) {
-  const [value, setValue] = useState(initialJob);
+export function SelectJobCookie() {
+  const [value, setValue] = useState("PLD");
   const [isPending, startTransition] = useTransition();
 
-  useEffect(() => setValue(initialJob), [initialJob]);
+  useEffect(() => {
+    const loadJobCookie = async () => {
+      const cookieJob = await getJobCookie();
+      if (cookieJob) {
+        setValue(cookieJob);
+      }
+    };
+    loadJobCookie();
+  }, []);
 
   const handleValueChange = (nextJobCode: string) => {
     setValue(nextJobCode);
