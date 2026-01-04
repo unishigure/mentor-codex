@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
-import { SelectJob } from "@/components/select-job";
+import { SelectJobCookie } from "@/components/select-job-cookie";
 import { SelectLocale } from "@/components/select-locale";
 
 export default async function HomePage() {
@@ -17,7 +17,7 @@ export default async function HomePage() {
         <h1 className="font-bold text-3xl">{t("title")}</h1>
         <div className="mt-4 flex flex-col items-center gap-4">
           <SelectLocale currentLocale={currentLocale} />
-          <SelectJob initialJob={currentJob} />
+          <SelectJobCookie initialJob={currentJob} />
         </div>
       </div>
     </main>
