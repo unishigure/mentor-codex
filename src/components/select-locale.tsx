@@ -46,6 +46,7 @@ export function SelectLocale({ currentLocale }: { currentLocale: string }) {
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
+          <title>Dropdown Arrow</title>
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
