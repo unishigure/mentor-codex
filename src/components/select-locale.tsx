@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 
-import { setLocaleCookie } from "@/app/lib/actions";
+import { setLocaleCookie } from "@/app/lib/actions/locale";
 
 const locales = [
   { code: "ja", name: "日本語" },
