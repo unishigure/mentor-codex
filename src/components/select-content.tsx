@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
-import { type Category, Content } from "@/app/lib/content";
+import { type Category, Content } from "@/lib/content";
 
 export function SelectContent({
   value,

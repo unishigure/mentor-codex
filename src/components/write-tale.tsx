@@ -4,12 +4,12 @@ import { useState } from "react";
 
 import { useTranslations } from "next-intl";
 
-import type { ContentCode } from "@/app/lib/content";
-import type { Tale } from "@/app/lib/db";
-import { saveTale } from "@/app/lib/db";
-import type { JobCode } from "@/app/lib/job";
-import { SelectContent } from "./select-content";
-import { SelectJob } from "./select-job";
+import { SelectContent } from "@/components/select-content";
+import { SelectJob } from "@/components/select-job";
+import type { ContentCode } from "@/lib/content";
+import type { Tale } from "@/lib/db";
+import { saveTale } from "@/lib/db";
+import type { JobCode } from "@/lib/job";
 
 export function WriteTale() {
   const t = useTranslations();

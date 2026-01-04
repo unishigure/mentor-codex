@@ -1,5 +1,5 @@
-import type { ContentCode } from "@/app/lib/content";
-import type { JobCode } from "@/app/lib/job";
+import type { ContentCode } from "@/lib/content";
+import type { JobCode } from "@/lib/job";
 
 /**
  * Duty log

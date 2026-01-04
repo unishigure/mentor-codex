@@ -3,7 +3,7 @@
 import { useEffect, useState, useTransition } from "react";
 
 import { getJobCookie, setJobCookie } from "@/app/actions/job";
-import { SelectJob } from "./select-job";
+import { SelectJob } from "@/components/select-job";
 
 export function SelectJobCookie() {
   const [value, setValue] = useState("PLD");

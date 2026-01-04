@@ -5,10 +5,10 @@ import { useCallback, useEffect, useState } from "react";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
-import { getContentI18nKey } from "@/app/lib/content";
-import type { Tale } from "@/app/lib/db";
-import { deleteTale, getAllTales } from "@/app/lib/db";
-import { getJobI18nKey } from "@/app/lib/job";
+import { getContentI18nKey } from "@/lib/content";
+import type { Tale } from "@/lib/db";
+import { deleteTale, getAllTales } from "@/lib/db";
+import { getJobI18nKey } from "@/lib/job";
 
 export function TaleList() {
   const t = useTranslations();
@@ -36,11 +36,15 @@ export function TaleList() {
   }, []);
 
   // Load all tales on component mount
-  useEffect(() => { loadTales(true) }, [loadTales]);
+  useEffect(() => {
+    loadTales(true);
+  }, [loadTales]);
 
   // Refresh list when a tale is created elsewhere
   useEffect(() => {
-    const onTaleSaved = () => { void loadTales(false); };
+    const onTaleSaved = () => {
+      void loadTales(false);
+    };
     window.addEventListener("tale:saved", onTaleSaved);
     return () => window.removeEventListener("tale:saved", onTaleSaved);
   }, [loadTales]);

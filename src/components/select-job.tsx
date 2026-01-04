@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
-import { Job, type Role } from "@/app/lib/job";
+import { Job, type Role } from "@/lib/job";
 
 export function SelectJob({
   value,

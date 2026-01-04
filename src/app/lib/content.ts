@@ -1,4 +1,4 @@
-import { Content } from "@/app/lib/i18n/messages/ja.json";
+import { Content } from "@/lib/i18n/messages/ja.json";
 
 export { Content };
 
