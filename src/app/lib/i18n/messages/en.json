@@ -1,6 +1,5 @@
 {
   "title": "Mentor Codex",
-  "description": "Welcome to Mentor Codex",
   "Expansion": {
     "v2": {
       "0": "A Realm Reborn",
@@ -50,6 +49,13 @@
       "4": "Into the Mist",
       "5": "To be continued..."
     }
+  },
+  "Role": {
+    "Tank": "Tank",
+    "Healer": "Healer",
+    "Melee": "Melee DPS",
+    "PhysicalRanged": "Physical Ranged DPS",
+    "MagicalRanged": "Magical Ranged DPS"
   },
   "Job": {
     "Tank": {

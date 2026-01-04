@@ -1,6 +1,5 @@
 {
   "title": "Mentor Codex",
-  "description": "Mentor Codex へようこそ",
   "Expansion": {
     "v2": {
       "0": "新生エオルゼア",
@@ -50,6 +49,13 @@
       "4": "霧の中の理想郷",
       "5": "To be continued..."
     }
+  },
+  "Role": {
+    "Tank": "Tank",
+    "Healer": "Healer",
+    "Melee": "Melee DPS",
+    "PhysicalRanged": "Physical Ranged DPS",
+    "MagicalRanged": "Magical Ranged DPS"
   },
   "Job": {
     "Tank": {
