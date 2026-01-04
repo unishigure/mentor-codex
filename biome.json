@@ -47,6 +47,7 @@
             "groups": [
               ":BUN:",
               ":NODE:",
+              "react*",
               ":BLANK_LINE:",
               ":PACKAGE:",
               ":BLANK_LINE:",
