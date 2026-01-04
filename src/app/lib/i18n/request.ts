@@ -4,7 +4,7 @@ import { getRequestConfig } from "next-intl/server";
 import * as jaMessages from "@/app/lib/i18n/messages/ja.json";
 import { Content as jaContent } from "@/app/lib/i18n/messages/ja.json";
 
-type Content = typeof jaContent['Dungeons']['dungeon_15'];
+type Content = (typeof jaContent)["Dungeons"]["dungeon_15"];
 
 export default getRequestConfig(async () => {
   const store = await cookies();
