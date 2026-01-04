@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 
 import { SelectLocale } from "@/components/select-locale";
+import { TaleList } from "@/components/tale-list";
+import { WriteTale } from "@/components/write-tale";
 
 export default async function HomePage() {
   const t = await getTranslations();
@@ -11,6 +13,8 @@ export default async function HomePage() {
         <h1 className="font-bold text-2xl">{t("title")}</h1>
         <SelectLocale />
       </header>
+      <TaleList />
+      <WriteTale />
     </main>
   );
 }

@@ -1,5 +1,33 @@
 {
   "title": "Mentor Codex",
+  "Common": {
+    "loading": "読み込み中..."
+  },
+  "TaleList": {
+    "empty": "あなただけの記録はここから始まります",
+    "dateTime": "記録日時",
+    "content": "コンテンツ",
+    "job": "参加ジョブ",
+    "inProgress": "途中参加",
+    "result": "結果",
+    "actions": "操作",
+    "inProgressLabel": "途中参加",
+    "successLabel": "成功",
+    "failureLabel": "失敗",
+    "delete": "削除",
+    "deleteConfirm": "本当にこの記録を削除しますか？"
+  },
+  "WriteTale": {
+    "title": "記録の作成",
+    "content": "コンテンツ",
+    "selectContent": "コンテンツを選択",
+    "job": "参加ジョブ",
+    "selectJob": "ジョブを選択",
+    "inProgress": "途中参加",
+    "result": "結果",
+    "save": "記録を保存",
+    "saving": "記録を保存中..."
+  },
   "Expansion": {
     "v2": {
       "0": "新生エオルゼア",
@@ -90,6 +118,14 @@
       "PCT": "ピクトマンサー",
       "BLU": "青魔道士"
     }
+  },
+  "Category": {
+    "Dungeons": "ダンジョン",
+    "Guildhests": "ギルドオーダー",
+    "Trials": "討伐・討滅戦",
+    "Extremes": "極討伐・討滅戦",
+    "Raids": "レイド",
+    "AllianceRaids": "アライアンスレイド"
   },
   "Content": {
     "Dungeons": {

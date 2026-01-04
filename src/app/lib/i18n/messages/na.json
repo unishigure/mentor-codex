@@ -1,5 +1,33 @@
 {
   "title": "Mentor Codex",
+  "Common": {
+    "loading": "Loading..."
+  },
+  "TaleList": {
+    "empty": "Your tale starts here",
+    "dateTime": "DateTime",
+    "content": "Content",
+    "job": "Job",
+    "inProgress": "In Progress",
+    "result": "Result",
+    "actions": "Actions",
+    "inProgressLabel": "In Progress",
+    "successLabel": "Success",
+    "failureLabel": "Failure",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this record?"
+  },
+  "WriteTale": {
+    "title": "Create Record",
+    "content": "Content",
+    "selectContent": "Select Content",
+    "job": "Job",
+    "selectJob": "Select Job",
+    "inProgress": "In Progress",
+    "result": "Result",
+    "save": "Save Record",
+    "saving": "Saving Record..."
+  },
   "Expansion": {
     "v2": {
       "0": "A Realm Reborn",
@@ -90,6 +118,14 @@
       "PCT": "Pictomancer",
       "BLU": "Blue Mage"
     }
+  },
+  "Category": {
+    "Dungeons": "Dungeons",
+    "Guildhests": "Guildhests",
+    "Trials": "Trials",
+    "Extremes": "Extremes",
+    "Raids": "Raids",
+    "AllianceRaids": "Alliance Raids"
   },
   "Content": {
     "Dungeons": {

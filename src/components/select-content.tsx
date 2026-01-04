@@ -5,16 +5,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
-import { Job, type Role } from "@/app/lib/job";
+import { type Category, Content } from "@/app/lib/content";
 
-export function SelectJob({
+export function SelectContent({
   value,
   onValueChange,
   disabled,
-  id,
 }: {
   value: string;
-  onValueChange: (jobCode: string) => void;
+  onValueChange: (contentCode: string) => void;
   disabled?: boolean;
   id?: string;
 }) {
@@ -25,12 +24,15 @@ export function SelectJob({
 
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const { allItems, jobLabelByCode } = useMemo(() => {
+  const { allItems, contentLabelByCode } = useMemo(() => {
     const items = buildAllItems(t);
-    return { allItems: items, jobLabelByCode: buildJobLabelByCode(items) };
+    return {
+      allItems: items,
+      contentLabelByCode: buildContentLabelByCode(items),
+    };
   }, [t]);
 
-  const selectedLabel = jobLabelByCode.get(value) ?? value;
+  const selectedLabel = contentLabelByCode.get(value) ?? value;
   useEffect(() => setInputValue(selectedLabel), [selectedLabel]);
 
   const renderOptions = useMemo(
@@ -42,21 +44,24 @@ export function SelectJob({
     [renderOptions],
   );
 
-  const selectJobCode = (jobCode: string) => {
-    const label = jobLabelByCode.get(jobCode) ?? jobCode;
+  const selectContentCode = (contentCode: string) => {
+    const label = contentLabelByCode.get(contentCode) ?? contentCode;
     setIsOpen(false);
     setInputValue(label);
 
-    if (jobCode === value) return;
-    onValueChange(jobCode);
+    if (contentCode === value) return;
+    onValueChange(contentCode);
   };
 
   const commitSelectionFromInput = () => {
-    const exactCode = findExactJobCodeByInput(jobLabelByCode, inputValue);
+    const exactCode = findExactContentCodeByInput(
+      contentLabelByCode,
+      inputValue,
+    );
     const nextValue = exactCode ?? firstSelectableOption?.value;
     if (!nextValue) return false;
 
-    selectJobCode(nextValue);
+    selectContentCode(nextValue);
     return true;
   };
 
@@ -76,7 +81,6 @@ export function SelectJob({
   return (
     <div ref={containerRef} className="relative inline-block">
       <input
-        id={id}
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value);
@@ -137,7 +141,7 @@ export function SelectJob({
                     key={option.key}
                     onMouseDown={(e) => {
                       e.preventDefault();
-                      selectJobCode(option.value);
+                      selectContentCode(option.value);
                     }}
                     className="cursor-pointer px-4 py-2 text-gray-700 text-sm hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-700"
                   >
@@ -154,12 +158,12 @@ export function SelectJob({
 }
 
 type OptionItem =
-  | { type: "separator"; role: Role; label: string }
-  | { type: "job"; role: Role; code: string; label: string };
+  | { type: "separator"; category: Category; label: string }
+  | { type: "content"; category: Category; code: string; label: string };
 
 type RenderOption = {
   key: string;
-  role?: Role;
+  category?: Category;
   label: string;
   value: string;
   disabled?: boolean;
@@ -167,24 +171,28 @@ type RenderOption = {
 
 function buildAllItems(t: ReturnType<typeof useTranslations>) {
   const items: OptionItem[] = [];
-  for (const role of Object.keys(Job) as Role[]) {
-    items.push({ type: "separator", role, label: t(`Role.${role}`) });
-    for (const jobCode of Object.keys(Job[role])) {
+  for (const category of Object.keys(Content) as Category[]) {
+    items.push({
+      type: "separator",
+      category,
+      label: t(`Category.${category}`),
+    });
+    for (const contentCode of Object.keys(Content[category])) {
       items.push({
-        type: "job",
-        role,
-        code: jobCode,
-        label: t(`Job.${role}.${jobCode}`),
+        type: "content",
+        category,
+        code: contentCode,
+        label: t(`Content.${category}.${contentCode}.name`),
       });
     }
   }
   return items;
 }
 
-function buildJobLabelByCode(allItems: OptionItem[]) {
+function buildContentLabelByCode(allItems: OptionItem[]) {
   const map = new Map<string, string>();
   for (const item of allItems) {
-    if (item.type === "job") {
+    if (item.type === "content") {
       map.set(item.code, item.label);
     }
   }
@@ -193,7 +201,7 @@ function buildJobLabelByCode(allItems: OptionItem[]) {
 
 function toRenderOptions(allItems: OptionItem[], query: string) {
   const normalizedQuery = query.trim().toLowerCase();
-  const matches = (item: Extract<OptionItem, { type: "job" }>) => {
+  const matches = (item: Extract<OptionItem, { type: "content" }>) => {
     if (normalizedQuery === "") return true;
     return (
       item.label.toLowerCase().includes(normalizedQuery) ||
@@ -201,19 +209,21 @@ function toRenderOptions(allItems: OptionItem[], query: string) {
     );
   };
 
-  const filteredJobItems = allItems.filter(
-    (item): item is Extract<OptionItem, { type: "job" }> =>
-      item.type === "job" && matches(item),
+  const filteredContentItems = allItems.filter(
+    (item): item is Extract<OptionItem, { type: "content" }> =>
+      item.type === "content" && matches(item),
   );
-  const visibleRoles = new Set(filteredJobItems.map((j) => j.role));
+  const visibleCategories = new Set(
+    filteredContentItems.map((c) => c.category),
+  );
 
   const renderOptions: RenderOption[] = [];
   for (const item of allItems) {
     if (item.type === "separator") {
-      if (!visibleRoles.has(item.role)) continue;
+      if (!visibleCategories.has(item.category)) continue;
       renderOptions.push({
-        key: `sep-${item.role}`,
-        role: item.role,
+        key: `sep-${item.category}`,
+        category: item.category,
         label: item.label,
         value: "",
         disabled: true,
@@ -223,8 +233,8 @@ function toRenderOptions(allItems: OptionItem[], query: string) {
 
     if (!matches(item)) continue;
     renderOptions.push({
-      key: `job-${item.role}-${item.code}`,
-      role: item.role,
+      key: `content-${item.category}-${item.code}`,
+      category: item.category,
       label: item.label,
       value: item.code,
     });
@@ -233,14 +243,14 @@ function toRenderOptions(allItems: OptionItem[], query: string) {
   return renderOptions;
 }
 
-function findExactJobCodeByInput(
-  jobLabelByCode: Map<string, string>,
+function findExactContentCodeByInput(
+  contentLabelByCode: Map<string, string>,
   inputValue: string,
 ) {
   const normalized = inputValue.trim().toLowerCase();
   if (normalized === "") return;
 
-  return Array.from(jobLabelByCode.keys()).find(
+  return Array.from(contentLabelByCode.keys()).find(
     (code) => code.toLowerCase() === normalized,
   );
 }
