@@ -1,8 +1,8 @@
 import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
-import { getJobI18nKey } from "@/app/lib/job";
 import { SelectLocale } from "@/components/select-locale";
+import { getJobI18nKey } from "@/lib/job";
 
 const latestVersion = "v7.4";
 

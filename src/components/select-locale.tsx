@@ -3,7 +3,7 @@
 import { ChevronDownIcon, LanguageIcon } from "@heroicons/react/24/solid";
 import { useTransition } from "react";
 
-import { setLocaleCookie } from "@/app/lib/actions/locale";
+import { setLocaleCookie } from "@/actions/locale";
 
 const locales = [
   { code: "ja", name: "日本語" },
