@@ -1,4 +1,88 @@
 {
   "title": "Mentor Codex",
-  "description": "Welcome to Mentor Codex"
+  "description": "Welcome to Mentor Codex",
+  "Expansion": {
+    "v2": {
+      "0": "A Realm Reborn",
+      "1": "A Realm Awoken",
+      "2": "Through The Maelstrom",
+      "3": "Defenders of Eorzea",
+      "4": "Dreams of Ice",
+      "5": "Before the Fall"
+    },
+    "v3": {
+      "0": "Heavensward",
+      "1": "As Goes Light, So Goes Darkness",
+      "2": "The Gears Of Change",
+      "3": "Revenge Of The Horde",
+      "4": "Soul Surrender",
+      "5": "The Far Edge Of Fate"
+    },
+    "v4": {
+      "0": "Stormblood",
+      "1": "The Legend Returns",
+      "2": "Rise of a New Sun",
+      "3": "Under the Moonlight",
+      "4": "Prelude in Violet",
+      "5": "A Requiem for Heroes"
+    },
+    "v5": {
+      "0": "Shadowbringers",
+      "1": "Vows of Virtue, Deeds of Cruelty",
+      "2": "Echoes of a Fallen Star",
+      "3": "Reflections in Crystal",
+      "4": "Futures Rewritten",
+      "5": "Death Unto Dawn"
+    },
+    "v6": {
+      "0": "Endwalker",
+      "1": "Newfound Adventure",
+      "2": "Buried Memory",
+      "3": "Gods Revel, Lands Tremble",
+      "4": "The Dark Throne",
+      "5": "Growing Light"
+    },
+    "v7": {
+      "0": "Dawntrail",
+      "1": "Crossroads",
+      "2": "Seekers of Eternity",
+      "3": "The Promise of Tomorrow",
+      "4": "Into the Mist",
+      "5": "To be continued..."
+    }
+  },
+  "Job": {
+    "Tank": {
+      "PLD": "Paladin",
+      "WAR": "Warrior",
+      "DRK": "Dark Knight",
+      "GNB": "Gunbreaker"
+    },
+    "Healer": {
+      "WHM": "White Mage",
+      "SCH": "Scholar",
+      "AST": "Astrologian",
+      "SGE": "Sage"
+    },
+    "Melee": {
+      "MNK": "Monk",
+      "DRG": "Dragoon",
+      "NIN": "Ninja",
+      "SAM": "Samurai",
+      "RPR": "Reaper",
+      "VPR": "Viper"
+    },
+    "PhysicalRange": {
+      "BRD": "Bard",
+      "MCH": "Machinist",
+      "DNC": "Dancer"
+    },
+    "MagicalRange": {
+      "BLM": "Black Mage",
+      "SMN": "Summoner",
+      "RDM": "Red Mage",
+      "PCT": "Pictomancer",
+      "BLU": "Blue Mage"
+    }
+  }
 }
