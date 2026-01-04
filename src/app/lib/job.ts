@@ -1,3 +1,5 @@
+import { Job } from "@/app/lib/i18n/messages/ja.json";
+
 /**
  * Get the i18n key for a given job value.
  *
@@ -5,8 +7,7 @@
  * @returns The i18n key string if found, otherwise null.
  */
 export async function getJobI18nKey(value: string): Promise<string | null> {
-  const jobMap = (await import("../../../messages/ja.json")).default.Job;
-  for (const [categoryKey, category] of Object.entries(jobMap)) {
+  for (const [categoryKey, category] of Object.entries(Job)) {
     if (typeof category === "object" && value in category) {
       return `Job.${categoryKey}.${value}`;
     }
