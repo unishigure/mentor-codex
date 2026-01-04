@@ -72,12 +72,12 @@
       "RPR": "Reaper",
       "VPR": "Viper"
     },
-    "PhysicalRange": {
+    "PhysicalRanged": {
       "BRD": "Bard",
       "MCH": "Machinist",
       "DNC": "Dancer"
     },
-    "MagicalRange": {
+    "MagicalRanged": {
       "BLM": "Black Mage",
       "SMN": "Summoner",
       "RDM": "Red Mage",
