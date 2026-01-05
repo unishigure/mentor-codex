@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import {
   ArrowLeftEndOnRectangleIcon,
+  ArrowTopRightOnSquareIcon,
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
@@ -126,27 +127,31 @@ export function TaleList() {
                         : ""
                     }`}
                   >
-                    <td className="px-4 py-2 dark:text-gray-300">
+                    <td className="px-4 py-2 text-sm dark:text-gray-300">
                       {formatDateTime(tale.dateTime, locale)}
                     </td>
-                    <td className="px-4 py-2 dark:text-gray-300">
+                    <td className="px-4 py-2 text-sm dark:text-gray-300">
                       {dutyLink ? (
                         <a
-                          className="text-blue-700 underline hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-100"
+                          className="inline-flex items-center gap-1 no-underline hover:no-underline"
                           href={dutyLink}
                           target="_blank"
                           rel="noreferrer"
                         >
                           {contentName}
+                          <ArrowTopRightOnSquareIcon
+                            className="h-4 w-4"
+                            aria-hidden
+                          />
                         </a>
                       ) : (
                         contentName
                       )}
                     </td>
-                    <td className="px-4 py-2 dark:text-gray-300">
+                    <td className="px-4 py-2 text-sm dark:text-gray-300">
                       {t(`${getJobI18nKey(tale.job)}`)}
                     </td>
-                    <td className="px-4 py-2 text-center dark:text-gray-300">
+                    <td className="px-4 py-2 text-center text-sm dark:text-gray-300">
                       {tale.inProgress ? (
                         <span className="inline-flex items-center gap-1 rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
                           <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
@@ -158,7 +163,7 @@ export function TaleList() {
                         </span>
                       )}
                     </td>
-                    <td className="px-4 py-2 text-center dark:text-gray-300">
+                    <td className="px-4 py-2 text-center text-sm dark:text-gray-300">
                       {tale.result ? (
                         <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
                           <CheckCircleIcon className="h-4 w-4" />

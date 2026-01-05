@@ -2,7 +2,10 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import { ArrowLeftEndOnRectangleIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowLeftEndOnRectangleIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
@@ -112,12 +115,13 @@ export function TaleListSm() {
                     <span className="font-medium text-gray-900 dark:text-gray-100">
                       {dutyLink ? (
                         <a
-                          className="text-blue-700 underline hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-100"
+                          className="inline-flex items-center gap-1 no-underline hover:no-underline"
                           href={dutyLink}
                           target="_blank"
                           rel="noreferrer"
                         >
                           {t(`${getContentI18nKey(tale.content)}.name`)}
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden />
                         </a>
                       ) : (
                         t(`${getContentI18nKey(tale.content)}.name`)
