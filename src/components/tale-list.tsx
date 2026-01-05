@@ -83,22 +83,22 @@ export function TaleList() {
           <table className="w-full border-collapse rounded-lg bg-white shadow-lg dark:bg-gray-900">
             <thead>
               <tr className="border-gray-300 border-b bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th className="px-4 py-2 text-left dark:text-gray-200">
+                <th className="p-4 text-left text-xs dark:text-gray-200">
                   {t("TaleList.dateTime")}
                 </th>
-                <th className="px-4 py-2 text-left dark:text-gray-200">
+                <th className="p-4 text-left text-xs dark:text-gray-200">
                   {t("TaleList.content")}
                 </th>
-                <th className="px-4 py-2 text-left dark:text-gray-200">
+                <th className="p-4 text-left text-xs dark:text-gray-200">
                   {t("TaleList.job")}
                 </th>
-                <th className="px-4 py-2 text-center dark:text-gray-200">
+                <th className="p-4 text-center text-xs dark:text-gray-200">
                   {t("TaleList.inProgress")}
                 </th>
-                <th className="px-4 py-2 text-center dark:text-gray-200">
+                <th className="p-4 text-center text-xs dark:text-gray-200">
                   {t("TaleList.result")}
                 </th>
-                <th className="px-4 py-2 text-center dark:text-gray-200">
+                <th className="p-4 text-center text-xs dark:text-gray-200">
                   {t("TaleList.actions")}
                 </th>
               </tr>
