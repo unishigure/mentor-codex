@@ -13,9 +13,7 @@
     "actions": "Actions",
     "inProgressLabel": "Join midway",
     "successLabel": "Success",
-    "failureLabel": "Failure",
-    "delete": "Delete",
-    "deleteConfirm": "Are you sure you want to delete this record?"
+    "failureLabel": "Failure"
   },
   "WriteTale": {
     "title": "Create Record",
@@ -27,7 +25,17 @@
     "result": "Success",
     "save": "Save Record",
     "saving": "Saving Record...",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "errorRequired": "Content and Job are required",
+    "errorSaving": "Failed to save record"
+  },
+  "DeleteTale": {
+    "title": "Delete Record",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "deleteConfirm": "Are you sure you want to delete this record?",
+    "cancel": "Cancel",
+    "errorDeleting": "Failed to delete record"
   },
   "Expansion": {
     "v2": {

@@ -13,9 +13,7 @@
     "actions": "操作",
     "inProgressLabel": "途中参加",
     "successLabel": "成功",
-    "failureLabel": "失敗",
-    "delete": "削除",
-    "deleteConfirm": "本当にこの記録を削除しますか？"
+    "failureLabel": "失敗"
   },
   "WriteTale": {
     "title": "記録の作成",
@@ -27,7 +25,17 @@
     "result": "コンテンツクリア",
     "save": "記録を保存",
     "saving": "記録を保存中...",
-    "cancel": "キャンセル"
+    "cancel": "キャンセル",
+    "errorRequired": "コンテンツとジョブは必須です",
+    "errorSaving": "記録の保存に失敗しました"
+  },
+  "DeleteTale": {
+    "title": "記録の削除",
+    "delete": "削除",
+    "deleteConfirm": "本当にこの記録を削除しますか？",
+    "deleting": "削除中...",
+    "cancel": "キャンセル",
+    "errorDeleting": "記録の削除に失敗しました"
   },
   "Expansion": {
     "v2": {

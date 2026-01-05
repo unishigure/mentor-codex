@@ -5,15 +5,15 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   CheckCircleIcon,
-  TrashIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
+import { DeleteTale } from "@/components/delete-tale";
 import { getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
-import { deleteTale, getAllTales } from "@/lib/db";
+import { getAllTales } from "@/lib/db";
 import { getJobI18nKey } from "@/lib/job";
 
 export function TaleList() {
@@ -52,21 +52,9 @@ export function TaleList() {
     const onTaleSaved = () => {
       void loadTales(false);
     };
-    window.addEventListener("tale:saved", onTaleSaved);
-    return () => window.removeEventListener("tale:saved", onTaleSaved);
+    window.addEventListener("tale:update", onTaleSaved);
+    return () => window.removeEventListener("tale:update", onTaleSaved);
   }, [loadTales]);
-
-  const handleDelete = async (key: number) => {
-    if (!confirm(t("TaleList.deleteConfirm"))) return;
-
-    try {
-      await deleteTale(key);
-      setTales((prev) => prev.filter((tale) => tale.key !== key));
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to delete tale");
-      console.error("Error deleting tale:", err);
-    }
-  };
 
   if (isLoading) {
     return (
@@ -159,14 +147,7 @@ export function TaleList() {
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
                     <div className="flex items-center justify-center">
-                      <button
-                        type="button"
-                        onClick={() => handleDelete(tale.key)}
-                        className="inline-flex items-center gap-1 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
-                        title={t("TaleList.delete")}
-                      >
-                        <TrashIcon className="h-4 w-4" />
-                      </button>
+                      <DeleteTale taleKey={tale.key} />
                     </div>
                   </td>
                 </tr>

@@ -72,7 +72,7 @@ export function WriteTale() {
 
       await saveTale(tale);
       if (typeof window !== "undefined") {
-        window.dispatchEvent(new Event("tale:saved"));
+        window.dispatchEvent(new Event("tale:update"));
       }
 
       // Reset form
