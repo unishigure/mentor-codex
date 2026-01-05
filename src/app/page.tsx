@@ -14,10 +14,10 @@ export default async function HomePage() {
         <h1 className="font-bold text-2xl">{t("title")}</h1>
         <SelectLocale />
       </header>
-      <div className="flex-1 overflow-y-auto lg:hidden">
+      <div className="flex-1 overflow-y-auto xl:hidden">
         <TaleListSm />
       </div>
-      <div className="hidden flex-1 overflow-y-auto lg:block">
+      <div className="hidden flex-1 overflow-y-auto xl:block">
         <TaleList />
       </div>
       <div className="fixed right-4 bottom-4">
