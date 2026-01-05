@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useTranslations } from "next-intl";
 
@@ -15,6 +15,7 @@ export function WriteTale() {
   const t = useTranslations();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,6 +23,27 @@ export function WriteTale() {
   const [job, setJob] = useState<JobCode | "">("");
   const [inProgress, setInProgress] = useState(false);
   const [result, setResult] = useState(true);
+
+  useEffect(() => {
+    if (isOpen) {
+      // DOMが確実にレンダリングされてからアニメーションを開始
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsAnimating(true);
+        });
+      });
+    } else {
+      setIsAnimating(false);
+    }
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setIsAnimating(false);
+    // アニメーション完了後に閉じる
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 200); // duration-200と同じ
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,7 +77,7 @@ export function WriteTale() {
       setInProgress(false);
       setResult(true);
 
-      setIsOpen(false);
+      handleClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : t("WriteTale.errorSaving"));
       console.error("Error saving tale:", err);
@@ -78,17 +100,21 @@ export function WriteTale() {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-40 cursor-default bg-black/50"
-            onClick={() => setIsOpen(false)}
+            className={`fixed inset-0 z-40 cursor-default bg-black/50 transition-opacity duration-200 ${isAnimating ? "opacity-100" : "opacity-0"}`}
+            onClick={handleClose}
             onKeyDown={(e) => {
-              if (e.key === "Escape") setIsOpen(false);
+              if (e.key === "Escape") handleClose();
             }}
           />
           <dialog
             open
-            className="fixed top-1/2 left-1/2 z-50 m-0 flex w-[95%] flex-col items-center justify-center rounded-lg border-none p-0 shadow-lg md:w-[50%]"
-            style={{ transform: "translate(-50%, -50%)" }}
-            onCancel={() => setIsOpen(false)}
+            className={`fixed top-1/2 left-1/2 z-50 m-0 flex w-[95%] flex-col items-center justify-center rounded-lg border-none p-0 shadow-lg transition-all duration-200 md:w-[50%] ${isAnimating ? "opacity-100" : "opacity-0"}`}
+            style={{
+              transform: isAnimating
+                ? "translate(-50%, -50%) scale(1)"
+                : "translate(-50%, -50%) scale(0.95)",
+            }}
+            onCancel={handleClose}
           >
             <div className="w-full rounded-lg bg-white p-6 dark:bg-gray-800">
               <h2 className="mb-4 font-bold text-gray-900 text-xl dark:text-gray-100">
@@ -181,7 +207,7 @@ export function WriteTale() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => setIsOpen(false)}
+                    onClick={handleClose}
                     disabled={isSaving}
                     className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
                   >
