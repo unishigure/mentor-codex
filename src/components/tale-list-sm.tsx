@@ -1,0 +1,147 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
+import {
+  ArrowLeftEndOnRectangleIcon,
+  CheckCircleIcon,
+  TrashIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
+import { useTranslations } from "next-intl";
+
+import { getContentI18nKey } from "@/lib/content";
+import type { Tale } from "@/lib/db";
+import { deleteTale, getAllTales } from "@/lib/db";
+import { getJobI18nKey } from "@/lib/job";
+
+export function TaleListSm() {
+  const t = useTranslations();
+
+  const [tales, setTales] = useState<Tale[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const loadTales = useCallback(async (withLoadingState: boolean) => {
+    try {
+      if (withLoadingState) setIsLoading(true);
+      setError(null);
+      const data = await getAllTales();
+      data.sort(
+        (a, b) =>
+          new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime(),
+      );
+      setTales(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load tales");
+      console.error("Error loading tales:", err);
+    } finally {
+      if (withLoadingState) setIsLoading(false);
+    }
+  }, []);
+
+  // Load all tales on component mount
+  useEffect(() => {
+    loadTales(true);
+  }, [loadTales]);
+
+  // Refresh list when a tale is created elsewhere
+  useEffect(() => {
+    const onTaleSaved = () => {
+      void loadTales(false);
+    };
+    window.addEventListener("tale:saved", onTaleSaved);
+    return () => window.removeEventListener("tale:saved", onTaleSaved);
+  }, [loadTales]);
+
+  const handleDelete = async (key: number) => {
+    if (!confirm(t("TaleList.deleteConfirm"))) return;
+
+    try {
+      await deleteTale(key);
+      setTales((prev) => prev.filter((tale) => tale.key !== key));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to delete tale");
+      console.error("Error deleting tale:", err);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="py-8 text-center dark:text-gray-300">
+        {t("Common.loading")}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto my-4 w-[95%] max-w-300">
+      {error && (
+        <div className="mb-4 rounded bg-red-100 p-4 text-red-700 dark:bg-red-900 dark:text-red-200">
+          {error}
+        </div>
+      )}
+
+      {tales.length === 0 ? (
+        <div className="py-8 text-center text-gray-500 dark:text-gray-400">
+          {t("TaleList.empty")}
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {tales.map((tale) => (
+            <div
+              key={tale.key}
+              className="rounded-lg bg-white p-4 shadow-lg dark:bg-gray-900"
+            >
+              {/* First row: datetime, inProgress icon, result icon */}
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-gray-600 text-sm dark:text-gray-400">
+                  {new Date(tale.dateTime).toLocaleString()}
+                </span>
+                <div className="flex items-center gap-2">
+                  {tale.inProgress && (
+                    <ArrowLeftEndOnRectangleIcon
+                      className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                      title={t("TaleList.inProgressLabel")}
+                    />
+                  )}
+                  {tale.result ? (
+                    <CheckCircleIcon
+                      className="h-5 w-5 text-green-600 dark:text-green-400"
+                      title={t("TaleList.successLabel")}
+                    />
+                  ) : (
+                    <XCircleIcon
+                      className="h-5 w-5 text-red-600 dark:text-red-400"
+                      title={t("TaleList.failureLabel")}
+                    />
+                  )}
+                </div>
+              </div>
+
+              {/* Second row: content name, job name, delete button */}
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-1">
+                  <span className="font-medium text-gray-900 dark:text-gray-100">
+                    {t(`${getContentI18nKey(tale.content)}.name`)}
+                  </span>
+                  <span className="text-gray-700 text-sm dark:text-gray-300">
+                    {t(`${getJobI18nKey(tale.job)}`)}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleDelete(tale.key)}
+                  className="ml-4 shrink-0 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+                  title={t("TaleList.delete")}
+                >
+                  <TrashIcon className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

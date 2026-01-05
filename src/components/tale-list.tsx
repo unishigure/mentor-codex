@@ -127,7 +127,7 @@ export function TaleList() {
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
                     {tale.inProgress ? (
-                      <span className="rounded bg-yellow-200 px-2 py-1 text-sm text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                      <span className="rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
                         {t("TaleList.inProgressLabel")}
                       </span>
                     ) : (
