@@ -108,9 +108,10 @@ export function TaleList() {
                 const contentName =
                   contentKey !== null ? t(`${contentKey}.name`) : tale.content;
                 const dutyId = getContentDutyId(tale.content);
-                const dutyLink = dutyId
-                  ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
-                  : null;
+                const dutyLink =
+                  dutyId && dutyId !== "none"
+                    ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
+                    : null;
 
                 return (
                   <tr
