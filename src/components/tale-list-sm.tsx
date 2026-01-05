@@ -115,7 +115,7 @@ export function TaleListSm() {
                     <span className="font-medium text-gray-900 text-sm dark:text-gray-100">
                       {dutyLink ? (
                         <a
-                          className="inline-flex items-center gap-1 no-underline hover:no-underline"
+                          className="eorzeadb_link inline-flex items-center gap-1 no-underline hover:no-underline"
                           href={dutyLink}
                           target="_blank"
                           rel="noreferrer"
