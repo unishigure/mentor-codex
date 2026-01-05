@@ -96,7 +96,7 @@ export function TaleListSm() {
               >
                 {/* First row: datetime, inProgress icon, result icon */}
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="text-gray-600 text-sm dark:text-gray-400">
+                  <span className="text-gray-600 text-xs dark:text-gray-400">
                     {formatDateTime(tale.dateTime, locale)}
                   </span>
                   <div className="flex items-center gap-2">
@@ -112,7 +112,7 @@ export function TaleListSm() {
                 {/* Second row: content name, job name, delete button */}
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1">
-                    <span className="font-medium text-gray-900 dark:text-gray-100">
+                    <span className="font-medium text-gray-900 text-sm dark:text-gray-100">
                       {dutyLink ? (
                         <a
                           className="inline-flex items-center gap-1 no-underline hover:no-underline"
@@ -121,13 +121,16 @@ export function TaleListSm() {
                           rel="noreferrer"
                         >
                           {t(`${getContentI18nKey(tale.content)}.name`)}
-                          <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden />
+                          <ArrowTopRightOnSquareIcon
+                            className="size-3"
+                            aria-hidden
+                          />
                         </a>
                       ) : (
                         t(`${getContentI18nKey(tale.content)}.name`)
                       )}
                     </span>
-                    <span className="text-gray-700 text-sm dark:text-gray-300">
+                    <span className="text-gray-700 text-xs dark:text-gray-300">
                       {t(`${getJobI18nKey(tale.job)}`)}
                     </span>
                   </div>

@@ -140,7 +140,7 @@ export function TaleList() {
                         >
                           {contentName}
                           <ArrowTopRightOnSquareIcon
-                            className="h-4 w-4"
+                            className="size-3"
                             aria-hidden
                           />
                         </a>
@@ -166,12 +166,12 @@ export function TaleList() {
                     <td className="px-4 py-2 text-center text-sm dark:text-gray-300">
                       {tale.result ? (
                         <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
-                          <CheckCircleIcon className="h-4 w-4" />
+                          <CheckCircleIcon className="size-3.5" />
                           {t("TaleList.successLabel")}
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 rounded bg-red-200 px-2 py-1 text-red-800 text-sm dark:bg-red-900 dark:text-red-200">
-                          <XCircleIcon className="h-4 w-4" />
+                          <XCircleIcon className="size-3.5" />
                           {t("TaleList.failureLabel")}
                         </span>
                       )}
