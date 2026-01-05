@@ -115,7 +115,9 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
                   disabled={isDeleting}
                   className="flex-1 rounded-lg bg-red-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-red-700 dark:hover:bg-red-600"
                 >
-                  {isDeleting ? t("DeleteTale.deleting") : t("DeleteTale.delete")}
+                  {isDeleting
+                    ? t("DeleteTale.deleting")
+                    : t("DeleteTale.delete")}
                 </button>
                 <button
                   type="button"
