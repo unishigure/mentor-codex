@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 import { Job, type Role } from "@/lib/job";
@@ -110,6 +110,20 @@ export function SelectJob({
         aria-autocomplete="list"
         className={`w-full cursor-pointer rounded-lg border border-gray-300 bg-white px-4 py-2.5 pr-10 font-medium text-gray-700 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 hover:border-gray-400 hover:bg-gray-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:border-gray-500 dark:hover:bg-gray-700 dark:placeholder:text-gray-500 ${disabled ? "bg-gray-100 dark:bg-gray-750" : ""}`}
       />
+      {value && !disabled && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            onValueChange("");
+            setInputValue("");
+            setIsOpen(false);
+          }}
+          className="absolute top-1/2 right-10 -translate-y-1/2 rounded p-0.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+        >
+          <XMarkIcon className="h-4 w-4" />
+        </button>
+      )}
       <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3 h-5 w-5 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
 
       {isOpen ? (
