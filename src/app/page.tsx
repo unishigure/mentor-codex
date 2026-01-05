@@ -10,8 +10,8 @@ export default async function HomePage() {
 
   return (
     <main className="flex h-screen flex-col">
-      <header className="flex shrink-0 items-center justify-between border-gray-200 border-b bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
-        <h1 className="font-bold text-2xl">{t("title")}</h1>
+      <header className="flex shrink-0 items-center justify-between p-4">
+        <h1 className="font-bold">{t("title")}</h1>
         <SelectLocale />
       </header>
       <div className="flex-1 overflow-y-auto xl:hidden">
