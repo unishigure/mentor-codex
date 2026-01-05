@@ -82,8 +82,8 @@ export function TaleList() {
           {t("TaleList.empty")}
         </div>
       ) : (
-        <div className="overflow-x-auto rounded">
-          <table className="w-full border-collapse">
+        <div className="overflow-x-auto rounded-lg">
+          <table className="w-full border-collapse rounded-lg bg-white shadow-lg dark:bg-gray-900">
             <thead>
               <tr className="border-gray-300 border-b bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
                 <th className="px-4 py-2 text-left dark:text-gray-200">
@@ -107,10 +107,14 @@ export function TaleList() {
               </tr>
             </thead>
             <tbody>
-              {tales.map((tale) => (
+              {tales.map((tale, index) => (
                 <tr
                   key={tale.key}
-                  className="border-gray-200 border-b hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+                  className={`hover:bg-gray-50 dark:hover:bg-gray-800 ${
+                    index !== tales.length - 1
+                      ? "border-gray-200 border-b dark:border-gray-700"
+                      : ""
+                  }`}
                 >
                   <td className="px-4 py-2 dark:text-gray-300">
                     {new Date(tale.dateTime).toLocaleString()}
