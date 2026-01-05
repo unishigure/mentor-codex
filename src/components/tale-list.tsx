@@ -2,7 +2,12 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import { TrashIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowLeftEndOnRectangleIcon,
+  CheckCircleIcon,
+  TrashIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 import { getContentI18nKey } from "@/lib/content";
@@ -127,7 +132,8 @@ export function TaleList() {
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
                     {tale.inProgress ? (
-                      <span className="rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
+                      <span className="inline-flex items-center gap-1 rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
+                        <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
                         {t("TaleList.inProgressLabel")}
                       </span>
                     ) : (
@@ -138,11 +144,13 @@ export function TaleList() {
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
                     {tale.result ? (
-                      <span className="rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
+                      <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
+                        <CheckCircleIcon className="h-4 w-4" />
                         {t("TaleList.successLabel")}
                       </span>
                     ) : (
-                      <span className="rounded bg-red-200 px-2 py-1 text-red-800 text-sm dark:bg-red-900 dark:text-red-200">
+                      <span className="inline-flex items-center gap-1 rounded bg-red-200 px-2 py-1 text-red-800 text-sm dark:bg-red-900 dark:text-red-200">
+                        <XCircleIcon className="h-4 w-4" />
                         {t("TaleList.failureLabel")}
                       </span>
                     )}
