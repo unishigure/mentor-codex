@@ -70,7 +70,7 @@ export function TaleList() {
   }
 
   return (
-    <div className="mx-auto my-4 w-[95%] md:w-3/4">
+    <div className="mx-auto my-4 w-[95%] max-w-300 md:w-3/4">
       {error && (
         <div className="mb-4 rounded bg-red-100 p-4 text-red-700 dark:bg-red-900 dark:text-red-200">
           {error}

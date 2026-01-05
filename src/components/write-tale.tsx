@@ -108,7 +108,7 @@ export function WriteTale() {
           />
           <dialog
             open
-            className={`fixed top-1/2 left-1/2 z-50 m-0 flex w-[95%] flex-col items-center justify-center rounded-lg border-none p-0 shadow-lg transition-all duration-200 md:w-[50%] ${isAnimating ? "opacity-100" : "opacity-0"}`}
+            className={`fixed top-1/2 left-1/2 z-50 m-0 flex w-[95%] max-w-100 flex-col items-center justify-center rounded-lg border-none p-0 shadow-lg transition-all duration-200 ${isAnimating ? "opacity-100" : "opacity-0"}`}
             style={{
               transform: isAnimating
                 ? "translate(-50%, -50%) scale(1)"
