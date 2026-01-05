@@ -106,7 +106,11 @@ export function TaleList() {
               {tales.map((tale, index) => (
                 <tr
                   key={tale.key}
-                  className={`hover:bg-gray-50 dark:hover:bg-gray-800 ${
+                  className={`${
+                    tale.result
+                      ? "bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30"
+                      : "bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30"
+                  } ${
                     index !== tales.length - 1
                       ? "border-gray-200 border-b dark:border-gray-700"
                       : ""

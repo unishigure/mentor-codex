@@ -2,11 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-import {
-  ArrowLeftEndOnRectangleIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-} from "@heroicons/react/24/solid";
+import { ArrowLeftEndOnRectangleIcon } from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
@@ -82,7 +78,11 @@ export function TaleListSm() {
           {tales.map((tale) => (
             <div
               key={tale.key}
-              className="rounded-lg bg-white p-4 shadow-lg dark:bg-gray-900"
+              className={`rounded-lg p-4 shadow-lg ${
+                tale.result
+                  ? "bg-green-50 dark:bg-green-900/20"
+                  : "bg-red-50 dark:bg-red-900/20"
+              }`}
             >
               {/* First row: datetime, inProgress icon, result icon */}
               <div className="mb-2 flex items-center justify-between">
@@ -94,17 +94,6 @@ export function TaleListSm() {
                     <ArrowLeftEndOnRectangleIcon
                       className="h-5 w-5 text-blue-600 dark:text-blue-400"
                       title={t("TaleList.inProgressLabel")}
-                    />
-                  )}
-                  {tale.result ? (
-                    <CheckCircleIcon
-                      className="h-5 w-5 text-green-600 dark:text-green-400"
-                      title={t("TaleList.successLabel")}
-                    />
-                  ) : (
-                    <XCircleIcon
-                      className="h-5 w-5 text-red-600 dark:text-red-400"
-                      title={t("TaleList.failureLabel")}
                     />
                   )}
                 </div>
