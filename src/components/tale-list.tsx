@@ -8,15 +8,17 @@ import {
   TrashIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { getContentI18nKey } from "@/lib/content";
+import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
 import { deleteTale, getAllTales } from "@/lib/db";
 import { getJobI18nKey } from "@/lib/job";
 
 export function TaleList() {
   const t = useTranslations();
+  const locale = useLocale();
 
   const [tales, setTales] = useState<Tale[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -122,7 +124,7 @@ export function TaleList() {
                   }`}
                 >
                   <td className="px-4 py-2 dark:text-gray-300">
-                    {new Date(tale.dateTime).toLocaleString()}
+                    {formatDateTime(tale.dateTime, locale)}
                   </td>
                   <td className="px-4 py-2 dark:text-gray-300">
                     {t(`${getContentI18nKey(tale.content)}.name`)}

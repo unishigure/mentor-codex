@@ -8,15 +8,17 @@ import {
   TrashIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { getContentI18nKey } from "@/lib/content";
+import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
 import { deleteTale, getAllTales } from "@/lib/db";
 import { getJobI18nKey } from "@/lib/job";
 
 export function TaleListSm() {
   const t = useTranslations();
+  const locale = useLocale();
 
   const [tales, setTales] = useState<Tale[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -96,7 +98,7 @@ export function TaleListSm() {
               {/* First row: datetime, inProgress icon, result icon */}
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-gray-600 text-sm dark:text-gray-400">
-                  {new Date(tale.dateTime).toLocaleString()}
+                  {formatDateTime(tale.dateTime, locale)}
                 </span>
                 <div className="flex items-center gap-2">
                   {tale.inProgress && (
