@@ -125,7 +125,7 @@ export function EditTale({ tale }: EditTaleProps) {
 						}}
 						onCancel={handleClose}
 					>
-						<div className="w-full rounded-lg bg-white p-6 dark:bg-gray-800">
+						<div className="w-full rounded-lg bg-white p-6 text-center dark:bg-gray-800">
 							<h2 className="mb-4 font-bold text-gray-900 text-xl dark:text-gray-100">
 								{t("EditTale.title")}
 							</h2>
