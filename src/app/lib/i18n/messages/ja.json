@@ -37,6 +37,19 @@
     "cancel": "キャンセル",
     "errorDeleting": "記録の削除に失敗しました"
   },
+  "EditTale": {
+    "title": "記録の編集",
+    "edit": "編集",
+    "content": "コンテンツ",
+    "job": "参加ジョブ",
+    "inProgress": "途中参加",
+    "result": "コンテンツクリア",
+    "save": "変更を保存",
+    "saving": "保存中...",
+    "cancel": "キャンセル",
+    "errorRequired": "コンテンツとジョブは必須です",
+    "errorSaving": "記録の保存に失敗しました"
+  },
   "Expansion": {
     "v2": {
       "0": "新生エオルゼア",

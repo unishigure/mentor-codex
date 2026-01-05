@@ -37,6 +37,19 @@
     "cancel": "Cancel",
     "errorDeleting": "Failed to delete record"
   },
+  "EditTale": {
+    "title": "Edit Record",
+    "edit": "Edit",
+    "content": "Content",
+    "job": "Job",
+    "inProgress": "Join midway",
+    "result": "Success",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "errorRequired": "Content and Job are required",
+    "errorSaving": "Failed to save record"
+  },
   "Expansion": {
     "v2": {
       "0": "A Realm Reborn",

@@ -10,6 +10,7 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
+import { EditTale } from "@/components/edit-tale";
 import { getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
@@ -147,6 +148,7 @@ export function TaleList() {
                   </td>
                   <td className="px-4 py-2 text-center dark:text-gray-300">
                     <div className="flex items-center justify-center">
+                      <EditTale tale={tale} />
                       <DeleteTale taleKey={tale.key} />
                     </div>
                   </td>

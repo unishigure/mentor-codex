@@ -10,6 +10,7 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
+import { EditTale } from "@/components/edit-tale";
 import { getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
@@ -119,7 +120,10 @@ export function TaleListSm() {
                     {t(`${getJobI18nKey(tale.job)}`)}
                   </span>
                 </div>
-                <DeleteTale taleKey={tale.key} />
+                <div className="flex items-center">
+                  <EditTale tale={tale} />
+                  <DeleteTale taleKey={tale.key} />
+                </div>
               </div>
             </div>
           ))}
