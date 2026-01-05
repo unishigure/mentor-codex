@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+import {
+  ArrowLeftEndOnRectangleIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 import { SelectContent } from "@/components/select-content";
@@ -172,8 +176,9 @@ export function WriteTale() {
                   />
                   <label
                     htmlFor="inProgress"
-                    className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
+                    className="ml-2 flex cursor-pointer items-center gap-2 text-gray-700 text-sm dark:text-gray-300"
                   >
+                    <ArrowLeftEndOnRectangleIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     {t("WriteTale.inProgress")}
                   </label>
                 </div>
@@ -190,8 +195,9 @@ export function WriteTale() {
                   />
                   <label
                     htmlFor="result"
-                    className="ml-2 cursor-pointer text-gray-700 text-sm dark:text-gray-300"
+                    className="ml-2 flex cursor-pointer items-center gap-2 text-gray-700 text-sm dark:text-gray-300"
                   >
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 dark:text-green-400" />
                     {t("WriteTale.result")}
                   </label>
                 </div>
