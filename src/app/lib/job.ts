@@ -1,4 +1,4 @@
-import { Job } from "@/lib/i18n/messages/ja.json";
+import { Job } from "@/lib/i18n/messages/jp.json";
 
 export { Job };
 

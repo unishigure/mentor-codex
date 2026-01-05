@@ -11,7 +11,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
 import { EditTale } from "@/components/edit-tale";
-import { getContentI18nKey } from "@/lib/content";
+import { getContentDutyId, getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
 import { getAllTales } from "@/lib/db";
@@ -103,61 +103,82 @@ export function TaleList() {
               </tr>
             </thead>
             <tbody>
-              {tales.map((tale, index) => (
-                <tr
-                  key={tale.key}
-                  className={`${
-                    tale.result
-                      ? "bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30"
-                      : "bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30"
-                  } ${
-                    index !== tales.length - 1
-                      ? "border-gray-200 border-b dark:border-gray-700"
-                      : ""
-                  }`}
-                >
-                  <td className="px-4 py-2 dark:text-gray-300">
-                    {formatDateTime(tale.dateTime, locale)}
-                  </td>
-                  <td className="px-4 py-2 dark:text-gray-300">
-                    {t(`${getContentI18nKey(tale.content)}.name`)}
-                  </td>
-                  <td className="px-4 py-2 dark:text-gray-300">
-                    {t(`${getJobI18nKey(tale.job)}`)}
-                  </td>
-                  <td className="px-4 py-2 text-center dark:text-gray-300">
-                    {tale.inProgress ? (
-                      <span className="inline-flex items-center gap-1 rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
-                        <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
-                        {t("TaleList.inProgressLabel")}
-                      </span>
-                    ) : (
-                      <span className="text-gray-400 dark:text-gray-500">
-                        -
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-2 text-center dark:text-gray-300">
-                    {tale.result ? (
-                      <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
-                        <CheckCircleIcon className="h-4 w-4" />
-                        {t("TaleList.successLabel")}
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 rounded bg-red-200 px-2 py-1 text-red-800 text-sm dark:bg-red-900 dark:text-red-200">
-                        <XCircleIcon className="h-4 w-4" />
-                        {t("TaleList.failureLabel")}
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-2 text-center dark:text-gray-300">
-                    <div className="flex items-center justify-center">
-                      <EditTale tale={tale} />
-                      <DeleteTale taleKey={tale.key} />
-                    </div>
-                  </td>
-                </tr>
-              ))}
+              {tales.map((tale, index) => {
+                const contentKey = getContentI18nKey(tale.content);
+                const contentName =
+                  contentKey !== null ? t(`${contentKey}.name`) : tale.content;
+                const dutyId = getContentDutyId(tale.content);
+                const dutyLink = dutyId
+                  ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
+                  : null;
+
+                return (
+                  <tr
+                    key={tale.key}
+                    className={`${
+                      tale.result
+                        ? "bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30"
+                        : "bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30"
+                    } ${
+                      index !== tales.length - 1
+                        ? "border-gray-200 border-b dark:border-gray-700"
+                        : ""
+                    }`}
+                  >
+                    <td className="px-4 py-2 dark:text-gray-300">
+                      {formatDateTime(tale.dateTime, locale)}
+                    </td>
+                    <td className="px-4 py-2 dark:text-gray-300">
+                      {dutyLink ? (
+                        <a
+                          className="text-blue-700 underline hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-100"
+                          href={dutyLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {contentName}
+                        </a>
+                      ) : (
+                        contentName
+                      )}
+                    </td>
+                    <td className="px-4 py-2 dark:text-gray-300">
+                      {t(`${getJobI18nKey(tale.job)}`)}
+                    </td>
+                    <td className="px-4 py-2 text-center dark:text-gray-300">
+                      {tale.inProgress ? (
+                        <span className="inline-flex items-center gap-1 rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
+                          <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
+                          {t("TaleList.inProgressLabel")}
+                        </span>
+                      ) : (
+                        <span className="text-gray-400 dark:text-gray-500">
+                          -
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-2 text-center dark:text-gray-300">
+                      {tale.result ? (
+                        <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
+                          <CheckCircleIcon className="h-4 w-4" />
+                          {t("TaleList.successLabel")}
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 rounded bg-red-200 px-2 py-1 text-red-800 text-sm dark:bg-red-900 dark:text-red-200">
+                          <XCircleIcon className="h-4 w-4" />
+                          {t("TaleList.failureLabel")}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-2 text-center dark:text-gray-300">
+                      <div className="flex items-center justify-center">
+                        <EditTale tale={tale} />
+                        <DeleteTale taleKey={tale.key} />
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

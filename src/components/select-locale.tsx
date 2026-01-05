@@ -7,12 +7,12 @@ import { ChevronDownIcon, LanguageIcon } from "@heroicons/react/24/solid";
 import { getLocaleCookie, setLocaleCookie } from "@/actions/locale";
 
 const locales = [
-  { code: "ja", name: "日本語" },
+  { code: "jp", name: "日本語" },
   { code: "na", name: "English (US)" },
 ] as const;
 
 export function SelectLocale() {
-  const [value, setValue] = useState("ja");
+  const [value, setValue] = useState("jp");
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {

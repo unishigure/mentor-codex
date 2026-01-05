@@ -1,4 +1,4 @@
-import { Content } from "@/lib/i18n/messages/ja.json";
+import { Content } from "@/lib/i18n/messages/jp.json";
 
 export { Content };
 
@@ -24,5 +24,22 @@ export function getContentI18nKey(code: string): string | null {
       return `Content.${category}.${code}`;
     }
   }
+  return null;
+}
+
+export function getContentDutyId(code: string): string | null {
+  for (const contents of Object.values(Content)) {
+    if (
+      typeof contents !== "object" ||
+      contents === null ||
+      !(code in contents)
+    ) {
+      continue;
+    }
+
+    const entry = (contents as Record<string, { dutyId?: string }>)[code];
+    if (entry?.dutyId) return entry.dutyId;
+  }
+
   return null;
 }

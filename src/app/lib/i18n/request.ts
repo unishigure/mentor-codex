@@ -1,33 +1,38 @@
 import { cookies } from "next/headers";
 import { getRequestConfig } from "next-intl/server";
 
-import * as jaMessages from "@/lib/i18n/messages/ja.json";
-import { Content as jaContent } from "@/lib/i18n/messages/ja.json";
+import * as jpMessages from "@/lib/i18n/messages/jp.json";
+import { Content as jpContent } from "@/lib/i18n/messages/jp.json";
+import { LOCALES } from "@/lib/locale";
 
-type Content = (typeof jaContent)["Dungeons"]["dungeon_15"];
+type Content = (typeof jpContent)["Dungeons"]["dungeon_15"];
 
 export default getRequestConfig(async () => {
   const store = await cookies();
-  const locale = store.get("locale")?.value ?? "ja";
+  const locale = store.get("locale")?.value ?? "jp";
+
+  if (!LOCALES.includes(locale)) {
+    throw new Error("Unsupported locale");
+  }
 
   const localeMessages = (await import(`./messages/${locale}.json`)).default;
   const localeContent = localeMessages.Content || {};
 
-  // Use locale names but preserve ja details (level, expansion)
+  // Use locale names but preserve jp details (level, expansion)
   const mergedContent: Record<string, Record<string, Content>> = {};
-  Object.entries(jaContent).forEach(([section, items]) => {
+  Object.entries(jpContent).forEach(([section, items]) => {
     mergedContent[section] = {};
-    Object.entries(items).forEach(([id, jaItem]) => {
+    Object.entries(items).forEach(([id, jpItem]) => {
       const localeItem = localeContent[section]?.[id] || {};
       mergedContent[section][id] = {
-        ...jaItem,
-        name: localeItem.name || jaItem.name,
+        ...jpItem,
+        name: localeItem.name || jpItem.name,
       };
     });
   });
 
   // Fall back to Japanese messages for any missing translations
-  const messages = { ...jaMessages, ...localeMessages };
+  const messages = { ...jpMessages, ...localeMessages };
   messages.Content = mergedContent;
 
   return { locale, messages };

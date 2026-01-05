@@ -2,6 +2,8 @@
 
 import { cookies } from "next/headers";
 
+import { LOCALES } from "@/lib/locale";
+
 export async function getLocaleCookie(): Promise<string | null> {
   const store = await cookies();
   const locale = store.get("locale")?.value ?? null;
@@ -9,8 +11,7 @@ export async function getLocaleCookie(): Promise<string | null> {
 }
 
 export async function setLocaleCookie(locale: string) {
-  const validLocales = ["ja", "na"];
-  if (!validLocales.includes(locale)) {
+  if (!LOCALES.includes(locale)) {
     throw new Error("Unsupported locale");
   }
   const store = await cookies();

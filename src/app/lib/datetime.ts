@@ -1,6 +1,6 @@
 /**
  * Get date-time format options based on locale
- * @param locale - The locale code (e.g., 'ja', 'na')
+ * @param locale - The locale code (e.g., 'jp', 'na')
  * @returns Intl.DateTimeFormatOptions for the given locale
  */
 export function getDateTimeFormatOptions(
