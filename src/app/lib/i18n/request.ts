@@ -18,7 +18,7 @@ export default getRequestConfig(async () => {
   const localeMessages = (await import(`./messages/${locale}.json`)).default;
   const localeContent = localeMessages.Content || {};
 
-  // Use locale names but preserve jp details (level, expansion)
+  // Use locale names but preserve jp details
   const mergedContent: Record<string, Record<string, Content>> = {};
   Object.entries(jpContent).forEach(([section, items]) => {
     mergedContent[section] = {};
