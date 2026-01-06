@@ -49,7 +49,7 @@ export function Config() {
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label={t("Config.title")}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-700 transition-colors duration-150 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 dark:text-neutral-200 dark:hover:text-white"
+        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-neutral-700 transition-colors duration-150 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 dark:text-neutral-200 dark:hover:text-white"
       >
         <Cog6ToothIcon className="size-5" />
       </button>
