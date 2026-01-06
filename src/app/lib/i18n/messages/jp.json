@@ -8,6 +8,7 @@
     "dateTime": "記録日時",
     "content": "コンテンツ",
     "job": "参加ジョブ",
+    "roulette": "ルーレット",
     "inProgress": "途中参加",
     "result": "結果",
     "actions": "操作",
@@ -21,6 +22,8 @@
     "selectContent": "コンテンツを選択",
     "job": "参加ジョブ",
     "selectJob": "ジョブを選択",
+    "roulette": "コンテンツルーレット",
+    "optional": "任意",
     "inProgress": "途中参加",
     "result": "コンテンツクリア",
     "save": "記録を保存",
@@ -42,6 +45,8 @@
     "edit": "編集",
     "content": "コンテンツ",
     "job": "参加ジョブ",
+    "roulette": "ルーレット",
+    "optional": "任意",
     "inProgress": "途中参加",
     "result": "コンテンツクリア",
     "save": "変更を保存",
@@ -140,6 +145,18 @@
       "PCT": "ピクトマンサー",
       "BLU": "青魔道士"
     }
+  },
+  "Roulette": {
+    "expert": "エキスパート",
+    "cap": "レベルキャップダンジョン",
+    "high": "ハイレベリング",
+    "level": "レベリング",
+    "trial": "討伐・討滅戦",
+    "main": "メインクエスト",
+    "guildhest": "ギルドオーダー",
+    "alliance": "アライアンスレイド",
+    "normal": "ノーマルレイド",
+    "mentor": "メンター"
   },
   "Category": {
     "Dungeons": "ダンジョン",

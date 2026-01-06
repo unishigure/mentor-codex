@@ -11,10 +11,12 @@ import { useTranslations } from "next-intl";
 
 import { SelectContent } from "@/components/select-content";
 import { SelectJobCookie } from "@/components/select-job-cookie";
+import { SelectRoulette } from "@/components/select-roulette";
 import type { ContentCode } from "@/lib/content";
 import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
+import type { RouletteCode } from "@/lib/roulette";
 
 export function WriteTale() {
   const t = useTranslations();
@@ -26,6 +28,7 @@ export function WriteTale() {
 
   const [content, setContent] = useState<ContentCode | "">("");
   const [job, setJob] = useState<JobCode | "">("");
+  const [roulette, setRoulette] = useState<RouletteCode | "">("");
   const [inProgress, setInProgress] = useState(false);
   const [result, setResult] = useState(true);
 
@@ -66,6 +69,7 @@ export function WriteTale() {
         key: Date.now(),
         content: content as ContentCode,
         job: job as JobCode,
+        roulette: roulette || undefined,
         inProgress,
         result,
         dateTime: new Date(),
@@ -79,6 +83,7 @@ export function WriteTale() {
       // Reset form
       setContent("");
       setJob("");
+      setRoulette("");
       setInProgress(false);
       setResult(true);
 
@@ -162,6 +167,25 @@ export function WriteTale() {
                     id="job"
                     value={job}
                     onValueChange={(code) => setJob(code as JobCode)}
+                    disabled={isSaving}
+                  />
+                </div>
+
+                {/* Roulette Selection (Optional) */}
+                <div>
+                  <label
+                    htmlFor="roulette"
+                    className="mb-2 block font-medium text-neutral-700 text-sm dark:text-neutral-300"
+                  >
+                    {t("WriteTale.roulette")}
+                    <span className="ml-1 text-neutral-500 text-xs dark:text-neutral-400">
+                      ({t("WriteTale.optional")})
+                    </span>
+                  </label>
+                  <SelectRoulette
+                    id="roulette"
+                    value={roulette}
+                    onValueChange={(code) => setRoulette(code as RouletteCode)}
                     disabled={isSaving}
                   />
                 </div>

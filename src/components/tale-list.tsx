@@ -20,6 +20,7 @@ import type { Tale } from "@/lib/db";
 import { getAllTales } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
 import { getJobI18nKey, getRoleColorByJobCode } from "@/lib/job";
+import { getRouletteI18nKey } from "@/lib/roulette";
 
 export function TaleList() {
   const t = useTranslations();
@@ -115,8 +116,11 @@ export function TaleList() {
                     <th className="p-4 text-left text-xs dark:text-neutral-200">
                       {t("TaleList.content")}
                     </th>
-                    <th className="p-4 text-left text-xs dark:text-neutral-200">
+                    <th className="p-4 text-center text-xs dark:text-neutral-200">
                       {t("TaleList.job")}
+                    </th>
+                    <th className="p-4 text-center text-xs dark:text-neutral-200">
+                      {t("TaleList.roulette")}
                     </th>
                     <th className="p-4 text-center text-xs dark:text-neutral-200">
                       {t("TaleList.inProgress")}
@@ -141,6 +145,10 @@ export function TaleList() {
                     const roleColor = getRoleColorByJobCode(
                       tale.job as JobCode,
                     );
+                    const rouletteKey = tale.roulette
+                      ? getRouletteI18nKey(tale.roulette)
+                      : null;
+                    const rouletteLabel = rouletteKey ? t(rouletteKey) : null;
                     const dutyId = getContentDutyId(tale.content);
                     const dutyLink =
                       dutyId && dutyId !== "none"
@@ -177,7 +185,7 @@ export function TaleList() {
                             contentName
                           )}
                         </td>
-                        <td className="px-4 py-2 text-sm dark:text-neutral-300">
+                        <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
                           <span
                             className={`inline-flex items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
                           >
@@ -185,10 +193,20 @@ export function TaleList() {
                           </span>
                         </td>
                         <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
+                          {rouletteLabel ? (
+                            <span className="inline-flex items-center rounded-xl bg-purple-200/50 px-2 py-1 text-purple-800 text-xs dark:bg-purple-900/50 dark:text-purple-200">
+                              {rouletteLabel}
+                            </span>
+                          ) : (
+                            <span className="text-neutral-400 dark:text-neutral-500">
+                              -
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
                           {tale.inProgress ? (
-                            <span className="inline-flex items-center gap-1 rounded-xl bg-blue-200/50 px-2 py-1 text-blue-800 text-xs dark:bg-blue-900/50 dark:text-blue-200">
+                            <span className="inline-flex items-center justify-center rounded-xl bg-blue-200/50 px-2 py-1 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
                               <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
-                              {t("TaleList.inProgressLabel")}
                             </span>
                           ) : (
                             <span className="text-neutral-400 dark:text-neutral-500">
@@ -198,14 +216,12 @@ export function TaleList() {
                         </td>
                         <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
                           {tale.result ? (
-                            <span className="inline-flex items-center gap-1 rounded-xl bg-green-200/50 px-2 py-1 text-green-800 text-xs dark:bg-green-900/50 dark:text-green-200">
+                            <span className="inline-flex items-center justify-center rounded-xl bg-green-200/50 px-2 py-1 text-green-800 dark:bg-green-900/50 dark:text-green-200">
                               <CheckCircleIcon className="size-3.5" />
-                              {t("TaleList.successLabel")}
                             </span>
                           ) : (
-                            <span className="inline-flex items-center gap-1 rounded-xl bg-red-200/50 px-2 py-1 text-red-800 text-xs dark:bg-red-900/50 dark:text-red-200">
+                            <span className="inline-flex items-center justify-center rounded-xl bg-red-200/50 px-2 py-1 text-red-800 dark:bg-red-900/50 dark:text-red-200">
                               <XCircleIcon className="size-3.5" />
-                              {t("TaleList.failureLabel")}
                             </span>
                           )}
                         </td>
@@ -229,6 +245,7 @@ export function TaleList() {
                       }`}
                       className="h-12 border-neutral-300 dark:border-neutral-700"
                     >
+                      <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>

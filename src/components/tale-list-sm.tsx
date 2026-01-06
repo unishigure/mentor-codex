@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
+  CheckCircleIcon,
+  XCircleIcon,
 } from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -18,6 +20,7 @@ import type { Tale } from "@/lib/db";
 import { getAllTales } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
 import { getJobI18nKey, getRoleColorByJobCode } from "@/lib/job";
+import { getRouletteI18nKey } from "@/lib/roulette";
 
 export function TaleListSm() {
   const t = useTranslations();
@@ -102,6 +105,10 @@ export function TaleListSm() {
               const jobKey = getJobI18nKey(tale.job);
               const jobLabel = jobKey ? t(jobKey) : tale.job;
               const roleColor = getRoleColorByJobCode(tale.job as JobCode);
+              const rouletteKey = tale.roulette
+                ? getRouletteI18nKey(tale.roulette)
+                : null;
+              const rouletteLabel = rouletteKey ? t(rouletteKey) : null;
               const dutyId = getContentDutyId(tale.content);
               const dutyLink =
                 dutyId && dutyId !== "none"
@@ -111,22 +118,23 @@ export function TaleListSm() {
               return (
                 <div
                   key={tale.key}
-                  className={`rounded-lg border-[0.5px] border-neutral-300 p-4 shadow-lg dark:border-neutral-700 ${
-                    tale.result
-                      ? "bg-green-50 dark:bg-green-900/20"
-                      : "bg-red-50 dark:bg-red-900/20"
-                  }`}
+                  className="rounded-lg border-[0.5px] border-neutral-300 bg-white p-4 shadow-lg transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-700"
                 >
-                  {/* First row: datetime, inProgress icon, result icon */}
+                  {/* First row: datetime, result icon */}
                   <div className="mb-2 flex items-center justify-between">
                     <span className="text-neutral-600 text-xs dark:text-neutral-400">
                       {formatDateTime(tale.dateTime, locale)}
                     </span>
                     <div className="flex items-center gap-2">
-                      {tale.inProgress && (
-                        <ArrowLeftEndOnRectangleIcon
-                          className="h-5 w-5 text-blue-600 dark:text-blue-400"
-                          title={t("TaleList.inProgressLabel")}
+                      {tale.result ? (
+                        <CheckCircleIcon
+                          className="h-5 w-5 text-green-600 dark:text-green-400"
+                          title={t("TaleList.successLabel")}
+                        />
+                      ) : (
+                        <XCircleIcon
+                          className="h-5 w-5 text-red-600 dark:text-red-400"
+                          title={t("TaleList.failureLabel")}
                         />
                       )}
                     </div>
@@ -153,11 +161,24 @@ export function TaleListSm() {
                           t(`${getContentI18nKey(tale.content)}.name`)
                         )}
                       </span>
-                      <span
-                        className={`inline-flex w-fit items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
-                      >
-                        {jobLabel}
-                      </span>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`inline-flex w-fit items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
+                        >
+                          {jobLabel}
+                        </span>
+                        {rouletteLabel && (
+                          <span className="inline-flex w-fit items-center rounded-xl bg-purple-200/50 px-2 py-1 text-purple-800 text-xs dark:bg-purple-900/50 dark:text-purple-200">
+                            {rouletteLabel}
+                          </span>
+                        )}
+                        {tale.inProgress && (
+                          <ArrowLeftEndOnRectangleIcon
+                            className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                            title={t("TaleList.inProgressLabel")}
+                          />
+                        )}
+                      </div>
                     </div>
                     <div className="flex items-center">
                       <EditTale tale={tale} />

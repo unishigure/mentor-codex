@@ -1,5 +1,6 @@
 import type { ContentCode } from "@/lib/content";
 import type { JobCode } from "@/lib/job";
+import type { RouletteCode } from "@/lib/roulette";
 
 /**
  * Duty log
@@ -8,6 +9,7 @@ export interface Tale {
   key: number;
   content: ContentCode;
   job: JobCode;
+  roulette?: RouletteCode;
   inProgress: boolean;
   result: boolean;
   dateTime: Date;

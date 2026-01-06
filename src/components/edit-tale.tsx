@@ -11,10 +11,12 @@ import { useTranslations } from "next-intl";
 
 import { SelectContent } from "@/components/select-content";
 import { SelectJob } from "@/components/select-job";
+import { SelectRoulette } from "@/components/select-roulette";
 import type { ContentCode } from "@/lib/content";
 import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
+import type { RouletteCode } from "@/lib/roulette";
 
 interface EditTaleProps {
   tale: Tale;
@@ -30,6 +32,9 @@ export function EditTale({ tale }: EditTaleProps) {
 
   const [content, setContent] = useState<ContentCode | "">(tale.content);
   const [job, setJob] = useState<JobCode | "">(tale.job);
+  const [roulette, setRoulette] = useState<RouletteCode | "">(
+    tale.roulette ?? "",
+  );
   const [inProgress, setInProgress] = useState(tale.inProgress);
   const [result, setResult] = useState(tale.result);
 
@@ -37,6 +42,7 @@ export function EditTale({ tale }: EditTaleProps) {
     if (isOpen) {
       setContent(tale.content);
       setJob(tale.job);
+      setRoulette(tale.roulette ?? "");
       setInProgress(tale.inProgress);
       setResult(tale.result);
 
@@ -76,6 +82,7 @@ export function EditTale({ tale }: EditTaleProps) {
         ...tale,
         content: content as ContentCode,
         job: job as JobCode,
+        roulette: roulette || undefined,
         inProgress,
         result,
       };
@@ -165,6 +172,25 @@ export function EditTale({ tale }: EditTaleProps) {
                     id="job"
                     value={job}
                     onValueChange={(code) => setJob(code as JobCode)}
+                    disabled={isSaving}
+                  />
+                </div>
+
+                {/* Roulette Selection (Optional) */}
+                <div>
+                  <label
+                    htmlFor="roulette"
+                    className="mb-2 block font-medium text-neutral-700 text-sm dark:text-neutral-300"
+                  >
+                    {t("EditTale.roulette")}
+                    <span className="ml-1 text-neutral-500 text-xs dark:text-neutral-400">
+                      ({t("EditTale.optional")})
+                    </span>
+                  </label>
+                  <SelectRoulette
+                    id="roulette"
+                    value={roulette}
+                    onValueChange={(code) => setRoulette(code as RouletteCode)}
                     disabled={isSaving}
                   />
                 </div>
