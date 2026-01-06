@@ -223,7 +223,7 @@ export function ImportTale() {
           key: Date.now() + index + talesToSave.length,
           content: content as ContentCode,
           job: job as JobCode,
-          roulette: (roulette ?? "") as (RouletteCode | ""),
+          roulette: (roulette ?? "") as RouletteCode | "",
           memo,
           inProgress,
           result,
