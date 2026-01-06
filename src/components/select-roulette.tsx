@@ -21,7 +21,6 @@ export function SelectRoulette({
   const t = useTranslations();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
 
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,36 +33,14 @@ export function SelectRoulette({
   }, [t]);
 
   const selectedLabel = rouletteLabelByCode.get(value) ?? value;
-  useEffect(() => setInputValue(selectedLabel), [selectedLabel]);
 
-  const renderOptions = useMemo(
-    () => toRenderOptions(allItems, inputValue),
-    [allItems, inputValue],
-  );
-  const firstSelectableOption = useMemo(
-    () => renderOptions.find((o) => !o.disabled && o.value !== ""),
-    [renderOptions],
-  );
+  const renderOptions = useMemo(() => toRenderOptions(allItems), [allItems]);
 
   const selectRouletteCode = (rouletteCode: string) => {
-    const label = rouletteLabelByCode.get(rouletteCode) ?? rouletteCode;
     setIsOpen(false);
-    setInputValue(label);
 
     if (rouletteCode === value) return;
     onValueChange(rouletteCode);
-  };
-
-  const commitSelectionFromInput = () => {
-    const exactCode = findExactRouletteCodeByInput(
-      rouletteLabelByCode,
-      inputValue,
-    );
-    const nextValue = exactCode ?? firstSelectableOption?.value;
-    if (!nextValue) return false;
-
-    selectRouletteCode(nextValue);
-    return true;
   };
 
   useEffect(() => {
@@ -71,58 +48,30 @@ export function SelectRoulette({
       if (!containerRef.current) return;
       if (!containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
-        setInputValue(selectedLabel);
       }
     };
 
     window.addEventListener("pointerdown", onPointerDown);
     return () => window.removeEventListener("pointerdown", onPointerDown);
-  }, [selectedLabel]);
+  }, []);
 
   return (
     <div ref={containerRef} className="relative block">
-      <input
+      <button
         id={id}
-        value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-          setIsOpen(true);
-        }}
-        onFocus={() => {
-          setIsOpen(true);
-          setInputValue("");
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Escape") {
-            setIsOpen(false);
-            setInputValue(selectedLabel);
-            return;
-          }
-
-          if (e.key === "Tab" && !e.shiftKey && isOpen) {
-            if (commitSelectionFromInput()) {
-              e.preventDefault();
-            }
-            return;
-          }
-
-          if (e.key === "Enter") {
-            commitSelectionFromInput();
-          }
-        }}
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
         disabled={disabled}
-        role="combobox"
-        aria-expanded={isOpen}
-        aria-autocomplete="list"
-        className={`w-full cursor-pointer rounded-lg border border-neutral-300 bg-white px-4 py-2.5 pr-10 font-medium text-neutral-700 shadow-sm transition-all duration-200 placeholder:text-neutral-400 hover:border-neutral-400 hover:bg-neutral-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:bg-neutral-700 dark:placeholder:text-neutral-500 ${disabled ? "bg-neutral-100 dark:bg-neutral-750" : ""}`}
-      />
+        className={`h-11.5 w-full cursor-pointer rounded-lg border border-neutral-300 bg-white px-4 py-2.5 pr-10 text-left font-medium text-neutral-700 shadow-sm transition-all duration-200 placeholder:text-neutral-400 hover:border-neutral-400 hover:bg-neutral-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:bg-neutral-700 dark:placeholder:text-neutral-500 ${disabled ? "bg-neutral-100 dark:bg-neutral-750" : ""}`}
+      >
+        {selectedLabel}
+      </button>
       {value && !disabled && (
         <button
           type="button"
           onClick={(e) => {
             e.preventDefault();
             onValueChange("");
-            setInputValue("");
             setIsOpen(false);
           }}
           className="absolute top-1/2 right-10 -translate-y-1/2 rounded p-0.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
@@ -135,37 +84,31 @@ export function SelectRoulette({
       {isOpen ? (
         <div className="absolute z-10 mt-2 w-full overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
           <ul className="max-h-64 overflow-auto py-1">
-            {renderOptions.length === 0 ? (
-              <li className="px-4 py-2 text-neutral-500 text-sm dark:text-neutral-400">
-                {selectedLabel}
-              </li>
-            ) : (
-              renderOptions.map((option) => {
-                if (option.disabled) {
-                  return (
-                    <li
-                      key={option.key}
-                      className="px-4 py-2 font-semibold text-neutral-500 text-xs dark:text-neutral-400"
-                    >
-                      {option.label}
-                    </li>
-                  );
-                }
-
+            {renderOptions.map((option) => {
+              if (option.disabled) {
                 return (
                   <li
                     key={option.key}
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      selectRouletteCode(option.value);
-                    }}
-                    className="cursor-pointer px-4 py-2 text-neutral-700 text-sm hover:bg-neutral-50 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                    className="px-4 py-2 font-semibold text-neutral-500 text-xs dark:text-neutral-400"
                   >
                     {option.label}
                   </li>
                 );
-              })
-            )}
+              }
+
+              return (
+                <li
+                  key={option.key}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    selectRouletteCode(option.value);
+                  }}
+                  className="cursor-pointer px-4 py-2 text-neutral-700 text-sm hover:bg-neutral-50 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                >
+                  {option.label}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ) : null}
@@ -201,22 +144,9 @@ function buildRouletteLabelByCode(
   return map;
 }
 
-function toRenderOptions(
-  allItems: { code: RouletteCode; label: string }[],
-  query: string,
-) {
-  const normalizedQuery = query.trim().toLowerCase();
-  const matches = (item: { code: RouletteCode; label: string }) => {
-    if (normalizedQuery === "") return true;
-    return (
-      item.label.toLowerCase().includes(normalizedQuery) ||
-      item.code.toLowerCase().includes(normalizedQuery)
-    );
-  };
-
+function toRenderOptions(allItems: { code: RouletteCode; label: string }[]) {
   const renderOptions: RenderOption[] = [];
   for (const item of allItems) {
-    if (!matches(item)) continue;
     renderOptions.push({
       key: `roulette-${item.code}`,
       label: item.label,
@@ -225,16 +155,4 @@ function toRenderOptions(
   }
 
   return renderOptions;
-}
-
-function findExactRouletteCodeByInput(
-  rouletteLabelByCode: Map<string, string>,
-  inputValue: string,
-) {
-  const normalized = inputValue.trim().toLowerCase();
-  if (normalized === "") return;
-
-  return Array.from(rouletteLabelByCode.keys()).find(
-    (code) => code.toLowerCase() === normalized,
-  );
 }
