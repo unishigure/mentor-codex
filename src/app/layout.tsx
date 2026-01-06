@@ -5,9 +5,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 
 import { Config } from "@/components/config";
-import { ExportTale } from "@/components/export-tale";
-import { ImportTale } from "@/components/import-tale";
-import { SelectLocale } from "@/components/select-locale";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,10 +38,7 @@ export default function RootLayout({
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
               <h1 className="font-bold">{t("title")}</h1>
               <div className="flex items-center gap-4">
-                <ImportTale />
-                <ExportTale />
                 <Config />
-                <SelectLocale />
               </div>
             </div>
           </header>
