@@ -1,23 +1,14 @@
-import { getTranslations } from "next-intl/server";
-
-import { SelectLocale } from "@/components/select-locale";
 import { TaleList } from "@/components/tale-list";
 import { TaleListSm } from "@/components/tale-list-sm";
 import { WriteTale } from "@/components/write-tale";
 
-export default async function HomePage() {
-  const t = await getTranslations();
-
+export default function HomePage() {
   return (
-    <main className="flex h-screen flex-col">
-      <header className="flex shrink-0 items-center justify-between p-4">
-        <h1 className="font-bold">{t("title")}</h1>
-        <SelectLocale />
-      </header>
-      <div className="flex-1 overflow-y-auto xl:hidden">
+    <main className="flex flex-col">
+      <div className="flex-1 xl:hidden">
         <TaleListSm />
       </div>
-      <div className="hidden flex-1 overflow-y-auto xl:block">
+      <div className="hidden flex-1 xl:block">
         <TaleList />
       </div>
       <div className="fixed right-4 bottom-4">
