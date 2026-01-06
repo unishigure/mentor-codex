@@ -10,6 +10,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
 import { EditTale } from "@/components/edit-tale";
+import { WriteTale } from "@/components/write-tale";
 import { getContentDutyId, getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
@@ -150,6 +151,9 @@ export function TaleListSm() {
           })}
         </div>
       )}
+      <div className="fixed right-4 bottom-4">
+        <WriteTale />
+      </div>
     </div>
   );
 }

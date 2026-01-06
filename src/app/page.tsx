@@ -11,9 +11,6 @@ export default function HomePage() {
       <div className="hidden flex-1 xl:block">
         <TaleList />
       </div>
-      <div className="fixed right-4 bottom-4">
-        <WriteTale />
-      </div>
     </main>
   );
 }
