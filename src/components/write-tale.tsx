@@ -9,7 +9,7 @@ import {
 import { useTranslations } from "next-intl";
 
 import { SelectContent } from "@/components/select-content";
-import { SelectJob } from "@/components/select-job";
+import { SelectJobCookie } from "@/components/select-job-cookie";
 import type { ContentCode } from "@/lib/content";
 import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
@@ -156,7 +156,7 @@ export function WriteTale() {
                   >
                     {t("WriteTale.job")}
                   </label>
-                  <SelectJob
+                  <SelectJobCookie
                     id="job"
                     value={job}
                     onValueChange={(code) => setJob(code as JobCode)}

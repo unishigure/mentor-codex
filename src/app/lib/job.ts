@@ -38,8 +38,7 @@ const roleColorByRole: Record<Role, string> = {
   Melee: "bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-200",
   PhysicalRanged:
     "bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-200",
-  MagicalRanged:
-    "bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-200",
+  MagicalRanged: "bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-200",
 };
 
 export function getRoleColorByJobCode(code: JobCode): string {
