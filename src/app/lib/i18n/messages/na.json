@@ -49,6 +49,9 @@
     "cancel": "Cancel",
     "errorDeleting": "Failed to delete record"
   },
+  "ImportTale": {
+    "buttonLabel": "Import CSV"
+  },
   "EditTale": {
     "title": "Edit Record",
     "edit": "Edit",
