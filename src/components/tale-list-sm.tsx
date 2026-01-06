@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
+  ChatBubbleLeftEllipsisIcon,
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
@@ -114,6 +115,7 @@ export function TaleListSm() {
                 dutyId && dutyId !== "none"
                   ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
                   : null;
+              const hasMemo = tale.memo.trim().length > 0;
 
               return (
                 <div
@@ -126,6 +128,12 @@ export function TaleListSm() {
                       {formatDateTime(tale.dateTime, locale)}
                     </span>
                     <div className="flex items-center gap-2">
+                      {hasMemo && (
+                        <ChatBubbleLeftEllipsisIcon
+                          className="h-5 w-5 text-neutral-500 dark:text-neutral-400"
+                          title={tale.memo}
+                        />
+                      )}
                       {tale.result ? (
                         <CheckCircleIcon
                           className="h-5 w-5 text-green-600 dark:text-green-400"

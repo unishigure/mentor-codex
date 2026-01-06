@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
+  ChatBubbleLeftEllipsisIcon,
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/24/solid";
@@ -129,6 +130,9 @@ export function TaleList() {
                       {t("TaleList.result")}
                     </th>
                     <th className="p-4 text-center text-xs dark:text-neutral-200">
+                      {t("TaleList.memo")}
+                    </th>
+                    <th className="p-4 text-center text-xs dark:text-neutral-200">
                       {t("TaleList.actions")}
                     </th>
                   </tr>
@@ -154,6 +158,7 @@ export function TaleList() {
                       dutyId && dutyId !== "none"
                         ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
                         : null;
+                    const hasMemo = tale.memo.trim().length > 0;
 
                     return (
                       <tr
@@ -225,6 +230,19 @@ export function TaleList() {
                             </span>
                           )}
                         </td>
+                        <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
+                          {hasMemo ? (
+                            <ChatBubbleLeftEllipsisIcon
+                              title={tale.memo}
+                              className="mx-auto h-5 w-5 text-neutral-500 dark:text-neutral-400"
+                              aria-hidden
+                            />
+                          ) : (
+                            <span className="text-neutral-400 dark:text-neutral-500">
+                              -
+                            </span>
+                          )}
+                        </td>
                         <td className="px-4 py-2 text-center dark:text-neutral-300">
                           <div className="flex items-center justify-center gap-1">
                             <EditTale tale={tale} />
@@ -245,6 +263,7 @@ export function TaleList() {
                       }`}
                       className="h-12 border-neutral-300 dark:border-neutral-700"
                     >
+                      <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>
                       <td className="px-4 py-2">&nbsp;</td>
