@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   CheckCircleIcon,
+  PencilIcon,
 } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
@@ -95,9 +96,10 @@ export function WriteTale() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="flex flex-row rounded-lg bg-blue-600 p-4 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 xl:px-4 xl:py-2.5"
       >
-        {t("WriteTale.title")}
+        <PencilIcon className="inline size-4 xl:mt-0.5 xl:mr-2" />
+        <span className="hidden xl:block">{t("WriteTale.title")}</span>
       </button>
 
       {isOpen && (
