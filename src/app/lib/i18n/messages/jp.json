@@ -698,6 +698,10 @@
         "name": "ナイツ・オブ・ラウンド討滅戦",
         "dutyId": "12c172943bc"
       },
+      "trial_sephirot": {
+        "name": "魔神セフィロト討滅戦",
+        "dutyId": "08c9d224d28"
+      },
       "trial_sophia": {
         "name": "女神ソフィア討滅戦",
         "dutyId": "83e0064270d"
@@ -705,10 +709,6 @@
       "trial_zurvan": {
         "name": "鬼神ズルワーン討滅戦",
         "dutyId": "8ff3c52798c"
-      },
-      "trial_sephirot": {
-        "name": "魔神セフィロト討滅戦",
-        "dutyId": "08c9d224d28"
       },
       "trial_nidhogg": {
         "name": "ニーズヘッグ征竜戦",
@@ -817,6 +817,10 @@
       "trial_99": {
         "name": "ゾラージャ討滅戦",
         "dutyId": "72c4bd9bafa"
+      },
+      "trial_100": {
+        "name": "エターナルクイーン討滅戦",
+        "dutyId": "ba0e236d90e"
       },
       "trial_7_2": {
         "name": "ゼレニア討滅戦",
@@ -995,6 +999,10 @@
       "extreme_7_0_2": {
         "name": "極ゾラージャ討滅戦",
         "dutyId": "515c012009a"
+      },
+      "extreme_7_1": {
+        "name": "極エターナルクイーン討滅戦",
+        "dutyId": "aa6e7d00035"
       },
       "extreme_7_2": {
         "name": "極ゼレニア討滅戦",
