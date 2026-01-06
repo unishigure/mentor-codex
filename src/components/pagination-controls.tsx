@@ -68,7 +68,7 @@ export function PaginationControls({
         type="button"
         onClick={goToPrevious}
         disabled={currentPage === 1}
-        className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+        className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-default disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
         aria-label="Previous page"
       >
         <ChevronLeftIcon className="size-5" />
@@ -93,7 +93,7 @@ export function PaginationControls({
               type="button"
               key={item}
               onClick={() => onPageChange(item)}
-              className={`min-w-8 rounded-lg px-3 py-1.5 font-medium text-sm transition-colors ${
+              className={`min-w-8 cursor-pointer rounded-lg px-3 py-1.5 font-medium text-sm transition-colors ${
                 currentPage === item
                   ? "bg-blue-600 text-white dark:bg-blue-500"
                   : "bg-white text-neutral-700 shadow hover:bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
@@ -109,7 +109,7 @@ export function PaginationControls({
         type="button"
         onClick={goToNext}
         disabled={currentPage === totalPages}
-        className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+        className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-default disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
         aria-label="Next page"
       >
         <ChevronRightIcon className="size-5" />
