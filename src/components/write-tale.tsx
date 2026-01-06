@@ -101,10 +101,10 @@ export function WriteTale() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex flex-row rounded-lg bg-blue-600 p-4 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 xl:px-4 xl:py-2.5"
+        className="flex flex-row rounded-lg bg-blue-600 p-4 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 lg:px-4 lg:py-2.5"
       >
-        <PencilIcon className="inline size-4 xl:mt-0.5 xl:mr-2" />
-        <span className="hidden xl:block">{t("WriteTale.title")}</span>
+        <PencilIcon className="inline size-4 lg:mt-0.5 lg:mr-2" />
+        <span className="hidden lg:block">{t("WriteTale.title")}</span>
       </button>
 
       {isOpen && (
