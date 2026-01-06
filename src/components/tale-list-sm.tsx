@@ -14,7 +14,8 @@ import { getContentDutyId, getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
 import type { Tale } from "@/lib/db";
 import { getAllTales } from "@/lib/db";
-import { getJobI18nKey } from "@/lib/job";
+import type { JobCode } from "@/lib/job";
+import { getJobI18nKey, getRoleColorByJobCode } from "@/lib/job";
 
 export function TaleListSm() {
   const t = useTranslations();
@@ -79,6 +80,9 @@ export function TaleListSm() {
       ) : (
         <div className="space-y-3">
           {tales.map((tale) => {
+            const jobKey = getJobI18nKey(tale.job);
+            const jobLabel = jobKey ? t(jobKey) : tale.job;
+            const roleColor = getRoleColorByJobCode(tale.job as JobCode);
             const dutyId = getContentDutyId(tale.content);
             const dutyLink =
               dutyId && dutyId !== "none"
@@ -111,7 +115,7 @@ export function TaleListSm() {
 
                 {/* Second row: content name, job name, delete button */}
                 <div className="flex items-center justify-between">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-2">
                     <span className="font-medium text-neutral-900 text-sm dark:text-neutral-100">
                       {dutyLink ? (
                         <a
@@ -130,8 +134,10 @@ export function TaleListSm() {
                         t(`${getContentI18nKey(tale.content)}.name`)
                       )}
                     </span>
-                    <span className="text-neutral-700 text-xs dark:text-neutral-300">
-                      {t(`${getJobI18nKey(tale.job)}`)}
+                    <span
+                      className={`inline-flex w-fit items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
+                    >
+                      {jobLabel}
                     </span>
                   </div>
                   <div className="flex items-center">
