@@ -12,6 +12,17 @@
     "completed": "Complete!",
     "error": "Couldn't load your mentor progress"
   },
+  "Config": {
+    "title": "Settings",
+    "open": "Open settings",
+    "description": "Toggle which cards appear",
+    "showProgress": "Show mentor progress card",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "errorLoading": "Failed to load settings",
+    "errorSaving": "Failed to save settings"
+  },
   "TaleList": {
     "empty": "Your tale starts here",
     "dateTime": "DateTime",

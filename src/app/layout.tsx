@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 
+import { Config } from "@/components/config";
 import { ExportTale } from "@/components/export-tale";
 import { ImportTale } from "@/components/import-tale";
 import { SelectLocale } from "@/components/select-locale";
@@ -42,6 +43,7 @@ export default function RootLayout({
               <div className="flex items-center gap-4">
                 <ImportTale />
                 <ExportTale />
+                <Config />
                 <SelectLocale />
               </div>
             </div>

@@ -62,6 +62,19 @@ export function ProgressAstrope() {
   }, []);
 
   useEffect(() => {
+    const onConfigShowProgress = (event: Event) => {
+      if (event instanceof CustomEvent && typeof event.detail === "boolean") {
+        setShowProgress(event.detail);
+      }
+    };
+
+    window.addEventListener("config:showProgress", onConfigShowProgress);
+    return () => {
+      window.removeEventListener("config:showProgress", onConfigShowProgress);
+    };
+  }, []);
+
+  useEffect(() => {
     loadMentorRuns(true).catch(() => {
       // Error is already handled in loadMentorRuns
     });

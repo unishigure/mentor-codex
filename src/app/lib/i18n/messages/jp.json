@@ -12,6 +12,17 @@
     "completed": "Complete!",
     "error": "進捗の読み込みに失敗しました"
   },
+  "Config": {
+    "title": "設定",
+    "open": "設定を開く",
+    "description": "表示するカードを切り替えます",
+    "showProgress": "メンター進捗カードを表示",
+    "save": "保存",
+    "saving": "保存中...",
+    "cancel": "キャンセル",
+    "errorLoading": "設定の読み込みに失敗しました",
+    "errorSaving": "設定の保存に失敗しました"
+  },
   "TaleList": {
     "empty": "あなただけの記録はここから始まります",
     "dateTime": "記録日時",
