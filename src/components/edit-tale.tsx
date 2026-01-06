@@ -195,42 +195,44 @@ export function EditTale({ tale }: EditTaleProps) {
                   />
                 </div>
 
-                {/* In Progress Checkbox */}
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="inProgress"
-                    checked={inProgress}
-                    onChange={(e) => setInProgress(e.target.checked)}
-                    disabled={isSaving}
-                    className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
-                  />
-                  <label
-                    htmlFor="inProgress"
-                    className="ml-2 flex cursor-pointer items-center gap-2 text-neutral-700 text-sm dark:text-neutral-300"
-                  >
-                    <ArrowLeftEndOnRectangleIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                    {t("EditTale.inProgress")}
-                  </label>
-                </div>
+                <div className="flex flex-row justify-end gap-3">
+                  {/* In Progress Checkbox */}
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="inProgress"
+                      checked={inProgress}
+                      onChange={(e) => setInProgress(e.target.checked)}
+                      disabled={isSaving}
+                      className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
+                    />
+                    <label
+                      htmlFor="inProgress"
+                      className="ml-2 flex cursor-pointer items-center gap-1 text-neutral-700 text-sm dark:text-neutral-300"
+                    >
+                      {t("EditTale.inProgress")}
+                      <ArrowLeftEndOnRectangleIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    </label>
+                  </div>
 
-                {/* Result Checkbox */}
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="result"
-                    checked={result}
-                    onChange={(e) => setResult(e.target.checked)}
-                    disabled={isSaving}
-                    className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
-                  />
-                  <label
-                    htmlFor="result"
-                    className="ml-2 flex cursor-pointer items-center gap-2 text-neutral-700 text-sm dark:text-neutral-300"
-                  >
-                    <CheckCircleIcon className="h-5 w-5 text-green-600 dark:text-green-400" />
-                    {t("EditTale.result")}
-                  </label>
+                  {/* Result Checkbox */}
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="result"
+                      checked={result}
+                      onChange={(e) => setResult(e.target.checked)}
+                      disabled={isSaving}
+                      className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
+                    />
+                    <label
+                      htmlFor="result"
+                      className="ml-2 flex cursor-pointer items-center gap-1 text-neutral-700 text-sm dark:text-neutral-300"
+                    >
+                      {t("EditTale.result")}
+                      <CheckCircleIcon className="h-5 w-5 text-green-600 dark:text-green-400" />
+                    </label>
+                  </div>
                 </div>
 
                 {/* Buttons */}
