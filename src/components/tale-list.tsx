@@ -124,7 +124,7 @@ export function TaleList() {
                   return (
                     <tr
                       key={tale.key}
-                      className={`transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                      className={`h-12 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
                         index !== tales.length - 1
                           ? "border-neutral-300 dark:border-neutral-700"
                           : ""
@@ -184,7 +184,7 @@ export function TaleList() {
                         )}
                       </td>
                       <td className="px-4 py-2 text-center dark:text-neutral-300">
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center gap-1">
                           <EditTale tale={tale} />
                           <DeleteTale taleKey={tale.key} />
                         </div>

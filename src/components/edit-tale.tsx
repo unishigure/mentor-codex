@@ -99,10 +99,10 @@ export function EditTale({ tale }: EditTaleProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="cursor-pointer rounded-lg p-2 text-blue-600 transition-all duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:text-blue-400 dark:hover:bg-blue-900/20"
+        className="cursor-pointer rounded-lg p-1 text-blue-600 transition-all duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:text-blue-400 dark:hover:bg-blue-900/20"
         title={t("EditTale.edit")}
       >
-        <PencilSquareIcon className="h-5 w-5" />
+        <PencilSquareIcon className="size-4" />
       </button>
 
       {isOpen && (
@@ -212,7 +212,7 @@ export function EditTale({ tale }: EditTaleProps) {
                   <button
                     type="submit"
                     disabled={isSaving || !content || !job}
-                    className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
+                    className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
                   >
                     {isSaving ? t("EditTale.saving") : t("EditTale.save")}
                   </button>
@@ -220,7 +220,7 @@ export function EditTale({ tale }: EditTaleProps) {
                     type="button"
                     onClick={handleClose}
                     disabled={isSaving}
-                    className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
+                    className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 text-sm shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
                   >
                     {t("EditTale.cancel")}
                   </button>

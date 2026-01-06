@@ -66,10 +66,10 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="cursor-pointer rounded-lg p-2 text-red-600 transition-all duration-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:text-red-400 dark:hover:bg-red-900/20"
+        className="cursor-pointer rounded-lg p-1 text-red-600 transition-all duration-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:text-red-400 dark:hover:bg-red-900/20"
         title={t("DeleteTale.delete")}
       >
-        <TrashIcon className="h-5 w-5" />
+        <TrashIcon className="size-4" />
       </button>
 
       {isOpen && (

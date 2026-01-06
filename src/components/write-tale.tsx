@@ -95,7 +95,7 @@ export function WriteTale() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
         {t("WriteTale.title")}
       </button>
@@ -207,7 +207,7 @@ export function WriteTale() {
                   <button
                     type="submit"
                     disabled={isSaving || !content || !job}
-                    className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
+                    className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-700 dark:hover:bg-blue-600"
                   >
                     {isSaving ? t("WriteTale.saving") : t("WriteTale.save")}
                   </button>
@@ -215,7 +215,7 @@ export function WriteTale() {
                     type="button"
                     onClick={handleClose}
                     disabled={isSaving}
-                    className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
+                    className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 text-sm shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
                   >
                     {t("WriteTale.cancel")}
                   </button>
