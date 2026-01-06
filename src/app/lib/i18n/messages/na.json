@@ -3,6 +3,15 @@
   "Common": {
     "loading": "Loading..."
   },
+  "ProgressAstrope": {
+    "badge": "Mentor Roulette",
+    "title": "I Hope Mentor Will Notice Me",
+    "progressLabel": "Progress",
+    "counter": "{count} / {target}",
+    "remaining": "{remaining} runs left",
+    "completed": "Complete!",
+    "error": "Couldn't load your mentor progress"
+  },
   "TaleList": {
     "empty": "Your tale starts here",
     "dateTime": "DateTime",

@@ -1,3 +1,4 @@
+import type { Tale } from "@/lib/db";
 import { Roulette } from "@/lib/i18n/messages/jp.json";
 
 export { Roulette };
@@ -9,4 +10,8 @@ export function getRouletteI18nKey(code: string): string | null {
     return `Roulette.${code}`;
   }
   return null;
+}
+
+export function countMentorRoulette(tales: Tale[]): number {
+  return tales.filter((tale) => tale.roulette === "mentor").length;
 }

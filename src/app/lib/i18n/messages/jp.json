@@ -3,6 +3,15 @@
   "Common": {
     "loading": "読み込み中..."
   },
+  "ProgressAstrope": {
+    "badge": "メンタールーレット",
+    "title": "頼れる先輩",
+    "progressLabel": "進捗",
+    "counter": "{count} / {target}",
+    "remaining": "あと {remaining} 回",
+    "completed": "Complete!",
+    "error": "進捗の読み込みに失敗しました"
+  },
   "TaleList": {
     "empty": "あなただけの記録はここから始まります",
     "dateTime": "記録日時",
