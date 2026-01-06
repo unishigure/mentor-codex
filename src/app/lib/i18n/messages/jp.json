@@ -138,7 +138,9 @@
     "Extremes": "極討伐・討滅戦",
     "Raids": "レイド",
     "AllianceRaids": "アライアンスレイド",
-    "Savage": "零式"
+    "Savage": "零式",
+    "Chaotic": "滅アライアンスレイド",
+    "Ultimate": "絶レイド"
   },
   "Content": {
     "Dungeons": {
@@ -1646,6 +1648,23 @@
         "name": "至天の座アルカディア零式：ヘビー級4",
         "dutyId": "none"
       }
+    },
+    "Chaotic": {
+      "chaotic_7_1": { "name": "滅暗闇の雲激闘戦", "dutyId": "4a2a0efdb91" }
+    },
+    "Ultimate": {
+      "ultimate_4_1": { "name": "絶バハムート討滅戦", "dutyId": "1a863f1ea3b" },
+      "ultimate_4_3": {
+        "name": "絶アルテマウェポン破壊作戦",
+        "dutyId": "e6c2c586ba6"
+      },
+      "ultimate_5_1": {
+        "name": "絶アレキサンダー討滅戦",
+        "dutyId": "b56710190e9"
+      },
+      "ultimate_6_1": { "name": "絶竜詩戦争", "dutyId": "ba184b63c2d" },
+      "ultimate_6_3": { "name": "絶オメガ検証戦", "dutyId": "dccacd176f4" },
+      "ultimate_7_1": { "name": "絶もうひとつの未来", "dutyId": "d7ca52c7e6c" }
     }
   }
 }

@@ -138,7 +138,9 @@
     "Extremes": "Extremes",
     "Raids": "Raids",
     "AllianceRaids": "Alliance Raids",
-    "Savage": "Savage"
+    "Savage": "Savage",
+    "Chaotic": "Chaotic Alliance Raids",
+    "Ultimate": "Ultimate Raids"
   },
   "Content": {
     "Dungeons": {
@@ -547,6 +549,17 @@
       "savage_7_4_2": { "name": "AAC Heavyweight M2 (Savage)" },
       "savage_7_4_3": { "name": "AAC Heavyweight M3 (Savage)" },
       "savage_7_4_4": { "name": "AAC Heavyweight M4 (Savage)" }
+    },
+    "Chaotic": {
+      "chaotic_7_1": { "name": "The Cloud of Darkness (Chaotic)" }
+    },
+    "Ultimate": {
+      "ultimate_4_1": { "name": "The Unending Coil of Bahamut (Ultimate)" },
+      "ultimate_4_3": { "name": "The Weapon's Refrain (Ultimate)" },
+      "ultimate_5_1": { "name": "The Epic of Alexander (Ultimate)" },
+      "ultimate_6_1": { "name": "Dragonsong's Reprise (Ultimate)" },
+      "ultimate_6_3": { "name": "The Omega Protocol (Ultimate)" },
+      "ultimate_7_1": { "name": "Futures Rewritten (Ultimate)" }
     }
   }
 }
