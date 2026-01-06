@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -25,6 +27,9 @@ export function TaleListSm() {
   const [tales, setTales] = useState<Tale[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 5;
 
   const loadTales = useCallback(async (withLoadingState: boolean) => {
     try {
@@ -58,6 +63,19 @@ export function TaleListSm() {
     return () => window.removeEventListener("tale:update", onTaleSaved);
   }, [loadTales]);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(tales.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentTales = tales.slice(startIndex, endIndex);
+
+  // Reset to page 1 if current page is out of bounds
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(1);
+    }
+  }, [currentPage, totalPages]);
+
   if (isLoading) {
     return (
       <div className="py-8 text-center dark:text-neutral-300">
@@ -79,8 +97,9 @@ export function TaleListSm() {
           {t("TaleList.empty")}
         </div>
       ) : (
-        <div className="space-y-3">
-          {tales.map((tale) => {
+        <>
+          <div className="space-y-3">
+            {currentTales.map((tale) => {
             const jobKey = getJobI18nKey(tale.job);
             const jobLabel = jobKey ? t(jobKey) : tale.job;
             const roleColor = getRoleColorByJobCode(tale.job as JobCode);
@@ -149,7 +168,52 @@ export function TaleListSm() {
               </div>
             );
           })}
-        </div>
+          </div>
+
+          {/* Pagination Controls */}
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+              aria-label="Previous page"
+            >
+              <ChevronLeftIcon className="size-5" />
+            </button>
+
+            <div className="flex items-center gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    type="button"
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`min-w-8 rounded-lg px-3 py-1.5 font-medium text-sm transition-colors ${
+                      currentPage === page
+                        ? "bg-blue-600 text-white dark:bg-blue-500"
+                        : "bg-white text-neutral-700 shadow hover:bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+              }
+              disabled={currentPage === totalPages}
+              className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
+              aria-label="Next page"
+            >
+              <ChevronRightIcon className="size-5" />
+            </button>
+          </div>
+        </>
       )}
       <div className="fixed right-4 bottom-4">
         <WriteTale />
