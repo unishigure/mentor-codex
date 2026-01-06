@@ -371,6 +371,19 @@
       "extreme_7_4": { "name": "Hell on Rails (Extreme)" }
     },
     "Raids": {
+      "raid_2_1_1": { "name": "The Binding Coil of Bahamut - Turn 1" },
+      "raid_2_1_2": { "name": "The Binding Coil of Bahamut - Turn 2" },
+      "raid_2_1_3": { "name": "The Binding Coil of Bahamut - Turn 3" },
+      "raid_2_1_4": { "name": "The Binding Coil of Bahamut - Turn 4" },
+      "raid_2_1_5": { "name": "The Binding Coil of Bahamut - Turn 5" },
+      "raid_2_2_1": { "name": "The Second Coil of Bahamut - Turn 1" },
+      "raid_2_2_2": { "name": "The Second Coil of Bahamut - Turn 2" },
+      "raid_2_2_3": { "name": "The Second Coil of Bahamut - Turn 3" },
+      "raid_2_2_4": { "name": "The Second Coil of Bahamut - Turn 4" },
+      "raid_2_4_1": { "name": "The Final Coil of Bahamut - Turn 1" },
+      "raid_2_4_2": { "name": "The Final Coil of Bahamut - Turn 2" },
+      "raid_2_4_3": { "name": "The Final Coil of Bahamut - Turn 3" },
+      "raid_2_4_4": { "name": "The Final Coil of Bahamut - Turn 4" },
       "raid_3_0_1": { "name": "Alexander - The Fist of the Father" },
       "raid_3_0_2": { "name": "Alexander - The Cuff of the Father" },
       "raid_3_0_3": { "name": "Alexander - The Arm of the Father" },
@@ -450,6 +463,90 @@
       "alliance_6_5": { "name": "Thaleia" },
       "alliance_7_1": { "name": "Jeuno: The First Walk" },
       "alliance_7_3": { "name": "San d'Oria: The Second Walk" }
+    },
+    "Savage": {
+      "savage_2_3_1": {
+        "name": "The Second Coil of Bahamut (Savage) - Turn 1"
+      },
+      "savage_2_3_2": {
+        "name": "The Second Coil of Bahamut (Savage) - Turn 2"
+      },
+      "savage_2_3_3": {
+        "name": "The Second Coil of Bahamut (Savage) - Turn 3"
+      },
+      "savage_2_3_4": {
+        "name": "The Second Coil of Bahamut (Savage) - Turn 4"
+      },
+      "savage_3_0_1": { "name": "Alexander - The Fist of the Father (Savage)" },
+      "savage_3_0_2": { "name": "Alexander - The Cuff of the Father (Savage)" },
+      "savage_3_0_3": { "name": "Alexander - The Arm of the Father (Savage)" },
+      "savage_3_0_4": {
+        "name": "Alexander - The Burden of the Father (Savage)"
+      },
+      "savage_3_2_1": { "name": "Alexander - The Fist of the Son (Savage)" },
+      "savage_3_2_2": { "name": "Alexander - The Cuff of the Son (Savage)" },
+      "savage_3_2_3": { "name": "Alexander - The Arm of the Son (Savage)" },
+      "savage_3_2_4": { "name": "Alexander - The Burden of the Son (Savage)" },
+      "savage_3_4_1": {
+        "name": "Alexander - The Eyes of the Creator (Savage)"
+      },
+      "savage_3_4_2": {
+        "name": "Alexander - The Breath of the Creator (Savage)"
+      },
+      "savage_3_4_3": {
+        "name": "Alexander - The Heart of the Creator (Savage)"
+      },
+      "savage_3_4_4": {
+        "name": "Alexander - The Soul of the Creator (Savage)"
+      },
+      "savage_4_0_1": { "name": "Deltascape V1.0 (Savage)" },
+      "savage_4_0_2": { "name": "Deltascape V2.0 (Savage)" },
+      "savage_4_0_3": { "name": "Deltascape V3.0 (Savage)" },
+      "savage_4_0_4": { "name": "Deltascape V4.0 (Savage)" },
+      "savage_4_2_1": { "name": "Sigmascape V1.0 (Savage)" },
+      "savage_4_2_2": { "name": "Sigmascape V2.0 (Savage)" },
+      "savage_4_2_3": { "name": "Sigmascape V3.0 (Savage)" },
+      "savage_4_2_4": { "name": "Sigmascape V4.0 (Savage)" },
+      "savage_4_4_1": { "name": "Alphascape V1.0 (Savage)" },
+      "savage_4_4_2": { "name": "Alphascape V2.0 (Savage)" },
+      "savage_4_4_3": { "name": "Alphascape V3.0 (Savage)" },
+      "savage_4_4_4": { "name": "Alphascape V4.0 (Savage)" },
+      "savage_5_0_1": { "name": "Eden's Gate: Resurrection (Savage)" },
+      "savage_5_0_2": { "name": "Eden's Gate: Descent (Savage)" },
+      "savage_5_0_3": { "name": "Eden's Gate: Inundation (Savage)" },
+      "savage_5_0_4": { "name": "Eden's Gate: Sepulture (Savage)" },
+      "savage_5_2_1": { "name": "Eden's Verse: Fulmination (Savage)" },
+      "savage_5_2_2": { "name": "Eden's Verse: Furor (Savage)" },
+      "savage_5_2_3": { "name": "Eden's Verse: Iconoclasm (Savage)" },
+      "savage_5_2_4": { "name": "Eden's Verse: Refulgence (Savage)" },
+      "savage_5_4_1": { "name": "Eden's Promise: Umbra (Savage)" },
+      "savage_5_4_2": { "name": "Eden's Promise: Litany (Savage)" },
+      "savage_5_4_3": { "name": "Eden's Promise: Anamorphosis (Savage)" },
+      "savage_5_4_4": { "name": "Eden's Promise: Eternity (Savage)" },
+      "savage_6_0_1": { "name": "Asphodelos: The First Circle (Savage)" },
+      "savage_6_0_2": { "name": "Asphodelos: The Second Circle (Savage)" },
+      "savage_6_0_3": { "name": "Asphodelos: The Third Circle (Savage)" },
+      "savage_6_0_4": { "name": "Asphodelos: The Fourth Circle (Savage)" },
+      "savage_6_2_1": { "name": "Abyssos: The Fifth Circle (Savage)" },
+      "savage_6_2_2": { "name": "Abyssos: The Sixth Circle (Savage)" },
+      "savage_6_2_3": { "name": "Abyssos: The Seventh Circle (Savage)" },
+      "savage_6_2_4": { "name": "Abyssos: The Eighth Circle (Savage)" },
+      "savage_6_4_1": { "name": "Anabaseios: The Ninth Circle (Savage)" },
+      "savage_6_4_2": { "name": "Anabaseios: The Tenth Circle (Savage)" },
+      "savage_6_4_3": { "name": "Anabaseios: The Eleventh Circle (Savage)" },
+      "savage_6_4_4": { "name": "Anabaseios: The Twelfth Circle (Savage)" },
+      "savage_7_0_1": { "name": "AAC Light-heavyweight M1 (Savage)" },
+      "savage_7_0_2": { "name": "AAC Light-heavyweight M2 (Savage)" },
+      "savage_7_0_3": { "name": "AAC Light-heavyweight M3 (Savage)" },
+      "savage_7_0_4": { "name": "AAC Light-heavyweight M4 (Savage)" },
+      "savage_7_2_1": { "name": "AAC Cruiserweight M1 (Savage)" },
+      "savage_7_2_2": { "name": "AAC Cruiserweight M2 (Savage)" },
+      "savage_7_2_3": { "name": "AAC Cruiserweight M3 (Savage)" },
+      "savage_7_2_4": { "name": "AAC Cruiserweight M4 (Savage)" },
+      "savage_7_4_1": { "name": "AAC Heavyweight M1 (Savage)" },
+      "savage_7_4_2": { "name": "AAC Heavyweight M2 (Savage)" },
+      "savage_7_4_3": { "name": "AAC Heavyweight M3 (Savage)" },
+      "savage_7_4_4": { "name": "AAC Heavyweight M4 (Savage)" }
     }
   }
 }
