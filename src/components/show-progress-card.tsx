@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useTranslations } from "next-intl";
 
-import { setShowProgressCookie } from "@/app/actions/config";
+import {
+  getShowProgressCookie,
+  setShowProgressCookie,
+} from "@/app/actions/config";
 
 export function ShowProgressCard() {
   const t = useTranslations();
@@ -12,6 +15,14 @@ export function ShowProgressCard() {
   const [showProgress, setShowProgress] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchShowProgress = async () => {
+      const value = await getShowProgressCookie();
+      setShowProgress(value);
+    };
+    fetchShowProgress();
+  }, []);
 
   const handleToggle = async (checked: boolean) => {
     setShowProgress(checked);
