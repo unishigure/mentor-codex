@@ -66,7 +66,7 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="rounded-lg p-2 text-red-600 transition-all duration-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:text-red-400 dark:hover:bg-red-900/20"
+        className="cursor-pointer rounded-lg p-2 text-red-600 transition-all duration-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:text-red-400 dark:hover:bg-red-900/20"
         title={t("DeleteTale.delete")}
       >
         <TrashIcon className="h-5 w-5" />
@@ -92,8 +92,8 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
             }}
             onCancel={handleClose}
           >
-            <div className="w-full rounded-lg bg-white p-6 dark:bg-gray-800">
-              <h2 className="mb-4 font-bold text-gray-900 text-xl dark:text-gray-100">
+            <div className="w-full rounded-lg bg-white p-6 dark:bg-neutral-800">
+              <h2 className="mb-4 font-bold text-neutral-900 text-xl dark:text-neutral-100">
                 {t("DeleteTale.title")}
               </h2>
 
@@ -103,7 +103,7 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
                 </div>
               )}
 
-              <p className="mb-6 text-gray-700 text-sm dark:text-gray-300">
+              <p className="mb-6 text-neutral-700 text-sm dark:text-neutral-300">
                 {t("DeleteTale.deleteConfirm")}
               </p>
 
@@ -123,7 +123,7 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
                   type="button"
                   onClick={handleClose}
                   disabled={isDeleting}
-                  className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                  className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
                 >
                   {t("DeleteTale.cancel")}
                 </button>

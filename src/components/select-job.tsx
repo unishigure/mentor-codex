@@ -108,7 +108,7 @@ export function SelectJob({
         role="combobox"
         aria-expanded={isOpen}
         aria-autocomplete="list"
-        className={`w-full cursor-pointer rounded-lg border border-gray-300 bg-white px-4 py-2.5 pr-10 font-medium text-gray-700 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 hover:border-gray-400 hover:bg-gray-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:border-gray-500 dark:hover:bg-gray-700 dark:placeholder:text-gray-500 ${disabled ? "bg-gray-100 dark:bg-gray-750" : ""}`}
+        className={`w-full cursor-pointer rounded-lg border border-neutral-300 bg-white px-4 py-2.5 pr-10 font-medium text-neutral-700 text-sm shadow-sm transition-all duration-200 placeholder:text-neutral-400 hover:border-neutral-400 hover:bg-neutral-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:bg-neutral-700 dark:placeholder:text-neutral-500 ${disabled ? "bg-neutral-100 dark:bg-neutral-750" : ""}`}
       />
       {value && !disabled && (
         <button
@@ -119,18 +119,18 @@ export function SelectJob({
             setInputValue("");
             setIsOpen(false);
           }}
-          className="absolute top-1/2 right-10 -translate-y-1/2 rounded p-0.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+          className="absolute top-1/2 right-10 -translate-y-1/2 rounded p-0.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
         >
           <XMarkIcon className="h-4 w-4" />
         </button>
       )}
-      <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3 h-5 w-5 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
+      <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3 h-5 w-5 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" />
 
       {isOpen ? (
-        <div className="absolute z-10 mt-2 w-full overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <div className="absolute z-10 mt-2 w-full overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
           <ul className="max-h-64 overflow-auto py-1">
             {renderOptions.length === 0 ? (
-              <li className="px-4 py-2 text-gray-500 text-sm dark:text-gray-400">
+              <li className="px-4 py-2 text-neutral-500 text-sm dark:text-neutral-400">
                 {selectedLabel}
               </li>
             ) : (
@@ -139,7 +139,7 @@ export function SelectJob({
                   return (
                     <li
                       key={option.key}
-                      className="px-4 py-2 font-semibold text-gray-500 text-xs dark:text-gray-400"
+                      className="px-4 py-2 font-semibold text-neutral-500 text-xs dark:text-neutral-400"
                     >
                       {option.label}
                     </li>
@@ -153,7 +153,7 @@ export function SelectJob({
                       e.preventDefault();
                       selectJobCode(option.value);
                     }}
-                    className="cursor-pointer px-4 py-2 text-gray-700 text-sm hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-700"
+                    className="cursor-pointer px-4 py-2 text-neutral-700 text-sm hover:bg-neutral-50 dark:text-neutral-200 dark:hover:bg-neutral-700"
                   >
                     {option.label}
                   </li>

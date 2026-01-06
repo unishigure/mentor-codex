@@ -60,7 +60,7 @@ export function TaleList() {
 
   if (isLoading) {
     return (
-      <div className="py-8 text-center dark:text-gray-300">
+      <div className="py-8 text-center dark:text-neutral-300">
         {t("Common.loading")}
       </div>
     );
@@ -75,31 +75,31 @@ export function TaleList() {
       )}
 
       {tales.length === 0 ? (
-        <div className="py-8 text-center text-gray-500 dark:text-gray-400">
+        <div className="py-8 text-center text-neutral-500 dark:text-neutral-400">
           {t("TaleList.empty")}
         </div>
       ) : (
-        <div className="overflow-hidden rounded-lg border border-gray-300 shadow-lg dark:border-gray-700">
+        <div className="overflow-hidden rounded-lg border border-neutral-300 shadow-lg dark:border-neutral-700">
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white dark:bg-gray-900">
+            <table className="w-full border-collapse bg-white dark:bg-neutral-900">
               <thead>
-                <tr className="bg-gray-200 dark:bg-gray-800">
-                  <th className="p-4 text-left text-xs dark:text-gray-200">
+                <tr className="bg-neutral-200 dark:bg-neutral-800">
+                  <th className="p-4 text-left text-xs dark:text-neutral-200">
                     {t("TaleList.dateTime")}
                   </th>
-                  <th className="p-4 text-left text-xs dark:text-gray-200">
+                  <th className="p-4 text-left text-xs dark:text-neutral-200">
                     {t("TaleList.content")}
                   </th>
-                  <th className="p-4 text-left text-xs dark:text-gray-200">
+                  <th className="p-4 text-left text-xs dark:text-neutral-200">
                     {t("TaleList.job")}
                   </th>
-                  <th className="p-4 text-center text-xs dark:text-gray-200">
+                  <th className="p-4 text-center text-xs dark:text-neutral-200">
                     {t("TaleList.inProgress")}
                   </th>
-                  <th className="p-4 text-center text-xs dark:text-gray-200">
+                  <th className="p-4 text-center text-xs dark:text-neutral-200">
                     {t("TaleList.result")}
                   </th>
-                  <th className="p-4 text-center text-xs dark:text-gray-200">
+                  <th className="p-4 text-center text-xs dark:text-neutral-200">
                     {t("TaleList.actions")}
                   </th>
                 </tr>
@@ -120,16 +120,16 @@ export function TaleList() {
                   return (
                     <tr
                       key={tale.key}
-                      className={`${
+                      className={`transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
                         index !== tales.length - 1
-                          ? "border-gray-300 dark:border-gray-700"
+                          ? "border-neutral-300 dark:border-neutral-700"
                           : ""
                       }`}
                     >
-                      <td className="px-4 py-2 text-sm dark:text-gray-300">
+                      <td className="px-4 py-2 text-sm dark:text-neutral-300">
                         {formatDateTime(tale.dateTime, locale)}
                       </td>
-                      <td className="px-4 py-2 text-sm dark:text-gray-300">
+                      <td className="px-4 py-2 text-sm dark:text-neutral-300">
                         {dutyLink ? (
                           <a
                             className="eorzeadb_link inline-flex items-center gap-1 no-underline hover:no-underline"
@@ -147,22 +147,22 @@ export function TaleList() {
                           contentName
                         )}
                       </td>
-                      <td className="px-4 py-2 text-sm dark:text-gray-300">
+                      <td className="px-4 py-2 text-sm dark:text-neutral-300">
                         {t(`${getJobI18nKey(tale.job)}`)}
                       </td>
-                      <td className="px-4 py-2 text-center text-sm dark:text-gray-300">
+                      <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
                         {tale.inProgress ? (
                           <span className="inline-flex items-center gap-1 rounded bg-blue-200 px-2 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
                             <ArrowLeftEndOnRectangleIcon className="h-4 w-4" />
                             {t("TaleList.inProgressLabel")}
                           </span>
                         ) : (
-                          <span className="text-gray-400 dark:text-gray-500">
+                          <span className="text-neutral-400 dark:text-neutral-500">
                             -
                           </span>
                         )}
                       </td>
-                      <td className="px-4 py-2 text-center text-sm dark:text-gray-300">
+                      <td className="px-4 py-2 text-center text-sm dark:text-neutral-300">
                         {tale.result ? (
                           <span className="inline-flex items-center gap-1 rounded bg-green-200 px-2 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
                             <CheckCircleIcon className="size-3.5" />
@@ -175,7 +175,7 @@ export function TaleList() {
                           </span>
                         )}
                       </td>
-                      <td className="px-4 py-2 text-center dark:text-gray-300">
+                      <td className="px-4 py-2 text-center dark:text-neutral-300">
                         <div className="flex items-center justify-center">
                           <EditTale tale={tale} />
                           <DeleteTale taleKey={tale.key} />

@@ -120,8 +120,8 @@ export function WriteTale() {
             }}
             onCancel={handleClose}
           >
-            <div className="w-full rounded-lg bg-white p-6 text-center dark:bg-gray-800">
-              <h2 className="mb-4 font-bold text-gray-900 text-xl dark:text-gray-100">
+            <div className="w-full rounded-lg bg-white p-6 text-center dark:bg-neutral-800">
+              <h2 className="mb-4 font-bold text-neutral-900 text-xl dark:text-neutral-100">
                 {t("WriteTale.title")}
               </h2>
 
@@ -136,7 +136,7 @@ export function WriteTale() {
                 <div>
                   <label
                     htmlFor="content"
-                    className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
+                    className="mb-2 block font-medium text-neutral-700 text-sm dark:text-neutral-300"
                   >
                     {t("WriteTale.content")}
                   </label>
@@ -152,7 +152,7 @@ export function WriteTale() {
                 <div>
                   <label
                     htmlFor="job"
-                    className="mb-2 block font-medium text-gray-700 text-sm dark:text-gray-300"
+                    className="mb-2 block font-medium text-neutral-700 text-sm dark:text-neutral-300"
                   >
                     {t("WriteTale.job")}
                   </label>
@@ -172,11 +172,11 @@ export function WriteTale() {
                     checked={inProgress}
                     onChange={(e) => setInProgress(e.target.checked)}
                     disabled={isSaving}
-                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
+                    className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
                   />
                   <label
                     htmlFor="inProgress"
-                    className="ml-2 flex cursor-pointer items-center gap-2 text-gray-700 text-sm dark:text-gray-300"
+                    className="ml-2 flex cursor-pointer items-center gap-2 text-neutral-700 text-sm dark:text-neutral-300"
                   >
                     <ArrowLeftEndOnRectangleIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     {t("WriteTale.inProgress")}
@@ -191,11 +191,11 @@ export function WriteTale() {
                     checked={result}
                     onChange={(e) => setResult(e.target.checked)}
                     disabled={isSaving}
-                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700"
+                    className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-blue-600 focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700"
                   />
                   <label
                     htmlFor="result"
-                    className="ml-2 flex cursor-pointer items-center gap-2 text-gray-700 text-sm dark:text-gray-300"
+                    className="ml-2 flex cursor-pointer items-center gap-2 text-neutral-700 text-sm dark:text-neutral-300"
                   >
                     <CheckCircleIcon className="h-5 w-5 text-green-600 dark:text-green-400" />
                     {t("WriteTale.result")}
@@ -215,7 +215,7 @@ export function WriteTale() {
                     type="button"
                     onClick={handleClose}
                     disabled={isSaving}
-                    className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                    className="flex-1 rounded-lg border border-neutral-300 px-4 py-2.5 font-medium text-neutral-700 shadow-sm transition-all duration-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
                   >
                     {t("WriteTale.cancel")}
                   </button>

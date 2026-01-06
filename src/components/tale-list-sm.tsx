@@ -58,7 +58,7 @@ export function TaleListSm() {
 
   if (isLoading) {
     return (
-      <div className="py-8 text-center dark:text-gray-300">
+      <div className="py-8 text-center dark:text-neutral-300">
         {t("Common.loading")}
       </div>
     );
@@ -73,7 +73,7 @@ export function TaleListSm() {
       )}
 
       {tales.length === 0 ? (
-        <div className="py-8 text-center text-gray-500 dark:text-gray-400">
+        <div className="py-8 text-center text-neutral-500 dark:text-neutral-400">
           {t("TaleList.empty")}
         </div>
       ) : (
@@ -88,7 +88,7 @@ export function TaleListSm() {
             return (
               <div
                 key={tale.key}
-                className={`rounded-lg p-4 shadow-lg ${
+                className={`rounded-lg border-[0.5px] border-neutral-300 p-4 shadow-lg dark:border-neutral-700 ${
                   tale.result
                     ? "bg-green-50 dark:bg-green-900/20"
                     : "bg-red-50 dark:bg-red-900/20"
@@ -96,7 +96,7 @@ export function TaleListSm() {
               >
                 {/* First row: datetime, inProgress icon, result icon */}
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="text-gray-600 text-xs dark:text-gray-400">
+                  <span className="text-neutral-600 text-xs dark:text-neutral-400">
                     {formatDateTime(tale.dateTime, locale)}
                   </span>
                   <div className="flex items-center gap-2">
@@ -112,7 +112,7 @@ export function TaleListSm() {
                 {/* Second row: content name, job name, delete button */}
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1">
-                    <span className="font-medium text-gray-900 text-sm dark:text-gray-100">
+                    <span className="font-medium text-neutral-900 text-sm dark:text-neutral-100">
                       {dutyLink ? (
                         <a
                           className="eorzeadb_link inline-flex items-center gap-1 no-underline hover:no-underline"
@@ -130,7 +130,7 @@ export function TaleListSm() {
                         t(`${getContentI18nKey(tale.content)}.name`)
                       )}
                     </span>
-                    <span className="text-gray-700 text-xs dark:text-gray-300">
+                    <span className="text-neutral-700 text-xs dark:text-neutral-300">
                       {t(`${getJobI18nKey(tale.job)}`)}
                     </span>
                   </div>
