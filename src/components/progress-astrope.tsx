@@ -2,10 +2,13 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { ArrowTopRightOnSquareIcon,
-SparklesIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowTopRightOnSquareIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
+import { getShowProgressCookie } from "@/app/actions/config";
 import { getAllTales } from "@/lib/db";
 import { countMentorRoulette } from "@/lib/roulette";
 
@@ -18,6 +21,7 @@ export function ProgressAstrope() {
   const [mentorRuns, setMentorRuns] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showProgress, setShowProgress] = useState<boolean>(false);
 
   const numberFormatter = useMemo(
     () => new Intl.NumberFormat(locale),
@@ -42,6 +46,22 @@ export function ProgressAstrope() {
   );
 
   useEffect(() => {
+    let cancelled = false;
+    getShowProgressCookie()
+      .then((value) => {
+        if (!cancelled) setShowProgress(value === true);
+      })
+      .catch((err) => {
+        console.error("Failed to read mentor cookie", err);
+        if (!cancelled) setShowProgress(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
     loadMentorRuns(true).catch(() => {
       // Error is already handled in loadMentorRuns
     });
@@ -64,8 +84,11 @@ export function ProgressAstrope() {
   const formattedTarget = numberFormatter.format(ASTROPE_TARGET);
   const formattedRemaining = numberFormatter.format(remainingRuns);
 
-  const achievementLink =
-    `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/achievement/58ffb398c8f`
+  const achievementLink = `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/achievement/58ffb398c8f`;
+
+  if (!showProgress) {
+    return null;
+  }
 
   return (
     <section className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-linear-to-br from-slate-900 via-slate-900 to-zinc-900 text-white shadow-lg dark:border-neutral-800">
@@ -91,10 +114,7 @@ export function ProgressAstrope() {
                 rel="noreferrer"
               >
                 {t("ProgressAstrope.title")}
-                <ArrowTopRightOnSquareIcon
-                  className="size-3"
-                  aria-hidden
-                />
+                <ArrowTopRightOnSquareIcon className="size-3" aria-hidden />
               </a>
             </p>
           </div>
@@ -125,8 +145,8 @@ export function ProgressAstrope() {
             <span className="text-amber-100 text-xs">
               {remainingRuns > 0
                 ? t("ProgressAstrope.remaining", {
-                  remaining: formattedRemaining,
-                })
+                    remaining: formattedRemaining,
+                  })
                 : t("ProgressAstrope.completed")}
             </span>
           </div>
