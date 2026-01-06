@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mentor Codex",
+  description: "Road to Astrope"
 };
 
 export default function RootLayout({
