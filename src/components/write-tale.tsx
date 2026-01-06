@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 
 import { SelectContent } from "@/components/select-content";
 import { SelectJobCookie } from "@/components/select-job-cookie";
-import { SelectRoulette } from "@/components/select-roulette";
+import { SelectRouletteCookie } from "@/components/select-roulette-cookie";
 import type { ContentCode } from "@/lib/content";
 import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
@@ -182,7 +182,7 @@ export function WriteTale() {
                       ({t("WriteTale.optional")})
                     </span>
                   </label>
-                  <SelectRoulette
+                  <SelectRouletteCookie
                     id="roulette"
                     value={roulette}
                     onValueChange={(code) => setRoulette(code as RouletteCode)}
