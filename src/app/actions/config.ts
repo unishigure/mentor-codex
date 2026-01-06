@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 export async function getShowProgressCookie(): Promise<boolean> {
   const store = await cookies();
-  const showProgress = store.get("showProgress")?.value ?? "true";
+  const showProgress = store.get("showProgress")?.value ?? "false";
   return showProgress === "true";
 }
 
