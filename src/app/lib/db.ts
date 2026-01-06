@@ -9,9 +9,10 @@ export interface Tale {
   key: number;
   content: ContentCode;
   job: JobCode;
-  roulette?: RouletteCode;
+  roulette: RouletteCode | "";
   inProgress: boolean;
   result: boolean;
+  memo: string;
   dateTime: Date;
 }
 

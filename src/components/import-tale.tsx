@@ -147,6 +147,7 @@ export function ImportTale() {
       t("TaleList.roulette"),
       t("TaleList.inProgress"),
       t("TaleList.result"),
+      t("TaleList.memo"),
     ],
     [t],
   );
@@ -191,7 +192,7 @@ export function ImportTale() {
       const talesToSave: Tale[] = [];
 
       dataRows.forEach((row, index) => {
-        if (row.length < 6) return;
+        if (row.length < 7) return;
 
         const [
           dateValue,
@@ -200,12 +201,14 @@ export function ImportTale() {
           rouletteValue,
           inProgressValue,
           resultValue,
+          memoValue,
         ] = row;
 
         const dateTime = parseDateValue(dateValue?.trim());
         const content = resolveWithMap(contentNameMap, contentValue);
         const job = resolveWithMap(jobNameMap, jobValue);
         const roulette = resolveWithMap(rouletteNameMap, rouletteValue);
+        const memo = memoValue?.trim() ?? "";
 
         const inProgress =
           inProgressValue?.trim() === t("TaleList.inProgressLabel") ||
@@ -220,7 +223,8 @@ export function ImportTale() {
           key: Date.now() + index + talesToSave.length,
           content: content as ContentCode,
           job: job as JobCode,
-          roulette: roulette as RouletteCode | undefined,
+          roulette: (roulette ?? "") as (RouletteCode | ""),
+          memo,
           inProgress,
           result,
           dateTime,

@@ -35,6 +35,7 @@ export function EditTale({ tale }: EditTaleProps) {
   const [roulette, setRoulette] = useState<RouletteCode | "">(
     tale.roulette ?? "",
   );
+  const [memo, setMemo] = useState(tale.memo);
   const [inProgress, setInProgress] = useState(tale.inProgress);
   const [result, setResult] = useState(tale.result);
 
@@ -43,6 +44,7 @@ export function EditTale({ tale }: EditTaleProps) {
       setContent(tale.content);
       setJob(tale.job);
       setRoulette(tale.roulette ?? "");
+      setMemo(tale.memo ?? "");
       setInProgress(tale.inProgress);
       setResult(tale.result);
 
@@ -82,7 +84,8 @@ export function EditTale({ tale }: EditTaleProps) {
         ...tale,
         content: content as ContentCode,
         job: job as JobCode,
-        roulette: roulette || undefined,
+        roulette,
+        memo,
         inProgress,
         result,
       };
@@ -192,6 +195,27 @@ export function EditTale({ tale }: EditTaleProps) {
                     value={roulette}
                     onValueChange={(code) => setRoulette(code as RouletteCode)}
                     disabled={isSaving}
+                  />
+                </div>
+
+                {/* Memo (Optional) */}
+                <div>
+                  <label
+                    htmlFor="memo"
+                    className="mb-2 block font-medium text-neutral-700 text-sm dark:text-neutral-300"
+                  >
+                    {t("EditTale.memo")}
+                    <span className="ml-1 text-neutral-500 text-xs dark:text-neutral-400">
+                      ({t("EditTale.optional")})
+                    </span>
+                  </label>
+                  <textarea
+                    id="memo"
+                    value={memo}
+                    onChange={(e) => setMemo(e.target.value)}
+                    disabled={isSaving}
+                    className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-neutral-900 text-sm shadow-sm transition-all duration-200 placeholder:text-neutral-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+                    rows={3}
                   />
                 </div>
 

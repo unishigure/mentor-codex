@@ -25,6 +25,7 @@ export function ExportTale() {
         t("TaleList.roulette"),
         t("TaleList.inProgress"),
         t("TaleList.result"),
+        t("TaleList.memo"),
       ];
 
       const rows = tales.map((tale) => {
@@ -47,6 +48,7 @@ export function ExportTale() {
           rouletteLabel,
           tale.inProgress ? t("TaleList.inProgressLabel") : "",
           tale.result ? t("TaleList.successLabel") : t("TaleList.failureLabel"),
+          tale.memo,
         ];
       });
 
