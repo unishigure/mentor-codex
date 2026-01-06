@@ -100,74 +100,74 @@ export function TaleListSm() {
         <>
           <div className="space-y-3">
             {currentTales.map((tale) => {
-            const jobKey = getJobI18nKey(tale.job);
-            const jobLabel = jobKey ? t(jobKey) : tale.job;
-            const roleColor = getRoleColorByJobCode(tale.job as JobCode);
-            const dutyId = getContentDutyId(tale.content);
-            const dutyLink =
-              dutyId && dutyId !== "none"
-                ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
-                : null;
+              const jobKey = getJobI18nKey(tale.job);
+              const jobLabel = jobKey ? t(jobKey) : tale.job;
+              const roleColor = getRoleColorByJobCode(tale.job as JobCode);
+              const dutyId = getContentDutyId(tale.content);
+              const dutyLink =
+                dutyId && dutyId !== "none"
+                  ? `https://${locale}.finalfantasyxiv.com/lodestone/playguide/db/duty/${dutyId}/`
+                  : null;
 
-            return (
-              <div
-                key={tale.key}
-                className={`rounded-lg border-[0.5px] border-neutral-300 p-4 shadow-lg dark:border-neutral-700 ${
-                  tale.result
-                    ? "bg-green-50 dark:bg-green-900/20"
-                    : "bg-red-50 dark:bg-red-900/20"
-                }`}
-              >
-                {/* First row: datetime, inProgress icon, result icon */}
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-neutral-600 text-xs dark:text-neutral-400">
-                    {formatDateTime(tale.dateTime, locale)}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    {tale.inProgress && (
-                      <ArrowLeftEndOnRectangleIcon
-                        className="h-5 w-5 text-blue-600 dark:text-blue-400"
-                        title={t("TaleList.inProgressLabel")}
-                      />
-                    )}
-                  </div>
-                </div>
-
-                {/* Second row: content name, job name, delete button */}
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col gap-2">
-                    <span className="font-medium text-neutral-900 text-sm dark:text-neutral-100">
-                      {dutyLink ? (
-                        <a
-                          className="eorzeadb_link inline-flex items-center gap-1 no-underline hover:no-underline"
-                          href={dutyLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {t(`${getContentI18nKey(tale.content)}.name`)}
-                          <ArrowTopRightOnSquareIcon
-                            className="size-3"
-                            aria-hidden
-                          />
-                        </a>
-                      ) : (
-                        t(`${getContentI18nKey(tale.content)}.name`)
+              return (
+                <div
+                  key={tale.key}
+                  className={`rounded-lg border-[0.5px] border-neutral-300 p-4 shadow-lg dark:border-neutral-700 ${
+                    tale.result
+                      ? "bg-green-50 dark:bg-green-900/20"
+                      : "bg-red-50 dark:bg-red-900/20"
+                  }`}
+                >
+                  {/* First row: datetime, inProgress icon, result icon */}
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="text-neutral-600 text-xs dark:text-neutral-400">
+                      {formatDateTime(tale.dateTime, locale)}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      {tale.inProgress && (
+                        <ArrowLeftEndOnRectangleIcon
+                          className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                          title={t("TaleList.inProgressLabel")}
+                        />
                       )}
-                    </span>
-                    <span
-                      className={`inline-flex w-fit items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
-                    >
-                      {jobLabel}
-                    </span>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <EditTale tale={tale} />
-                    <DeleteTale taleKey={tale.key} />
+
+                  {/* Second row: content name, job name, delete button */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-2">
+                      <span className="font-medium text-neutral-900 text-sm dark:text-neutral-100">
+                        {dutyLink ? (
+                          <a
+                            className="eorzeadb_link inline-flex items-center gap-1 no-underline hover:no-underline"
+                            href={dutyLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {t(`${getContentI18nKey(tale.content)}.name`)}
+                            <ArrowTopRightOnSquareIcon
+                              className="size-3"
+                              aria-hidden
+                            />
+                          </a>
+                        ) : (
+                          t(`${getContentI18nKey(tale.content)}.name`)
+                        )}
+                      </span>
+                      <span
+                        className={`inline-flex w-fit items-center rounded-xl px-2 py-1 font-medium text-xs ${roleColor}`}
+                      >
+                        {jobLabel}
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <EditTale tale={tale} />
+                      <DeleteTale taleKey={tale.key} />
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           </div>
 
           {/* Pagination Controls */}
