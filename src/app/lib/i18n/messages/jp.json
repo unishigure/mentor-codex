@@ -652,6 +652,14 @@
         "name": "ギルガメッシュ討伐戦",
         "dutyId": "c370021f429"
       },
+      "trial_2_4": {
+        "name": "アマジナ杯闘技会決勝戦",
+        "dutyId": "a74020d08e8"
+      },
+      "trial_gilgamesh_hard": {
+        "name": "真ギルガメッシュ討滅戦",
+        "dutyId": "cb876745bce"
+      },
       "trial_ifrit_hard": {
         "name": "真イフリート討滅戦",
         "dutyId": "2640986aff3"
@@ -680,14 +688,6 @@
         "name": "真シヴァ討滅戦",
         "dutyId": "c38bedcfa46"
       },
-      "trial_2_4": {
-        "name": "アマジナ杯闘技会決勝戦",
-        "dutyId": "a74020d08e8"
-      },
-      "trial_gilgamesh_hard": {
-        "name": "真ギルガメッシュ討滅戦",
-        "dutyId": "cb876745bce"
-      },
       "trial_odin_hard": {
         "name": "闘神オーディン討滅戦",
         "dutyId": "21d8c5bd54b"
@@ -704,6 +704,10 @@
         "name": "ナイツ・オブ・ラウンド討滅戦",
         "dutyId": "12c172943bc"
       },
+      "trial_nidhogg": {
+        "name": "ニーズヘッグ征竜戦",
+        "dutyId": "2caf2e26f12"
+      },
       "trial_sephirot": {
         "name": "魔神セフィロト討滅戦",
         "dutyId": "08c9d224d28"
@@ -715,10 +719,6 @@
       "trial_zurvan": {
         "name": "鬼神ズルワーン討滅戦",
         "dutyId": "8ff3c52798c"
-      },
-      "trial_nidhogg": {
-        "name": "ニーズヘッグ征竜戦",
-        "dutyId": "2caf2e26f12"
       },
       "trial_susano": {
         "name": "スサノオ討滅戦",
@@ -732,6 +732,10 @@
         "name": "神龍討滅戦",
         "dutyId": "13be0500007"
       },
+      "trial_tsukuyomi": {
+        "name": "ツクヨミ討滅戦",
+        "dutyId": "10fe97ad942"
+      },
       "trial_yojimbo_hard": {
         "name": "真ヨウジンボウ討滅戦",
         "dutyId": "bad56c435a5"
@@ -743,10 +747,6 @@
       "trial_byakko": {
         "name": "白虎征魂戦",
         "dutyId": "f1fc9fb6093"
-      },
-      "trial_tsukuyomi": {
-        "name": "ツクヨミ討滅戦",
-        "dutyId": "10fe97ad942"
       },
       "trial_suzaku": {
         "name": "朱雀征魂戦",
@@ -886,6 +886,18 @@
         "name": "極ラーヴァナ討滅戦",
         "dutyId": "83f028575c8"
       },
+      "extreme_knights": {
+        "name": "蒼天幻想 ナイツ・オブ・ラウンド討滅戦",
+        "dutyId": "a8a4860068c"
+      },
+      "extreme_nidhogg": {
+        "name": "極ニーズヘッグ征竜戦",
+        "dutyId": "0e880006330"
+      },
+      "extreme_sephirot": {
+        "name": "極魔神セフィロト討滅戦",
+        "dutyId": "e05c982993d"
+      },
       "extreme_sophia": {
         "name": "極女神ソフィア討滅戦",
         "dutyId": "212ceb19a34"
@@ -893,18 +905,6 @@
       "extreme_zulwahn": {
         "name": "極鬼神ズルワーン討滅戦",
         "dutyId": "26a86785be9"
-      },
-      "extreme_knights": {
-        "name": "蒼天幻想 ナイツ・オブ・ラウンド討滅戦",
-        "dutyId": "a8a4860068c"
-      },
-      "extreme_sephirot": {
-        "name": "極魔神セフィロト討滅戦",
-        "dutyId": "e05c982993d"
-      },
-      "extreme_nidhogg": {
-        "name": "極ニーズヘッグ征竜戦",
-        "dutyId": "0e880006330"
       },
       "extreme_susano": {
         "name": "極スサノオ討滅戦",
@@ -918,10 +918,6 @@
         "name": "極神龍討滅戦",
         "dutyId": "8c829b8dd8c"
       },
-      "extreme_byakko": {
-        "name": "極白虎征魂戦",
-        "dutyId": "44fc4abc0eb"
-      },
       "extreme_tsukuyomi": {
         "name": "極ツクヨミ討滅戦",
         "dutyId": "0919d2674e0"
@@ -929,6 +925,10 @@
       "extreme_rathalos": {
         "name": "極リオレウス狩猟戦",
         "dutyId": "52328939737"
+      },
+      "extreme_byakko": {
+        "name": "極白虎征魂戦",
+        "dutyId": "44fc4abc0eb"
       },
       "extreme_suzaku": {
         "name": "極朱雀征魂戦",
@@ -946,10 +946,6 @@
         "name": "極イノセンス討滅戦",
         "dutyId": "55504d0495f"
       },
-      "extreme_varis": {
-        "name": "極シタデル・ボズヤ追憶戦",
-        "dutyId": "841d3f69efd"
-      },
       "extreme_hades": {
         "name": "極ハーデス討滅戦",
         "dutyId": "b2e08d16bce"
@@ -957,6 +953,10 @@
       "extreme_ruby": {
         "name": "極ルビーウェポン破壊作戦",
         "dutyId": "b388be5eb05"
+      },
+      "extreme_varis": {
+        "name": "極シタデル・ボズヤ追憶戦",
+        "dutyId": "841d3f69efd"
       },
       "extreme_wol": {
         "name": "極ウォーリア・オブ・ライト討滅戦",
