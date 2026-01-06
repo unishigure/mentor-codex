@@ -225,7 +225,7 @@ export function TaleList() {
                   }).map((_, index) => (
                     <tr
                       key={`empty-page${currentPage}-row${
-                        // biome-ignore lint/suspicious/noArrayIndexKey
+                        // biome-ignore lint/suspicious/noArrayIndexKey: empty row
                         index
                       }`}
                       className="h-12 border-neutral-300 dark:border-neutral-700"
