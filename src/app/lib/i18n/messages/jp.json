@@ -57,6 +57,9 @@
   "ImportTale": {
     "buttonLabel": "CSVをインポート"
   },
+  "ExportTale": {
+    "buttonLabel": "CSVをエクスポート"
+  },
   "EditTale": {
     "title": "記録の編集",
     "edit": "編集",

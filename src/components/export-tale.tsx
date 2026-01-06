@@ -81,6 +81,8 @@ export function ExportTale() {
     <button
       type="button"
       onClick={() => void handleExport()}
+      aria-label={t("ExportTale.buttonLabel")}
+      title={t("ExportTale.buttonLabel")}
       className="cursor-pointer rounded-lg p-1 text-neutral-700 transition-all duration-200 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 dark:text-neutral-300 dark:hover:bg-neutral-700/40"
     >
       <ArrowUpTrayIcon className="size-5" />

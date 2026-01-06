@@ -57,6 +57,9 @@
   "ImportTale": {
     "buttonLabel": "Import CSV"
   },
+  "ExportTale": {
+    "buttonLabel": "Export CSV"
+  },
   "EditTale": {
     "title": "Edit Record",
     "edit": "Edit",
