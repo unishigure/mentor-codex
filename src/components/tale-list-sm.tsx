@@ -5,13 +5,12 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeftEndOnRectangleIcon,
   ArrowTopRightOnSquareIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 import { useLocale, useTranslations } from "next-intl";
 
 import { DeleteTale } from "@/components/delete-tale";
 import { EditTale } from "@/components/edit-tale";
+import { PaginationControls } from "@/components/pagination-controls";
 import { WriteTale } from "@/components/write-tale";
 import { getContentDutyId, getContentI18nKey } from "@/lib/content";
 import { formatDateTime } from "@/lib/datetime";
@@ -171,47 +170,12 @@ export function TaleListSm() {
           </div>
 
           {/* Pagination Controls */}
-          <div className="mt-4 flex items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-              disabled={currentPage === 1}
-              className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
-              aria-label="Previous page"
-            >
-              <ChevronLeftIcon className="size-5" />
-            </button>
-
-            <div className="flex items-center gap-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
-                  <button
-                    type="button"
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`min-w-8 rounded-lg px-3 py-1.5 font-medium text-sm transition-colors ${
-                      currentPage === page
-                        ? "bg-blue-600 text-white dark:bg-blue-500"
-                        : "bg-white text-neutral-700 shadow hover:bg-neutral-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ),
-              )}
-            </div>
-
-            <button
-              type="button"
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
-              }
-              disabled={currentPage === totalPages}
-              className="rounded-lg bg-white p-2 text-neutral-700 shadow transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600"
-              aria-label="Next page"
-            >
-              <ChevronRightIcon className="size-5" />
-            </button>
+          <div className="mt-4">
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </div>
         </>
       )}
