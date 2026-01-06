@@ -108,7 +108,7 @@ export function SelectJob({
         role="combobox"
         aria-expanded={isOpen}
         aria-autocomplete="list"
-        className={`w-full cursor-pointer rounded-lg border border-neutral-300 bg-white px-4 py-2.5 pr-10 font-medium text-neutral-700 text-sm shadow-sm transition-all duration-200 placeholder:text-neutral-400 hover:border-neutral-400 hover:bg-neutral-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:bg-neutral-700 dark:placeholder:text-neutral-500 ${disabled ? "bg-neutral-100 dark:bg-neutral-750" : ""}`}
+        className={`w-full cursor-pointer rounded-lg border border-neutral-300 bg-white px-4 py-2.5 pr-10 font-medium text-neutral-700 shadow-sm transition-all duration-200 placeholder:text-neutral-400 hover:border-neutral-400 hover:bg-neutral-50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:bg-neutral-700 dark:placeholder:text-neutral-500 ${disabled ? "bg-neutral-100 dark:bg-neutral-750" : ""}`}
       />
       {value && !disabled && (
         <button
