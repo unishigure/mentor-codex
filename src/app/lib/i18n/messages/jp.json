@@ -550,6 +550,10 @@
       },
       "dungeon_100_7_4": {
         "name": "遺忘行路 ミストウェイク",
+        "dutyId": "6a4b324a5c5"
+      },
+      "dungeon_100_7_5": {
+        "name": "妖異侵攻 クルティウス魔導工廠",
         "dutyId": "none"
       }
     },
@@ -842,6 +846,10 @@
       },
       "trial_7_4": {
         "name": "グラシャラボラス討滅戦",
+        "dutyId": "2db4beb1880"
+      },
+      "trial_7_5": {
+        "name": "エヌオー討滅戦",
         "dutyId": "none"
       }
     },
@@ -1024,6 +1032,10 @@
       },
       "extreme_7_4": {
         "name": "極グラシャラボラス討滅戦",
+        "dutyId": "f6df7a9a911"
+      },
+      "extreme_7_5": {
+        "name": "極エヌオー討滅戦",
         "dutyId": "none"
       }
     },
@@ -1306,19 +1318,19 @@
       },
       "raid_7_4_1": {
         "name": "至天の座アルカディア：ヘビー級1",
-        "dutyId": "none"
+        "dutyId": "6da40c894e4"
       },
       "raid_7_4_2": {
         "name": "至天の座アルカディア：ヘビー級2",
-        "dutyId": "none"
+        "dutyId": "34c67ccecb0"
       },
       "raid_7_4_3": {
         "name": "至天の座アルカディア：ヘビー級3",
-        "dutyId": "none"
+        "dutyId": "670eb3e2b6a"
       },
       "raid_7_4_4": {
         "name": "至天の座アルカディア：ヘビー級4",
-        "dutyId": "none"
+        "dutyId": "6e8717f3032"
       }
     },
     "AllianceRaids": {
@@ -1389,6 +1401,10 @@
       "alliance_7_3": {
         "name": "サンドリア：ザ・セカンドウォーク",
         "dutyId": "2659bec79dd"
+      },
+      "alliance_7_5": {
+        "name": "ウィンダス：ザ・サードウォーク",
+        "dutyId": "none"
       }
     },
     "Savage": {
@@ -1634,19 +1650,19 @@
       },
       "savage_7_4_1": {
         "name": "至天の座アルカディア零式：ヘビー級1",
-        "dutyId": "none"
+        "dutyId": "3ea058f9348"
       },
       "savage_7_4_2": {
         "name": "至天の座アルカディア零式：ヘビー級2",
-        "dutyId": "none"
+        "dutyId": "dfd2edd76f7"
       },
       "savage_7_4_3": {
         "name": "至天の座アルカディア零式：ヘビー級3",
-        "dutyId": "none"
+        "dutyId": "83e7eae649b"
       },
       "savage_7_4_4": {
         "name": "至天の座アルカディア零式：ヘビー級4",
-        "dutyId": "none"
+        "dutyId": "55f77a8592c"
       }
     },
     "Chaotic": {
