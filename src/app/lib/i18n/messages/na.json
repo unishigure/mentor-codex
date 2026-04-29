@@ -245,7 +245,8 @@
       "dungeon_100_7_1": { "name": "Yuweyawata Field Station" },
       "dungeon_100_7_2": { "name": "The Underkeep" },
       "dungeon_100_7_3": { "name": "The Meso Terminal" },
-      "dungeon_100_7_4": { "name": "Mistwake" }
+      "dungeon_100_7_4": { "name": "Mistwake" },
+      "dungeon_100_7_5": { "name": "The Clyteum" }
     },
     "Guildhests": {
       "guildhest_1": { "name": "Basic Training: Enemy Parties" },
@@ -321,7 +322,8 @@
       "trial_7_2": { "name": "Recollection" },
       "trial_7_3": { "name": "The Ageless Necropolis" },
       "trial_arkveld": { "name": "The Windward Wilds" },
-      "trial_7_4": { "name": "Hell on Rails" }
+      "trial_7_4": { "name": "Hell on Rails" },
+      "trial_7_5": { "name": "The Unmaking" }
     },
     "Extremes": {
       "extreme_altema": { "name": "The Minstrel's Ballad: Ultima's Bane" },
@@ -370,7 +372,8 @@
       "extreme_7_2": { "name": "Recollection (Extreme)" },
       "extreme_7_3": { "name": "The Minstrel's Ballad: Necron's Embrace" },
       "extreme_arkveld": { "name": "The Windward Wilds (Extreme)" },
-      "extreme_7_4": { "name": "Hell on Rails (Extreme)" }
+      "extreme_7_4": { "name": "Hell on Rails (Extreme)" },
+      "extreme_7_5": { "name": "The Unmaking (Extreme)" }
     },
     "Raids": {
       "raid_2_1_1": { "name": "The Binding Coil of Bahamut - Turn 1" },
@@ -464,7 +467,8 @@
       "alliance_6_3": { "name": "Euphrosyne" },
       "alliance_6_5": { "name": "Thaleia" },
       "alliance_7_1": { "name": "Jeuno: The First Walk" },
-      "alliance_7_3": { "name": "San d'Oria: The Second Walk" }
+      "alliance_7_3": { "name": "San d'Oria: The Second Walk" },
+      "alliance_7_5": { "name": "Windurst: The Third Walk" }
     },
     "Savage": {
       "savage_2_3_1": {
