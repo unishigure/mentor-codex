@@ -1686,7 +1686,8 @@
       },
       "ultimate_6_1": { "name": "絶竜詩戦争", "dutyId": "ba184b63c2d" },
       "ultimate_6_3": { "name": "絶オメガ検証戦", "dutyId": "dccacd176f4" },
-      "ultimate_7_1": { "name": "絶もうひとつの未来", "dutyId": "d7ca52c7e6c" }
+      "ultimate_7_1": { "name": "絶もうひとつの未来", "dutyId": "d7ca52c7e6c" },
+      "ultimate_7_5": { "name": "絶妖星乱舞", "dutyId": "none" }
     }
   }
 }
