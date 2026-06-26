@@ -13,7 +13,6 @@ export function getRouletteI18nKey(code: string): string | null {
 }
 
 export function countMentorRoulette(tales: Tale[]): number {
-  return tales
-    .filter((tale) => tale.roulette === "mentor" && tale.result)
+  return tales.filter((tale) => tale.roulette === "mentor" && tale.result)
     .length;
 }
