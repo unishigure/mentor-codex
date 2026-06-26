@@ -6,6 +6,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 import { deleteTale } from "@/lib/db";
+import { dispatchTaleDeleted } from "@/lib/tale-events";
 
 interface DeleteTaleProps {
   taleKey: number;
@@ -47,7 +48,7 @@ export function DeleteTale({ taleKey }: DeleteTaleProps) {
 
       await deleteTale(taleKey);
       if (typeof window !== "undefined") {
-        window.dispatchEvent(new Event("tale:update"));
+        dispatchTaleDeleted(taleKey);
       }
 
       handleClose();

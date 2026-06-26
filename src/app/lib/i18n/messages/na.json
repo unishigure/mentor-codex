@@ -62,6 +62,12 @@
   "ExportTale": {
     "buttonLabel": "Export CSV"
   },
+  "ConnectDrive": {
+    "sync": "Sync to Google Drive",
+    "syncing": "Syncing to Google Drive...",
+    "synced": "Synced to Google Drive",
+    "disabled": "Google Drive sync is disabled"
+  },
   "EditTale": {
     "title": "Edit Record",
     "edit": "Edit",

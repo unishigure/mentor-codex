@@ -17,6 +17,7 @@ import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
 import type { RouletteCode } from "@/lib/roulette";
+import { dispatchTaleSaved } from "@/lib/tale-events";
 
 interface EditTaleProps {
   tale: Tale;
@@ -92,7 +93,7 @@ export function EditTale({ tale }: EditTaleProps) {
 
       await saveTale(nextTale);
       if (typeof window !== "undefined") {
-        window.dispatchEvent(new Event("tale:update"));
+        dispatchTaleSaved(nextTale.key);
       }
 
       handleClose();

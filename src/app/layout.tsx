@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 
 import { Config } from "@/components/config";
+import { ConnectDrive } from "@/components/connect-drive";
 import { GithubIcon } from "@/components/icons";
 
 const geistSans = Geist({
@@ -47,6 +48,7 @@ export default function RootLayout({
                 >
                   <GithubIcon />
                 </a>
+                <ConnectDrive />
                 <Config />
               </div>
             </div>

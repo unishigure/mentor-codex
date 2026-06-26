@@ -62,6 +62,12 @@
   "ExportTale": {
     "buttonLabel": "CSVをエクスポート"
   },
+  "ConnectDrive": {
+    "sync": "Google Driveに同期",
+    "syncing": "Google Driveに同期中...",
+    "synced": "Google Driveに同期しました",
+    "disabled": "Google Driveへの同期は無効です"
+  },
   "EditTale": {
     "title": "記録の編集",
     "edit": "編集",

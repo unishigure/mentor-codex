@@ -17,6 +17,7 @@ import type { Tale } from "@/lib/db";
 import { saveTale } from "@/lib/db";
 import type { JobCode } from "@/lib/job";
 import type { RouletteCode } from "@/lib/roulette";
+import { dispatchTaleSaved } from "@/lib/tale-events";
 
 export function WriteTale() {
   const t = useTranslations();
@@ -79,7 +80,7 @@ export function WriteTale() {
 
       await saveTale(tale);
       if (typeof window !== "undefined") {
-        window.dispatchEvent(new Event("tale:update"));
+        dispatchTaleSaved(tale.key);
       }
 
       // Reset form
